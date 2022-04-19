@@ -1,0 +1,4852 @@
+[
+    {
+        "id": 1,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "CO2",
+            "carbon",
+            "methane",
+            "pollution"
+        ],
+        "url": "CAM-SUP-CO2-carbon-methane-pollution",
+        "vsgOfficial": true
+    },
+    {
+        "id": 2,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "Car",
+            "motorvehicle",
+            "vehicle"
+        ],
+        "url": "CAM-SUP-Car-motorvehicle-vehicle",
+        "vsgOfficial": true
+    },
+    {
+        "id": 3,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "Excavator",
+            "mining",
+            "digging",
+            "mine",
+            "icon"
+        ],
+        "url": "CAM-SUP-Excavator-mining-digging-mine-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 4,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "Factory",
+            "building",
+            "industrial",
+            "icon"
+        ],
+        "url": "CAM-SUP-Factory-building-industrial-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 5,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "Trafficlight",
+            "robot",
+            "road",
+            "traffic",
+            "sidewalk",
+            "light"
+        ],
+        "url": "CAM-SUP-Trafficlight-robot-road-traffic-sidewalk-light",
+        "vsgOfficial": false
+    },
+    {
+        "id": 6,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "book",
+            "bibliography",
+            "icon"
+        ],
+        "url": "CAM-SUP-book-bibliography-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 8,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "bottle",
+            "cup",
+            "plastic",
+            "icon"
+        ],
+        "url": "CAM-SUP-bottle-cup-plastic-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 9,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "bottle",
+            "oil",
+            "soap",
+            "palmoil",
+            "handcreamicon"
+        ],
+        "url": "CAM-SUP-bottle-oil-soap-palmoil-handcreamicon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 10,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "brain",
+            "thinking",
+            "problemsolving",
+            "cogs",
+            "gears",
+            "icon"
+        ],
+        "url": "CAM-SUP-brain-thinking-problemsolving-cogs-gears-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 11,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "bubbles",
+            "foam",
+            "icon",
+            "soap"
+        ],
+        "url": "CAM-SUP-bubbles-foam-icon-soap",
+        "vsgOfficial": false
+    },
+    {
+        "id": 12,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "burger",
+            "food",
+            "meat",
+            "icon"
+        ],
+        "url": "CAM-SUP-burger-food-meat-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 13,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "burgerrestaurant",
+            "restaurant",
+            "diner",
+            "eat",
+            "food"
+        ],
+        "url": "CAM-SUP-burgerrestaurant-restaurant-diner-eat-food",
+        "vsgOfficial": true
+    },
+    {
+        "id": 14,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "car",
+            "carseat",
+            "chair"
+        ],
+        "url": "CAM-SUP-car-carseat-chair",
+        "vsgOfficial": true
+    },
+    {
+        "id": 15,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "car",
+            "modern",
+            "tech",
+            "electriccar"
+        ],
+        "url": "CAM-SUP-car-modern-tech-electriccar",
+        "vsgOfficial": true
+    },
+    {
+        "id": 16,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "car",
+            "motor",
+            "vechile",
+            "icon"
+        ],
+        "url": "CAM-SUP-car-motor-vechile-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 17,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "carbattery",
+            "energy",
+            "car",
+            "batterycare",
+            "electriccar",
+            "icon"
+        ],
+        "url": "CAM-SUP-carbattery-energy-car-batterycare-electriccar-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 18,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "carfactory",
+            "factory",
+            "building",
+            "industrial",
+            "car",
+            "icon",
+            "2"
+        ],
+        "url": "CAM-SUP-carfactory-factory-building-industrial-car-icon-2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 19,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "causeandeffect",
+            "dominos",
+            "causes",
+            "icon",
+            "finger"
+        ],
+        "url": "CAM-SUP-causeandeffect-dominos-causes-icon-finger",
+        "vsgOfficial": true
+    },
+    {
+        "id": 20,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "clothing",
+            "fashion",
+            "shirts",
+            "icon"
+        ],
+        "url": "CAM-SUP-clothing-fashion-shirts-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 21,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "cog",
+            "gear",
+            "abstract",
+            "icon"
+        ],
+        "url": "CAM-SUP-cog-gear-abstract-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 22,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "cog",
+            "thinking",
+            "process",
+            ""
+        ],
+        "url": "CAM-SUP-cog-thinking-process-",
+        "vsgOfficial": false
+    },
+    {
+        "id": 23,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "cogs",
+            "movement",
+            "engine",
+            "machine"
+        ],
+        "url": "CAM-SUP-cogs-movement-engine-machine",
+        "vsgOfficial": false
+    },
+    {
+        "id": 24,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "connected",
+            "cog",
+            "icon"
+        ],
+        "url": "CAM-SUP-connected-cog-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 25,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "connection",
+            "globe",
+            "abstract",
+            "icon"
+        ],
+        "url": "CAM-SUP-connection-globe-abstract-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 26,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "cotton",
+            "cottonfarm",
+            "plant",
+            "nature",
+            "icon"
+        ],
+        "url": "CAM-SUP-cotton-cottonfarm-plant-nature-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 27,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "cotton",
+            "nature",
+            "plant",
+            "icon"
+        ],
+        "url": "CAM-SUP-cotton-nature-plant-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 28,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "cow",
+            "farm",
+            "cattle",
+            "methane",
+            "icon"
+        ],
+        "url": "CAM-SUP-cow-farm-cattle-methane-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 29,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "delivery",
+            "logistics",
+            "truck",
+            "car",
+            "icon"
+        ],
+        "url": "CAM-SUP-delivery-logistics-truck-car-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 30,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "diagram",
+            "flowchart",
+            "icon"
+        ],
+        "url": "CAM-SUP-diagram-flowchart-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 31,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "disaster",
+            "houseburning",
+            "fire",
+            "house",
+            "icon"
+        ],
+        "url": "CAM-SUP-disaster-houseburning-fire-house-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 32,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "drop",
+            "oil",
+            "water",
+            "icon"
+        ],
+        "url": "CAM-SUP-drop-oil-water-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 33,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "factory",
+            "building",
+            "palmoil",
+            "refinery",
+            "industrial",
+            "icon"
+        ],
+        "url": "CAM-SUP-factory-building-palmoil-refinery-industrial-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 34,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "factory",
+            "industrial",
+            "building",
+            "icon"
+        ],
+        "url": "CAM-SUP-factory-industrial-building-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 35,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "factory",
+            "industrial",
+            "refinery",
+            "icon",
+            "building"
+        ],
+        "url": "CAM-SUP-factory-industrial-refinery-icon-building",
+        "vsgOfficial": false
+    },
+    {
+        "id": 36,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "farmtruck",
+            "truck",
+            "logistics",
+            "icon"
+        ],
+        "url": "CAM-SUP-farmtruck-truck-logistics-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 37,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "focussedproblemsolving",
+            "gear",
+            "cog",
+            "icon",
+            "arrows"
+        ],
+        "url": "CAM-SUP-focussedproblemsolving-gear-cog-icon-arrows",
+        "vsgOfficial": false
+    },
+    {
+        "id": 38,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "gascan",
+            "gas",
+            "icon",
+            "car"
+        ],
+        "url": "CAM-SUP-gascan-gas-icon-car",
+        "vsgOfficial": false
+    },
+    {
+        "id": 39,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "gear",
+            "cog",
+            "support",
+            "agreement",
+            "handsholding",
+            "competitors.icons"
+        ],
+        "url": "CAM-SUP-gear-cog-support-agreement-handsholding-competitors.icons",
+        "vsgOfficial": false
+    },
+    {
+        "id": 40,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "globe",
+            "world",
+            "influence",
+            "output",
+            "arrows",
+            "icon"
+        ],
+        "url": "CAM-SUP-globe-world-influence-output-arrows-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 41,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "hands",
+            "caring",
+            "coin",
+            "holding",
+            "icon"
+        ],
+        "url": "CAM-SUP-hands-caring-coin-holding-icon",
+        "vsgOfficial": false
+    },
+    {
+        "id": 42,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "icon",
+            "connection",
+            "interlinked"
+        ],
+        "url": "CAM-SUP-icon-connection-interlinked",
+        "vsgOfficial": false
+    },
+    {
+        "id": 43,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "key",
+            "icon"
+        ],
+        "url": "CAM-SUP-key-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 44,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "library",
+            "book",
+            "bibliography",
+            "icon"
+        ],
+        "url": "CAM-SUP-library-book-bibliography-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 45,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "lighthouse",
+            "building"
+        ],
+        "url": "CAM-SUP-lighthouse-building",
+        "vsgOfficial": true
+    },
+    {
+        "id": 46,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "logistics",
+            "gear",
+            "cog",
+            "truck",
+            "car",
+            "icon"
+        ],
+        "url": "CAM-SUP-logistics-gear-cog-truck-car-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 47,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "logistics",
+            "ship",
+            "shipping",
+            "container",
+            "icon"
+        ],
+        "url": "CAM-SUP-logistics-ship-shipping-container-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 48,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "material",
+            "fabric",
+            "cotton",
+            "roll",
+            "icon"
+        ],
+        "url": "CAM-SUP-material-fabric-cotton-roll-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 49,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "molecule",
+            "abstract"
+        ],
+        "url": "CAM-SUP-molecule-abstract",
+        "vsgOfficial": true
+    },
+    {
+        "id": 50,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "money",
+            "coins",
+            "growth",
+            "finance",
+            "icon"
+        ],
+        "url": "CAM-SUP-money-coins-growth-finance-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 51,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "money",
+            "saving",
+            "piggybank",
+            "bank"
+        ],
+        "url": "CAM-SUP-money-saving-piggybank-bank",
+        "vsgOfficial": true
+    },
+    {
+        "id": 52,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "nature",
+            "sustainability",
+            "cog",
+            "gear",
+            "hands",
+            "care",
+            "icon"
+        ],
+        "url": "CAM-SUP-nature-sustainability-cog-gear-hands-care-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 53,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "notepad",
+            "pencil",
+            "tickmark",
+            "icon"
+        ],
+        "url": "CAM-SUP-notepad-pencil-tickmark-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 54,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "oil",
+            "oilpump",
+            "oildig",
+            "fracking"
+        ],
+        "url": "CAM-SUP-oil-oilpump-oildig-fracking",
+        "vsgOfficial": true
+    },
+    {
+        "id": 55,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "oil",
+            "oilrefinery",
+            "factory",
+            "building",
+            "icon"
+        ],
+        "url": "CAM-SUP-oil-oilrefinery-factory-building-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 56,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "palm",
+            "palmseed",
+            "palmoil",
+            "icon"
+        ],
+        "url": "CAM-SUP-palm-palmseed-palmoil-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 57,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "palmtree",
+            "tree",
+            "palm",
+            "oil",
+            "icon"
+        ],
+        "url": "CAM-SUP-palmtree-tree-palm-oil-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 58,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "parking",
+            "carparking",
+            "car",
+            "icon"
+        ],
+        "url": "CAM-SUP-parking-carparking-car-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 59,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "piston",
+            "engine",
+            "car",
+            "machine"
+        ],
+        "url": "CAM-SUP-piston-engine-car-machine",
+        "vsgOfficial": true
+    },
+    {
+        "id": 60,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "plant",
+            "bottle",
+            "element",
+            ""
+        ],
+        "url": "CAM-SUP-plant-bottle-element-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 61,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "problemsolving",
+            "lightbulb",
+            "idea",
+            "creativeidea",
+            "problemsolving",
+            "icon"
+        ],
+        "url": "CAM-SUP-problemsolving-lightbulb-idea-creativeidea-problemsolving-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 62,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "problemsolving",
+            "thinking",
+            "head",
+            "creativethinking",
+            "icon"
+        ],
+        "url": "CAM-SUP-problemsolving-thinking-head-creativethinking-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 63,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "recycle",
+            "badrecycle",
+            "notsustainable"
+        ],
+        "url": "CAM-SUP-recycle-badrecycle-notsustainable",
+        "vsgOfficial": true
+    },
+    {
+        "id": 64,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "robotarm",
+            "arm",
+            "factoryarm",
+            ""
+        ],
+        "url": "CAM-SUP-robotarm-arm-factoryarm-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 65,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "rocket",
+            "space",
+            "takeoff",
+            "icon"
+        ],
+        "url": "CAM-SUP-rocket-space-takeoff-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 66,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "science",
+            "molecule",
+            "abstract",
+            "2"
+        ],
+        "url": "CAM-SUP-science-molecule-abstract-2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 67,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "science",
+            "molecule",
+            "abstract"
+        ],
+        "url": "CAM-SUP-science-molecule-abstract",
+        "vsgOfficial": true
+    },
+    {
+        "id": 68,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "scissors",
+            "fabric",
+            "material",
+            "pattern",
+            "clothing",
+            "icon"
+        ],
+        "url": "CAM-SUP-scissors-fabric-material-pattern-clothing-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 69,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "selfdriving",
+            "steeringwheel",
+            "wifi",
+            "wireless",
+            "icon"
+        ],
+        "url": "CAM-SUP-selfdriving-steeringwheel-wifi-wireless-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 70,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "sewingmachine",
+            "sewing",
+            "factory",
+            "clothing",
+            "fashion",
+            "icon"
+        ],
+        "url": "CAM-SUP-sewingmachine-sewing-factory-clothing-fashion-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 71,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "shop",
+            "diner",
+            "building",
+            "icon"
+        ],
+        "url": "CAM-SUP-shop-diner-building-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 72,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "smelting",
+            "factory",
+            "mining",
+            "production",
+            "icon"
+        ],
+        "url": "CAM-SUP-smelting-factory-mining-production-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 73,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "statistics",
+            "bargraph",
+            "graph",
+            "growth",
+            "data",
+            "icon"
+        ],
+        "url": "CAM-SUP-statistics-bargraph-graph-growth-data-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 74,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "statistics",
+            "icon",
+            "growth",
+            "bargraph"
+        ],
+        "url": "CAM-SUP-statistics-icon-growth-bargraph",
+        "vsgOfficial": true
+    },
+    {
+        "id": 75,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "steak",
+            "meat",
+            "food",
+            "icon"
+        ],
+        "url": "CAM-SUP-steak-meat-food-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 76,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "testtubes",
+            "science",
+            "biology",
+            "icon"
+        ],
+        "url": "CAM-SUP-testtubes-science-biology-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 77,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "thread",
+            "cotton",
+            "factory",
+            "fashion",
+            "icon"
+        ],
+        "url": "CAM-SUP-thread-cotton-factory-fashion-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 78,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "vendingmachine",
+            "shop",
+            "icon"
+        ],
+        "url": "CAM-SUP-vendingmachine-shop-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 79,
+        "up": "CAM",
+        "course": "SUP",
+        "tags": [
+            "CAM",
+            "SUP",
+            "wrench",
+            "tool",
+            "work",
+            "mechanics"
+        ],
+        "url": "CAM-SUP-wrench-tool-work-mechanics",
+        "vsgOfficial": true
+    },
+    {
+        "id": 80,
+        "up": "",
+        "course": "",
+        "tags": [
+            "GeorgeWashington",
+            "Computer",
+            "scene"
+        ],
+        "url": "GeorgeWashington-Computer-scene",
+        "vsgOfficial": true
+    },
+    {
+        "id": 81,
+        "up": "",
+        "course": "",
+        "tags": [
+            "GeorgeWashington",
+            "sdfsdf",
+            "2"
+        ],
+        "url": "GeorgeWashington-sdfsdf-2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 82,
+        "up": "",
+        "course": "",
+        "tags": [
+            "GeorgeWashington",
+            "sdfsdf",
+            "3"
+        ],
+        "url": "GeorgeWashington-sdfsdf-3",
+        "vsgOfficial": true
+    },
+    {
+        "id": 83,
+        "up": "",
+        "course": "",
+        "tags": [
+            "GeorgeWashington",
+            "sdfsdf",
+            "4"
+        ],
+        "url": "GeorgeWashington-sdfsdf-4",
+        "vsgOfficial": true
+    },
+    {
+        "id": 84,
+        "up": "",
+        "course": "",
+        "tags": [
+            "GeorgeWashington",
+            "sdfsdf",
+            "5"
+        ],
+        "url": "GeorgeWashington-sdfsdf-5",
+        "vsgOfficial": true
+    },
+    {
+        "id": 85,
+        "up": "",
+        "course": "",
+        "tags": [
+            "GeorgeWashington",
+            "sdfsdf",
+            "6"
+        ],
+        "url": "GeorgeWashington-sdfsdf-6",
+        "vsgOfficial": true
+    },
+    {
+        "id": 86,
+        "up": "",
+        "course": "",
+        "tags": [
+            "GeorgeWashington",
+            "sdfsdf",
+            "7"
+        ],
+        "url": "GeorgeWashington-sdfsdf-7",
+        "vsgOfficial": true
+    },
+    {
+        "id": 87,
+        "up": "",
+        "course": "",
+        "tags": [
+            "GeorgeWashington",
+            "sdfsdf",
+            "8"
+        ],
+        "url": "GeorgeWashington-sdfsdf-8",
+        "vsgOfficial": true
+    },
+    {
+        "id": 88,
+        "up": "",
+        "course": "",
+        "tags": [
+            "GeorgeWashington",
+            "sdfsdf"
+        ],
+        "url": "GeorgeWashington-sdfsdf",
+        "vsgOfficial": true
+    },
+    {
+        "id": 89,
+        "up": "HAR",
+        "course": "FIH",
+        "tags": [
+            "HAR",
+            "FIH",
+            "boks"
+        ],
+        "url": "HAR-FIH-boks",
+        "vsgOfficial": true
+    },
+    {
+        "id": 90,
+        "up": "HAR",
+        "course": "FIH",
+        "tags": [
+            "HAR",
+            "FIH",
+            "icon",
+            "brain"
+        ],
+        "url": "HAR-FIH-icon-brain",
+        "vsgOfficial": true
+    },
+    {
+        "id": 91,
+        "up": "LSE",
+        "course": "",
+        "tags": [
+            "LSE",
+            "icon",
+            "computer",
+            "2"
+        ],
+        "url": "LSE-icon-computer-2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 92,
+        "up": "LSE",
+        "course": "",
+        "tags": [
+            "LSE",
+            "icon",
+            "computer",
+            "security"
+        ],
+        "url": "LSE-icon-computer-security",
+        "vsgOfficial": true
+    },
+    {
+        "id": 93,
+        "up": "LSE",
+        "course": "",
+        "tags": [
+            "LSE",
+            "icon",
+            "dress",
+            "sell",
+            "shop"
+        ],
+        "url": "LSE-icon-dress-sell-shop",
+        "vsgOfficial": true
+    },
+    {
+        "id": 94,
+        "up": "LSE",
+        "course": "",
+        "tags": [
+            "LSE",
+            "icon",
+            "judge",
+            "gavel"
+        ],
+        "url": "LSE-icon-judge-gavel",
+        "vsgOfficial": true
+    },
+    {
+        "id": 95,
+        "up": "LSE",
+        "course": "",
+        "tags": [
+            "LSE",
+            "icon",
+            "old",
+            "parchment",
+            "quill"
+        ],
+        "url": "LSE-icon-old-parchment-quill",
+        "vsgOfficial": true
+    },
+    {
+        "id": 96,
+        "up": "LSE",
+        "course": "",
+        "tags": [
+            "LSE",
+            "icon",
+            "trade",
+            "goods",
+            "commerce"
+        ],
+        "url": "LSE-icon-trade-goods-commerce",
+        "vsgOfficial": true
+    },
+    {
+        "id": 97,
+        "up": "LSE",
+        "course": "",
+        "tags": [
+            "LSE",
+            "mac",
+            "computer",
+            "ecommerce",
+            "online",
+            "store",
+            "2"
+        ],
+        "url": "LSE-mac-computer-ecommerce-online-store-2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 98,
+        "up": "LSE",
+        "course": "",
+        "tags": [
+            "LSE",
+            "ship",
+            "old",
+            "medieval"
+        ],
+        "url": "LSE-ship-old-medieval",
+        "vsgOfficial": true
+    },
+    {
+        "id": 99,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "Aggressivethought",
+            "anger",
+            "negative",
+            "abstract"
+        ],
+        "url": "MIT-Aggressivethought-anger-negative-abstract",
+        "vsgOfficial": true
+    },
+    {
+        "id": 100,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "Bibliography",
+            "button",
+            "book",
+            "Interactive"
+        ],
+        "url": "MIT-Bibliography-button-book-Interactive",
+        "vsgOfficial": true
+    },
+    {
+        "id": 101,
+        "up": "MIT",
+        "course": "CFE",
+        "tags": [
+            "MIT",
+            "CFE",
+            "Scene",
+            "talking",
+            "characters",
+            "communication.man",
+            "woman",
+            "conversation"
+        ],
+        "url": "MIT-CFE-Scene-talking-characters-communication.man-woman-conversation",
+        "vsgOfficial": true
+    },
+    {
+        "id": 102,
+        "up": "MIT",
+        "course": "CFE",
+        "tags": [
+            "MIT",
+            "CFE",
+            "conflict",
+            "problem",
+            "angry",
+            "tension",
+            "icon"
+        ],
+        "url": "MIT-CFE-conflict-problem-angry-tension-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 103,
+        "up": "MIT",
+        "course": "CFE",
+        "tags": [
+            "MIT",
+            "CFE",
+            "crossroads",
+            "map",
+            "waypoint",
+            "direction",
+            "sign",
+            "icon"
+        ],
+        "url": "MIT-CFE-crossroads-map-waypoint-direction-sign-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 104,
+        "up": "MIT",
+        "course": "CFE",
+        "tags": [
+            "MIT",
+            "CFE",
+            "emotion",
+            "sad",
+            "angry",
+            "nothappy",
+            "icon"
+        ],
+        "url": "MIT-CFE-emotion-sad-angry-nothappy-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 105,
+        "up": "MIT",
+        "course": "CFE",
+        "tags": [
+            "MIT",
+            "CFE",
+            "emotion",
+            "smile",
+            "happy",
+            "icon"
+        ],
+        "url": "MIT-CFE-emotion-smile-happy-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 106,
+        "up": "MIT",
+        "course": "CFE",
+        "tags": [
+            "MIT",
+            "CFE",
+            "promise",
+            "scoutshonour",
+            "selfless",
+            "icon"
+        ],
+        "url": "MIT-CFE-promise-scoutshonour-selfless-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 107,
+        "up": "MIT",
+        "course": "CFE",
+        "tags": [
+            "MIT",
+            "CFE",
+            "readingdocument",
+            "search",
+            "learn",
+            "magnify",
+            "document",
+            "icon"
+        ],
+        "url": "MIT-CFE-readingdocument-search-learn-magnify-document-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 108,
+        "up": "MIT",
+        "course": "CFE",
+        "tags": [
+            "MIT",
+            "CFE",
+            "search",
+            "question",
+            "magnify",
+            "understand",
+            "research"
+        ],
+        "url": "MIT-CFE-search-question-magnify-understand-research",
+        "vsgOfficial": true
+    },
+    {
+        "id": 109,
+        "up": "MIT",
+        "course": "CFE",
+        "tags": [
+            "MIT",
+            "CFE",
+            "stop",
+            "stoppoint",
+            "sign",
+            "icon"
+        ],
+        "url": "MIT-CFE-stop-stoppoint-sign-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 110,
+        "up": "MIT",
+        "course": "CFE",
+        "tags": [
+            "MIT",
+            "CFE",
+            "world",
+            "map",
+            "worldmap",
+            "globe",
+            "scene",
+            "travel",
+            "points",
+            "gps",
+            "satellite"
+        ],
+        "url": "MIT-CFE-world-map-worldmap-globe-scene-travel-points-gps-satellite",
+        "vsgOfficial": true
+    },
+    {
+        "id": 111,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "Child",
+            "kid",
+            "hospitalbed",
+            "hospital",
+            "patient",
+            "sick",
+            ""
+        ],
+        "url": "MIT-CPS-Child-kid-hospitalbed-hospital-patient-sick-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 112,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "DNA",
+            "Genetics",
+            "human",
+            "science",
+            "icon"
+        ],
+        "url": "MIT-CPS-DNA-Genetics-human-science-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 113,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "Gelatine",
+            "blades",
+            "danger",
+            "game"
+        ],
+        "url": "MIT-CPS-Gelatine-blades-danger-game",
+        "vsgOfficial": true
+    },
+    {
+        "id": 114,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "Hospital",
+            "hospitalroom",
+            "medical",
+            "medicine",
+            "environment",
+            "scene"
+        ],
+        "url": "MIT-CPS-Hospital-hospitalroom-medical-medicine-environment-scene",
+        "vsgOfficial": true
+    },
+    {
+        "id": 115,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "Question",
+            "speechbubble",
+            "bubbles",
+            "communication",
+            "icon"
+        ],
+        "url": "MIT-CPS-Question-speechbubble-bubbles-communication-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 116,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "Scene",
+            "office",
+            "ceo",
+            "work",
+            "tabletop",
+            "topview",
+            "documents",
+            "pen",
+            "cup"
+        ],
+        "url": "MIT-CPS-Scene-office-ceo-work-tabletop-topview-documents-pen-cup",
+        "vsgOfficial": true
+    },
+    {
+        "id": 117,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "Timer",
+            "time",
+            "countdown",
+            "stopwatch",
+            "icon"
+        ],
+        "url": "MIT-CPS-Timer-time-countdown-stopwatch-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 118,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "abstract",
+            "shapes",
+            "emotion",
+            "imagination",
+            "creative",
+            "icon"
+        ],
+        "url": "MIT-CPS-abstract-shapes-emotion-imagination-creative-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 119,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "airport",
+            "aircraft",
+            "plane",
+            "2"
+        ],
+        "url": "MIT-CPS-airport-aircraft-plane-2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 120,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "airport",
+            "aircraft",
+            "plane",
+            "3"
+        ],
+        "url": "MIT-CPS-airport-aircraft-plane-3",
+        "vsgOfficial": true
+    },
+    {
+        "id": 121,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "airport",
+            "aircraft",
+            "plane"
+        ],
+        "url": "MIT-CPS-airport-aircraft-plane",
+        "vsgOfficial": true
+    },
+    {
+        "id": 122,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "athlete",
+            "running",
+            "player",
+            "character",
+            "run",
+            "afro"
+        ],
+        "url": "MIT-CPS-athlete-running-player-character-run-afro",
+        "vsgOfficial": true
+    },
+    {
+        "id": 123,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "avoid",
+            "detour",
+            "arrow",
+            "icon"
+        ],
+        "url": "MIT-CPS-avoid-detour-arrow-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 124,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "award",
+            "medal",
+            "celebrate",
+            "win",
+            "reward",
+            "3"
+        ],
+        "url": "MIT-CPS-award-medal-celebrate-win-reward-3",
+        "vsgOfficial": true
+    },
+    {
+        "id": 125,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "award",
+            "medal",
+            "celebrate",
+            "win",
+            "reward",
+            "cup"
+        ],
+        "url": "MIT-CPS-award-medal-celebrate-win-reward-cup",
+        "vsgOfficial": true
+    },
+    {
+        "id": 126,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "award",
+            "medal",
+            "celebrate",
+            "win",
+            "reward"
+        ],
+        "url": "MIT-CPS-award-medal-celebrate-win-reward",
+        "vsgOfficial": true
+    },
+    {
+        "id": 127,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "bad",
+            "thumbsdown",
+            "dislike",
+            "noeffort",
+            "icon"
+        ],
+        "url": "MIT-CPS-bad-thumbsdown-dislike-noeffort-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 128,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "box",
+            "gift",
+            "present",
+            "beingcarried"
+        ],
+        "url": "MIT-CPS-box-gift-present-beingcarried",
+        "vsgOfficial": true
+    },
+    {
+        "id": 129,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "boy",
+            "child",
+            "play",
+            "think",
+            "problemsolve",
+            "character"
+        ],
+        "url": "MIT-CPS-boy-child-play-think-problemsolve-character",
+        "vsgOfficial": true
+    },
+    {
+        "id": 130,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "brain",
+            "library",
+            "books",
+            "learning",
+            "information"
+        ],
+        "url": "MIT-CPS-brain-library-books-learning-information",
+        "vsgOfficial": true
+    },
+    {
+        "id": 131,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "buildingblocks",
+            "shapes",
+            "toy",
+            "2"
+        ],
+        "url": "MIT-CPS-buildingblocks-shapes-toy-2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 132,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "buildingblocks",
+            "shapes",
+            "toy",
+            "3"
+        ],
+        "url": "MIT-CPS-buildingblocks-shapes-toy-3",
+        "vsgOfficial": true
+    },
+    {
+        "id": 133,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "buildingblocks",
+            "shapes",
+            "toy",
+            "4"
+        ],
+        "url": "MIT-CPS-buildingblocks-shapes-toy-4",
+        "vsgOfficial": true
+    },
+    {
+        "id": 134,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "buildingblocks",
+            "shapes",
+            "toy",
+            "5"
+        ],
+        "url": "MIT-CPS-buildingblocks-shapes-toy-5",
+        "vsgOfficial": true
+    },
+    {
+        "id": 135,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "buildingblocks",
+            "shapes",
+            "toy"
+        ],
+        "url": "MIT-CPS-buildingblocks-shapes-toy",
+        "vsgOfficial": true
+    },
+    {
+        "id": 136,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "car",
+            "porsche",
+            "fancy",
+            "vehicle"
+        ],
+        "url": "MIT-CPS-car-porsche-fancy-vehicle",
+        "vsgOfficial": true
+    },
+    {
+        "id": 137,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "care",
+            "eye",
+            "aware",
+            "caring",
+            "icon"
+        ],
+        "url": "MIT-CPS-care-eye-aware-caring-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 138,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "coins",
+            "game",
+            "player",
+            "gameplay",
+            "goal"
+        ],
+        "url": "MIT-CPS-coins-game-player-gameplay-goal",
+        "vsgOfficial": true
+    },
+    {
+        "id": 139,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "communicate",
+            "message",
+            "sendingmessage",
+            "envelope",
+            "icon"
+        ],
+        "url": "MIT-CPS-communicate-message-sendingmessage-envelope-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 140,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "communication",
+            "gear",
+            "cog",
+            "icon"
+        ],
+        "url": "MIT-CPS-communication-gear-cog-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 141,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "cone",
+            "stop",
+            "road"
+        ],
+        "url": "MIT-CPS-cone-stop-road",
+        "vsgOfficial": true
+    },
+    {
+        "id": 142,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "diagram",
+            "flow",
+            "method",
+            "process",
+            "build",
+            "cog",
+            "icon"
+        ],
+        "url": "MIT-CPS-diagram-flow-method-process-build-cog-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 143,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "dress",
+            "weddingdress",
+            "wedding",
+            "clothes"
+        ],
+        "url": "MIT-CPS-dress-weddingdress-wedding-clothes",
+        "vsgOfficial": true
+    },
+    {
+        "id": 144,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "educated",
+            "graduate",
+            "learn",
+            "student"
+        ],
+        "url": "MIT-CPS-educated-graduate-learn-student",
+        "vsgOfficial": true
+    },
+    {
+        "id": 145,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "female",
+            "astronaut",
+            "character",
+            "space"
+        ],
+        "url": "MIT-CPS-female-astronaut-character-space",
+        "vsgOfficial": true
+    },
+    {
+        "id": 146,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "frontview",
+            "car",
+            "motor",
+            "vehicle"
+        ],
+        "url": "MIT-CPS-frontview-car-motor-vehicle",
+        "vsgOfficial": true
+    },
+    {
+        "id": 147,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "game",
+            "1up",
+            "reward",
+            "play"
+        ],
+        "url": "MIT-CPS-game-1up-reward-play",
+        "vsgOfficial": true
+    },
+    {
+        "id": 148,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "girl",
+            "child",
+            "kid",
+            "character",
+            "play",
+            "thinking"
+        ],
+        "url": "MIT-CPS-girl-child-kid-character-play-thinking",
+        "vsgOfficial": true
+    },
+    {
+        "id": 149,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "globe",
+            "rotation",
+            "world",
+            "earth"
+        ],
+        "url": "MIT-CPS-globe-rotation-world-earth",
+        "vsgOfficial": true
+    },
+    {
+        "id": 150,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "human",
+            "head",
+            "brain",
+            "think",
+            "icon"
+        ],
+        "url": "MIT-CPS-human-head-brain-think-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 151,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "idea",
+            "cog",
+            "gear",
+            "button",
+            "tech"
+        ],
+        "url": "MIT-CPS-idea-cog-gear-button-tech",
+        "vsgOfficial": true
+    },
+    {
+        "id": 152,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "influence",
+            "connection",
+            "connect",
+            "process",
+            "people",
+            "humanresource",
+            "icon"
+        ],
+        "url": "MIT-CPS-influence-connection-connect-process-people-humanresource-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 153,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "jump",
+            "challenges",
+            "facechallenges",
+            "icon"
+        ],
+        "url": "MIT-CPS-jump-challenges-facechallenges-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 154,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "location",
+            "gps",
+            "map",
+            "pin",
+            "pinpoint",
+            "icon"
+        ],
+        "url": "MIT-CPS-location-gps-map-pin-pinpoint-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 155,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "male",
+            "man",
+            "space",
+            "astronaut",
+            "character"
+        ],
+        "url": "MIT-CPS-male-man-space-astronaut-character",
+        "vsgOfficial": true
+    },
+    {
+        "id": 156,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "minicooper",
+            "frontview",
+            "car",
+            "vehicle"
+        ],
+        "url": "MIT-CPS-minicooper-frontview-car-vehicle",
+        "vsgOfficial": true
+    },
+    {
+        "id": 157,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "monkey",
+            "cute",
+            "plush",
+            "swinging",
+            "jungle",
+            "animal"
+        ],
+        "url": "MIT-CPS-monkey-cute-plush-swinging-jungle-animal",
+        "vsgOfficial": true
+    },
+    {
+        "id": 158,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "movement",
+            "rotation",
+            "influence",
+            "care",
+            "process",
+            "icon"
+        ],
+        "url": "MIT-CPS-movement-rotation-influence-care-process-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 159,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "nature",
+            "sustainable",
+            "green",
+            "leaves",
+            "icon"
+        ],
+        "url": "MIT-CPS-nature-sustainable-green-leaves-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 160,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "newideas",
+            "idea",
+            "lightbulb",
+            "care",
+            "gear",
+            "hands",
+            "cog",
+            ""
+        ],
+        "url": "MIT-CPS-newideas-idea-lightbulb-care-gear-hands-cog-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 161,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "pin",
+            "gps",
+            "globe",
+            "world",
+            "location",
+            "icon"
+        ],
+        "url": "MIT-CPS-pin-gps-globe-world-location-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 162,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "pizzabox",
+            "box",
+            "pizza",
+            "frontview"
+        ],
+        "url": "MIT-CPS-pizzabox-box-pizza-frontview",
+        "vsgOfficial": true
+    },
+    {
+        "id": 163,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "pizzabox",
+            "pizza",
+            "box",
+            ""
+        ],
+        "url": "MIT-CPS-pizzabox-pizza-box-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 164,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "planes",
+            "worldmap",
+            "aeroplanes",
+            "aircrafts",
+            "flightpaths"
+        ],
+        "url": "MIT-CPS-planes-worldmap-aeroplanes-aircrafts-flightpaths",
+        "vsgOfficial": true
+    },
+    {
+        "id": 165,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "portal"
+        ],
+        "url": "MIT-CPS-portal",
+        "vsgOfficial": true
+    },
+    {
+        "id": 166,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "present",
+            "gift",
+            "box",
+            ""
+        ],
+        "url": "MIT-CPS-present-gift-box-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 167,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "process",
+            "rotation",
+            "question",
+            "icon"
+        ],
+        "url": "MIT-CPS-process-rotation-question-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 168,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "protect",
+            "shield",
+            "mentalhealth",
+            "selfcare",
+            "icon"
+        ],
+        "url": "MIT-CPS-protect-shield-mentalhealth-selfcare-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 169,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "push",
+            "workhard",
+            "challenges",
+            "icon"
+        ],
+        "url": "MIT-CPS-push-workhard-challenges-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 170,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "puzzle",
+            "problemsolving",
+            "asking",
+            "communication"
+        ],
+        "url": "MIT-CPS-puzzle-problemsolving-asking-communication",
+        "vsgOfficial": true
+    },
+    {
+        "id": 171,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "thinking",
+            "speech",
+            "care",
+            "hands.cog",
+            "gear",
+            "icon"
+        ],
+        "url": "MIT-CPS-thinking-speech-care-hands.cog-gear-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 172,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "toy",
+            "buildingblocks",
+            "play"
+        ],
+        "url": "MIT-CPS-toy-buildingblocks-play",
+        "vsgOfficial": true
+    },
+    {
+        "id": 173,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "treasure",
+            "jewels",
+            "gold",
+            "reward",
+            "pirate",
+            "chest"
+        ],
+        "url": "MIT-CPS-treasure-jewels-gold-reward-pirate-chest",
+        "vsgOfficial": true
+    },
+    {
+        "id": 174,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "treasuremap",
+            "map",
+            "piratemap",
+            "palmtrees",
+            "pirateship",
+            "skull",
+            "piratehat"
+        ],
+        "url": "MIT-CPS-treasuremap-map-piratemap-palmtrees-pirateship-skull-piratehat",
+        "vsgOfficial": true
+    },
+    {
+        "id": 175,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "voicerecording",
+            "recording",
+            "voice",
+            "speaker"
+        ],
+        "url": "MIT-CPS-voicerecording-recording-voice-speaker",
+        "vsgOfficial": true
+    },
+    {
+        "id": 176,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "volkswagenbeetle",
+            "car",
+            "vehicle",
+            "frontview"
+        ],
+        "url": "MIT-CPS-volkswagenbeetle-car-vehicle-frontview",
+        "vsgOfficial": true
+    },
+    {
+        "id": 177,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "warning",
+            "barricade",
+            "stop",
+            "danger",
+            "roadblock"
+        ],
+        "url": "MIT-CPS-warning-barricade-stop-danger-roadblock",
+        "vsgOfficial": true
+    },
+    {
+        "id": 178,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "watch",
+            "iwatch",
+            "tech",
+            "communication",
+            ""
+        ],
+        "url": "MIT-CPS-watch-iwatch-tech-communication-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 179,
+        "up": "MIT",
+        "course": "CPS",
+        "tags": [
+            "MIT",
+            "CPS",
+            "win",
+            "firstplace",
+            "successful.succeed",
+            "goal",
+            "icon"
+        ],
+        "url": "MIT-CPS-win-firstplace-successful.succeed-goal-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 180,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "Character",
+            "bust",
+            "old",
+            "causcasian",
+            "happy",
+            "smile"
+        ],
+        "url": "MIT-Character-bust-old-causcasian-happy-smile",
+        "vsgOfficial": true
+    },
+    {
+        "id": 181,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "Conversation",
+            "Questions",
+            "icon",
+            "puzzle"
+        ],
+        "url": "MIT-Conversation-Questions-icon-puzzle",
+        "vsgOfficial": true
+    },
+    {
+        "id": 182,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "Reflect",
+            "mirror",
+            "person",
+            "icon"
+        ],
+        "url": "MIT-Reflect-mirror-person-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 183,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "Self",
+            "Selfaware",
+            "selfrefelctive",
+            "abstract"
+        ],
+        "url": "MIT-Self-Selfaware-selfrefelctive-abstract",
+        "vsgOfficial": true
+    },
+    {
+        "id": 184,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "Thumbsup",
+            "goodscore",
+            "reliability",
+            "goodservice",
+            "like"
+        ],
+        "url": "MIT-Thumbsup-goodscore-reliability-goodservice-like",
+        "vsgOfficial": true
+    },
+    {
+        "id": 185,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "broadcast",
+            "communicate",
+            "loudspeaker",
+            "speechbubble",
+            "icon"
+        ],
+        "url": "MIT-broadcast-communicate-loudspeaker-speechbubble-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 186,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "clipboard",
+            "evaluate",
+            "business",
+            "icon"
+        ],
+        "url": "MIT-clipboard-evaluate-business-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 187,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "data",
+            "business",
+            "paperplane",
+            "graph"
+        ],
+        "url": "MIT-data-business-paperplane-graph",
+        "vsgOfficial": true
+    },
+    {
+        "id": 188,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "dropdown",
+            "button",
+            "interactive"
+        ],
+        "url": "MIT-dropdown-button-interactive",
+        "vsgOfficial": true
+    },
+    {
+        "id": 189,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "happy",
+            "smile",
+            "bust",
+            "young",
+            "Africanamerican",
+            "character"
+        ],
+        "url": "MIT-happy-smile-bust-young-Africanamerican-character",
+        "vsgOfficial": true
+    },
+    {
+        "id": 190,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "happy",
+            "smile",
+            "character",
+            "youngprofessional",
+            "caucasian"
+        ],
+        "url": "MIT-happy-smile-character-youngprofessional-caucasian",
+        "vsgOfficial": true
+    },
+    {
+        "id": 191,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "happy",
+            "smile",
+            "female",
+            "asian"
+        ],
+        "url": "MIT-happy-smile-female-asian",
+        "vsgOfficial": true
+    },
+    {
+        "id": 192,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "happycharacter",
+            "smile",
+            "bust",
+            "female",
+            "midage"
+        ],
+        "url": "MIT-happycharacter-smile-bust-female-midage",
+        "vsgOfficial": true
+    },
+    {
+        "id": 193,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "listen",
+            "ear",
+            "hearspeechbubble",
+            "sound",
+            "icon"
+        ],
+        "url": "MIT-listen-ear-hearspeechbubble-sound-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 194,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "openmind",
+            "keytomind",
+            "head"
+        ],
+        "url": "MIT-openmind-keytomind-head",
+        "vsgOfficial": true
+    },
+    {
+        "id": 195,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "puzzle",
+            "problemsolving",
+            "icon"
+        ],
+        "url": "MIT-puzzle-problemsolving-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 196,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "smile",
+            "happy",
+            "bust",
+            "Indian",
+            "female"
+        ],
+        "url": "MIT-smile-happy-bust-Indian-female",
+        "vsgOfficial": true
+    },
+    {
+        "id": 197,
+        "up": "MIT",
+        "course": "",
+        "tags": [
+            "MIT",
+            "target",
+            "business",
+            "arrow",
+            "dartboard",
+            "goal",
+            "icon"
+        ],
+        "url": "MIT-target-business-arrow-dartboard-goal-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 198,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "character",
+            "man",
+            "male",
+            "business",
+            "2"
+        ],
+        "url": "NU-character-man-male-business-2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 199,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "character",
+            "man",
+            "male",
+            "business"
+        ],
+        "url": "NU-character-man-male-business",
+        "vsgOfficial": true
+    },
+    {
+        "id": 200,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "character",
+            "man",
+            "male",
+            "standing",
+            "rig",
+            "side",
+            "naked",
+            "2"
+        ],
+        "url": "NU-character-man-male-standing-rig-side-naked-2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 201,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "character",
+            "man",
+            "male",
+            "standing",
+            "rig",
+            "side",
+            "naked",
+            "3"
+        ],
+        "url": "NU-character-man-male-standing-rig-side-naked-3",
+        "vsgOfficial": true
+    },
+    {
+        "id": 202,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "character",
+            "man",
+            "male",
+            "standing",
+            "rig",
+            "side",
+            "naked"
+        ],
+        "url": "NU-character-man-male-standing-rig-side-naked",
+        "vsgOfficial": true
+    },
+    {
+        "id": 203,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "character",
+            "woman",
+            "business",
+            "2"
+        ],
+        "url": "NU-character-woman-business-2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 204,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "character",
+            "woman",
+            "business"
+        ],
+        "url": "NU-character-woman-business",
+        "vsgOfficial": true
+    },
+    {
+        "id": 205,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "character",
+            "woman",
+            "rig",
+            "naked",
+            "side",
+            "2"
+        ],
+        "url": "NU-character-woman-rig-naked-side-2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 206,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "character",
+            "woman",
+            "rig",
+            "naked",
+            "side",
+            "3"
+        ],
+        "url": "NU-character-woman-rig-naked-side-3",
+        "vsgOfficial": true
+    },
+    {
+        "id": 207,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "character",
+            "woman",
+            "rig",
+            "naked",
+            "side"
+        ],
+        "url": "NU-character-woman-rig-naked-side",
+        "vsgOfficial": true
+    },
+    {
+        "id": 208,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "icon",
+            "calendar"
+        ],
+        "url": "NU-icon-calendar",
+        "vsgOfficial": true
+    },
+    {
+        "id": 209,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "icon",
+            "hand",
+            "2"
+        ],
+        "url": "NU-icon-hand-2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 210,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "icon",
+            "hand",
+            "3"
+        ],
+        "url": "NU-icon-hand-3",
+        "vsgOfficial": true
+    },
+    {
+        "id": 211,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "icon",
+            "hand"
+        ],
+        "url": "NU-icon-hand",
+        "vsgOfficial": true
+    },
+    {
+        "id": 212,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "icon",
+            "light",
+            "lightbulb"
+        ],
+        "url": "NU-icon-light-lightbulb",
+        "vsgOfficial": true
+    },
+    {
+        "id": 213,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "icon",
+            "list",
+            "notes"
+        ],
+        "url": "NU-icon-list-notes",
+        "vsgOfficial": true
+    },
+    {
+        "id": 214,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "icon",
+            "puzzle"
+        ],
+        "url": "NU-icon-puzzle",
+        "vsgOfficial": true
+    },
+    {
+        "id": 215,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "icon",
+            "shoe",
+            "agility",
+            "mobile",
+            "agile"
+        ],
+        "url": "NU-icon-shoe-agility-mobile-agile",
+        "vsgOfficial": true
+    },
+    {
+        "id": 216,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "icon",
+            "strategy",
+            "whiteboard"
+        ],
+        "url": "NU-icon-strategy-whiteboard",
+        "vsgOfficial": true
+    },
+    {
+        "id": 217,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "icon",
+            "time",
+            "money"
+        ],
+        "url": "NU-icon-time-money",
+        "vsgOfficial": true
+    },
+    {
+        "id": 218,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "icon",
+            "time"
+        ],
+        "url": "NU-icon-time",
+        "vsgOfficial": true
+    },
+    {
+        "id": 219,
+        "up": "NU",
+        "course": "",
+        "tags": [
+            "NU",
+            "icon",
+            "trophy",
+            "cup"
+        ],
+        "url": "NU-icon-trophy-cup",
+        "vsgOfficial": true
+    },
+    {
+        "id": 220,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "avatar",
+            "character",
+            "yellow",
+            "hair",
+            ""
+        ],
+        "url": "OXF-OEP-avatar-character-yellow-hair-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 221,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "avatar",
+            "female",
+            "icon",
+            "navy"
+        ],
+        "url": "OXF-OEP-avatar-female-icon-navy",
+        "vsgOfficial": true
+    },
+    {
+        "id": 222,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "avatar",
+            "female",
+            "shorthair",
+            "blonde",
+            ""
+        ],
+        "url": "OXF-OEP-avatar-female-shorthair-blonde-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 223,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "background",
+            "coffeeshop",
+            "purple",
+            ""
+        ],
+        "url": "OXF-OEP-background-coffeeshop-purple-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 224,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "background",
+            "desert",
+            "mountains",
+            "road",
+            "clouds",
+            "nature",
+            ""
+        ],
+        "url": "OXF-OEP-background-desert-mountains-road-clouds-nature-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 225,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "background",
+            "scene",
+            "lounge",
+            "livingroom",
+            "door",
+            "windows",
+            ""
+        ],
+        "url": "OXF-OEP-background-scene-lounge-livingroom-door-windows-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 226,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "book",
+            "reading",
+            "knowledge",
+            "calendar",
+            "avatar",
+            "schedule",
+            "diary",
+            "icon",
+            ""
+        ],
+        "url": "OXF-OEP-book-reading-knowledge-calendar-avatar-schedule-diary-icon-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 227,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "character",
+            "armscrossed",
+            "armsfolded",
+            "listening",
+            "male",
+            ""
+        ],
+        "url": "OXF-OEP-character-armscrossed-armsfolded-listening-male-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 228,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "character",
+            "avatar",
+            "beard",
+            "male",
+            ""
+        ],
+        "url": "OXF-OEP-character-avatar-beard-male-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 229,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "character",
+            "avatar",
+            "professional",
+            "male",
+            ""
+        ],
+        "url": "OXF-OEP-character-avatar-professional-male-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 230,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "character",
+            "avatar",
+            "professional",
+            "male"
+        ],
+        "url": "OXF-OEP-character-avatar-professional-male",
+        "vsgOfficial": true
+    },
+    {
+        "id": 231,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "character",
+            "female",
+            "dress",
+            "laptopbag",
+            "CEO",
+            "shorthair",
+            ""
+        ],
+        "url": "OXF-OEP-character-female-dress-laptopbag-CEO-shorthair-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 232,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "character",
+            "female",
+            "phonecall",
+            "glasses",
+            "laptop",
+            "business",
+            "coffee"
+        ],
+        "url": "OXF-OEP-character-female-phonecall-glasses-laptop-business-coffee",
+        "vsgOfficial": true
+    },
+    {
+        "id": 233,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "character",
+            "female",
+            "sittingdown",
+            "coffee",
+            "laptop",
+            "business",
+            "earphones",
+            ""
+        ],
+        "url": "OXF-OEP-character-female-sittingdown-coffee-laptop-business-earphones-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 234,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "character",
+            "listening",
+            "female",
+            "learning",
+            ""
+        ],
+        "url": "OXF-OEP-character-listening-female-learning-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 235,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "character",
+            "male",
+            "laptop",
+            "beard",
+            "glasses",
+            ""
+        ],
+        "url": "OXF-OEP-character-male-laptop-beard-glasses-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 236,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "character",
+            "writing",
+            "yellow",
+            "female",
+            ""
+        ],
+        "url": "OXF-OEP-character-writing-yellow-female-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 237,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "character",
+            "yellow",
+            "holdingphone",
+            "phone",
+            "longhair"
+        ],
+        "url": "OXF-OEP-character-yellow-holdingphone-phone-longhair",
+        "vsgOfficial": true
+    },
+    {
+        "id": 238,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "character",
+            "yellowshirt",
+            "professional"
+        ],
+        "url": "OXF-OEP-character-yellowshirt-professional",
+        "vsgOfficial": true
+    },
+    {
+        "id": 239,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "characters",
+            "scene",
+            "dinner",
+            "date",
+            "couple",
+            "businessmeeting",
+            "meeting",
+            "discussion",
+            ""
+        ],
+        "url": "OXF-OEP-characters-scene-dinner-date-couple-businessmeeting-meeting-discussion-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 240,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "chesspiece",
+            "icon",
+            "isometric",
+            "strategic",
+            ""
+        ],
+        "url": "OXF-OEP-chesspiece-icon-isometric-strategic-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 241,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "clock",
+            "time",
+            "isometric",
+            "day",
+            "watch",
+            "schedule",
+            "icon"
+        ],
+        "url": "OXF-OEP-clock-time-isometric-day-watch-schedule-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 242,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "cog",
+            "isometric",
+            "icon",
+            ""
+        ],
+        "url": "OXF-OEP-cog-isometric-icon-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 243,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "cog",
+            "lightbulb",
+            "green",
+            "isometric",
+            "icon"
+        ],
+        "url": "OXF-OEP-cog-lightbulb-green-isometric-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 244,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "coin",
+            "dollar",
+            "isometric",
+            "purple",
+            ""
+        ],
+        "url": "OXF-OEP-coin-dollar-isometric-purple-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 245,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "complexicon",
+            "trophy",
+            "money",
+            "teamwork",
+            "laptop",
+            "icons",
+            "arrows",
+            "documents",
+            ""
+        ],
+        "url": "OXF-OEP-complexicon-trophy-money-teamwork-laptop-icons-arrows-documents-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 246,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "complexicon",
+            "wheel",
+            "entrepreneur",
+            "business",
+            "problem",
+            "solving",
+            ""
+        ],
+        "url": "OXF-OEP-complexicon-wheel-entrepreneur-business-problem-solving-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 247,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "cross",
+            "no",
+            "cancel",
+            "block",
+            "alert",
+            "icon"
+        ],
+        "url": "OXF-OEP-cross-no-cancel-block-alert-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 248,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "crown",
+            "royalty",
+            "purple",
+            "isometric",
+            "icon",
+            ""
+        ],
+        "url": "OXF-OEP-crown-royalty-purple-isometric-icon-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 249,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "documents",
+            "information",
+            "icon",
+            "green",
+            "white",
+            "isometric",
+            ""
+        ],
+        "url": "OXF-OEP-documents-information-icon-green-white-isometric-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 250,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "eating",
+            "dining",
+            "fancy",
+            "napkin",
+            "lamp",
+            "plant",
+            "food",
+            ""
+        ],
+        "url": "OXF-OEP-eating-dining-fancy-napkin-lamp-plant-food-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 251,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "email",
+            "favourite",
+            "star",
+            "prioritise",
+            "inbox"
+        ],
+        "url": "OXF-OEP-email-favourite-star-prioritise-inbox",
+        "vsgOfficial": true
+    },
+    {
+        "id": 252,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "email",
+            "refresh",
+            "inbox",
+            "icon",
+            "isometric",
+            "",
+            "2"
+        ],
+        "url": "OXF-OEP-email-refresh-inbox-icon-isometric--2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 253,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "emotion",
+            "mask",
+            "tear",
+            "drop",
+            "complexity",
+            "fragile",
+            "icon"
+        ],
+        "url": "OXF-OEP-emotion-mask-tear-drop-complexity-fragile-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 254,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "envelope",
+            "icon",
+            "alert",
+            "sign",
+            "documents",
+            ""
+        ],
+        "url": "OXF-OEP-envelope-icon-alert-sign-documents-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 255,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "fine",
+            "dining",
+            "prawns",
+            "healthy",
+            "leaves",
+            ""
+        ],
+        "url": "OXF-OEP-fine-dining-prawns-healthy-leaves-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 256,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "folder",
+            "paper",
+            "documents",
+            "yellow",
+            "file",
+            "icon"
+        ],
+        "url": "OXF-OEP-folder-paper-documents-yellow-file-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 257,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "government",
+            "building",
+            "pillars",
+            "justice",
+            ""
+        ],
+        "url": "OXF-OEP-government-building-pillars-justice-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 258,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "graph",
+            "coin",
+            "inflation",
+            "icon",
+            "isometric",
+            ""
+        ],
+        "url": "OXF-OEP-graph-coin-inflation-icon-isometric-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 259,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "iPad",
+            "hands",
+            "holdingiPad",
+            "ipad",
+            "holdingipad",
+            ""
+        ],
+        "url": "OXF-OEP-iPad-hands-holdingiPad-ipad-holdingipad-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 260,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "icon",
+            "documents",
+            "money",
+            "refresh",
+            "recycle",
+            "invest",
+            "evaluate",
+            "finance",
+            ""
+        ],
+        "url": "OXF-OEP-icon-documents-money-refresh-recycle-invest-evaluate-finance-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 261,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "icon",
+            "magnifyingglass",
+            "alert",
+            "sign",
+            "graph",
+            ""
+        ],
+        "url": "OXF-OEP-icon-magnifyingglass-alert-sign-graph-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 262,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "icon",
+            "money",
+            "coin",
+            "document",
+            "magnifyingglass",
+            ""
+        ],
+        "url": "OXF-OEP-icon-money-coin-document-magnifyingglass-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 263,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "icon",
+            "money",
+            "coins",
+            "bills",
+            "dollars",
+            ""
+        ],
+        "url": "OXF-OEP-icon-money-coins-bills-dollars-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 264,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "ipad",
+            "icons",
+            "hands",
+            "arms",
+            "character",
+            "videographics",
+            "interface",
+            "touchscreen",
+            "screen",
+            ""
+        ],
+        "url": "OXF-OEP-ipad-icons-hands-arms-character-videographics-interface-touchscreen-screen-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 265,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "laptop",
+            "frontview",
+            ""
+        ],
+        "url": "OXF-OEP-laptop-frontview-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 266,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "laptop",
+            "icon",
+            "download",
+            "data",
+            "percentage",
+            "software",
+            "arrow",
+            ""
+        ],
+        "url": "OXF-OEP-laptop-icon-download-data-percentage-software-arrow-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 267,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "laptop",
+            "icon",
+            "isometric",
+            "data",
+            "information",
+            ""
+        ],
+        "url": "OXF-OEP-laptop-icon-isometric-data-information-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 268,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "machine",
+            "mechanical",
+            "arm",
+            "ai",
+            "robot",
+            "tech",
+            ""
+        ],
+        "url": "OXF-OEP-machine-mechanical-arm-ai-robot-tech-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 269,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "magnifyingglass",
+            "alertsign",
+            "yellow",
+            "blue",
+            "icon"
+        ],
+        "url": "OXF-OEP-magnifyingglass-alertsign-yellow-blue-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 270,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "map",
+            "blue",
+            ""
+        ],
+        "url": "OXF-OEP-map-blue-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 271,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "people",
+            "avatars",
+            "connected",
+            "teamwork",
+            ""
+        ],
+        "url": "OXF-OEP-people-avatars-connected-teamwork-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 272,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "phone",
+            "backcover",
+            "navy",
+            "smartphone",
+            "camera"
+        ],
+        "url": "OXF-OEP-phone-backcover-navy-smartphone-camera",
+        "vsgOfficial": true
+    },
+    {
+        "id": 273,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "phone",
+            "icon",
+            "wifi",
+            "signal",
+            "message",
+            "text",
+            "contact",
+            ""
+        ],
+        "url": "OXF-OEP-phone-icon-wifi-signal-message-text-contact-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 274,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "phone",
+            "sideofphone",
+            ""
+        ],
+        "url": "OXF-OEP-phone-sideofphone-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 275,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "phone",
+            "smartphone",
+            "",
+            "2"
+        ],
+        "url": "OXF-OEP-phone-smartphone--2",
+        "vsgOfficial": true
+    },
+    {
+        "id": 276,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "phone",
+            "smartphone",
+            "isometric",
+            "navy"
+        ],
+        "url": "OXF-OEP-phone-smartphone-isometric-navy",
+        "vsgOfficial": true
+    },
+    {
+        "id": 277,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "piechart",
+            "graph",
+            "icon",
+            "isometric",
+            ""
+        ],
+        "url": "OXF-OEP-piechart-graph-icon-isometric-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 278,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "pizza",
+            "food",
+            "fastfood",
+            ""
+        ],
+        "url": "OXF-OEP-pizza-food-fastfood-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 279,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "puzzle",
+            "pieces",
+            "purple",
+            "icon"
+        ],
+        "url": "OXF-OEP-puzzle-pieces-purple-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 280,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "questionmark",
+            "icon",
+            "grey",
+            ""
+        ],
+        "url": "OXF-OEP-questionmark-icon-grey-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 281,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "roadblock",
+            "icon",
+            "isometric"
+        ],
+        "url": "OXF-OEP-roadblock-icon-isometric",
+        "vsgOfficial": true
+    },
+    {
+        "id": 282,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "rocket",
+            "launchpad",
+            "entrepreneur",
+            "innovation",
+            ""
+        ],
+        "url": "OXF-OEP-rocket-launchpad-entrepreneur-innovation-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 283,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "running",
+            "jogging",
+            "podcast",
+            "headphones",
+            "earphones",
+            "tracksuit",
+            "blonde",
+            "character",
+            ""
+        ],
+        "url": "OXF-OEP-running-jogging-podcast-headphones-earphones-tracksuit-blonde-character-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 284,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "scene",
+            "character",
+            "female",
+            "laptop",
+            "working",
+            "laptop",
+            "plant",
+            ""
+        ],
+        "url": "OXF-OEP-scene-character-female-laptop-working-laptop-plant-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 285,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "scene",
+            "laptop",
+            "coffeeshop",
+            "character",
+            "coffee",
+            "entrepreneur",
+            "start",
+            "up",
+            ""
+        ],
+        "url": "OXF-OEP-scene-laptop-coffeeshop-character-coffee-entrepreneur-start-up-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 286,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "speechbubble",
+            "exclamationmark",
+            "icon",
+            "isometric",
+            ""
+        ],
+        "url": "OXF-OEP-speechbubble-exclamationmark-icon-isometric-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 287,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "steak",
+            "chips",
+            "wood",
+            "platter",
+            "mash",
+            "food",
+            "fine",
+            "dining"
+        ],
+        "url": "OXF-OEP-steak-chips-wood-platter-mash-food-fine-dining",
+        "vsgOfficial": true
+    },
+    {
+        "id": 288,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "sushi",
+            "salmon",
+            "chopsticks",
+            "platter",
+            "food",
+            ""
+        ],
+        "url": "OXF-OEP-sushi-salmon-chopsticks-platter-food-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 289,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "timer",
+            "clock",
+            "padlock",
+            "schedule",
+            "time",
+            "timetable",
+            ""
+        ],
+        "url": "OXF-OEP-timer-clock-padlock-schedule-time-timetable-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 290,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "wallet",
+            "icon",
+            "money",
+            "notes",
+            "coins",
+            "dollars",
+            "bills",
+            ""
+        ],
+        "url": "OXF-OEP-wallet-icon-money-notes-coins-dollars-bills-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 291,
+        "up": "OXF",
+        "course": "OEP",
+        "tags": [
+            "OXF",
+            "OEP",
+            "wheel",
+            "complexicon",
+            "piechart",
+            ""
+        ],
+        "url": "OXF-OEP-wheel-complexicon-piechart-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 292,
+        "up": "",
+        "course": "",
+        "tags": [
+            "Oxford",
+            "bank",
+            "scene"
+        ],
+        "url": "Oxford-bank-scene",
+        "vsgOfficial": true
+    },
+    {
+        "id": 293,
+        "up": "",
+        "course": "",
+        "tags": [
+            "Syracuse",
+            "Aim",
+            "dartboard",
+            "goal",
+            "target"
+        ],
+        "url": "Syracuse-Aim-dartboard-goal-target",
+        "vsgOfficial": true
+    },
+    {
+        "id": 294,
+        "up": "",
+        "course": "",
+        "tags": [
+            "Syracuse",
+            "Clipboard",
+            "list",
+            "check"
+        ],
+        "url": "Syracuse-Clipboard-list-check",
+        "vsgOfficial": true
+    },
+    {
+        "id": 295,
+        "up": "",
+        "course": "",
+        "tags": [
+            "Syracuse",
+            "Coin",
+            "money",
+            "Dollar"
+        ],
+        "url": "Syracuse-Coin-money-Dollar",
+        "vsgOfficial": true
+    },
+    {
+        "id": 296,
+        "up": "",
+        "course": "",
+        "tags": [
+            "Syracuse",
+            "Credit",
+            "Card",
+            "interest"
+        ],
+        "url": "Syracuse-Credit-Card-interest",
+        "vsgOfficial": true
+    },
+    {
+        "id": 297,
+        "up": "",
+        "course": "",
+        "tags": [
+            "Syracuse",
+            "Lightbulb",
+            "idea",
+            "thought"
+        ],
+        "url": "Syracuse-Lightbulb-idea-thought",
+        "vsgOfficial": true
+    },
+    {
+        "id": 298,
+        "up": "",
+        "course": "",
+        "tags": [
+            "Syracuse",
+            "Save",
+            "money",
+            "piggybank"
+        ],
+        "url": "Syracuse-Save-money-piggybank",
+        "vsgOfficial": true
+    },
+    {
+        "id": 299,
+        "up": "",
+        "course": "",
+        "tags": [
+            "Syracuse",
+            "Wallet",
+            "money",
+            "save"
+        ],
+        "url": "Syracuse-Wallet-money-save",
+        "vsgOfficial": true
+    },
+    {
+        "id": 300,
+        "up": "",
+        "course": "",
+        "tags": [
+            "Syracuse",
+            "calculator",
+            "money",
+            "amount"
+        ],
+        "url": "Syracuse-calculator-money-amount",
+        "vsgOfficial": true
+    },
+    {
+        "id": 301,
+        "up": "",
+        "course": "",
+        "tags": [
+            "Syracuse",
+            "mountain",
+            "achievement",
+            "goal"
+        ],
+        "url": "Syracuse-mountain-achievement-goal",
+        "vsgOfficial": true
+    },
+    {
+        "id": 302,
+        "up": "UCT",
+        "course": "",
+        "tags": [
+            "UCT",
+            "city",
+            "cars",
+            "buildings",
+            "zoning",
+            "scene"
+        ],
+        "url": "UCT-city-cars-buildings-zoning-scene",
+        "vsgOfficial": true
+    },
+    {
+        "id": 303,
+        "up": "UCT",
+        "course": "",
+        "tags": [
+            "UCT",
+            "document",
+            "paper",
+            "digram",
+            "capacity"
+        ],
+        "url": "UCT-document-paper-digram-capacity",
+        "vsgOfficial": true
+    },
+    {
+        "id": 304,
+        "up": "UCT",
+        "course": "",
+        "tags": [
+            "UCT",
+            "hand",
+            "building",
+            "privatecompany",
+            "icon"
+        ],
+        "url": "UCT-hand-building-privatecompany-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 305,
+        "up": "UCT",
+        "course": "",
+        "tags": [
+            "UCT",
+            "hand",
+            "shake",
+            "icon"
+        ],
+        "url": "UCT-hand-shake-icon",
+        "vsgOfficial": true
+    },
+    {
+        "id": 306,
+        "up": "",
+        "course": "",
+        "tags": [
+            "Yale",
+            "computer",
+            "potplants",
+            "mug",
+            "scene"
+        ],
+        "url": "Yale-computer-potplants-mug-scene",
+        "vsgOfficial": true
+    },
+    {
+        "id": 307,
+        "up": "",
+        "course": "",
+        "tags": [
+            "Yale",
+            "forest",
+            "trees",
+            "mushroom",
+            "bush"
+        ],
+        "url": "Yale-forest-trees-mushroom-bush",
+        "vsgOfficial": true
+    },
+    {
+        "id": 308,
+        "up": "",
+        "course": "",
+        "tags": [
+            "back",
+            "button",
+            "hover",
+            "hype"
+        ],
+        "url": "back-button-hover-hype",
+        "vsgOfficial": true
+    },
+    {
+        "id": 309,
+        "up": "",
+        "course": "",
+        "tags": [
+            "cancel",
+            "no",
+            "cross",
+            "alert",
+            "icon",
+            ""
+        ],
+        "url": "cancel-no-cross-alert-icon-",
+        "vsgOfficial": true
+    },
+    {
+        "id": 310,
+        "up": "",
+        "course": "",
+        "tags": [
+            "computer",
+            "plant",
+            "scene"
+        ],
+        "url": "computer-plant-scene",
+        "vsgOfficial": true
+    },
+    {
+        "id": 311,
+        "up": "",
+        "course": "",
+        "tags": [
+            "diamond",
+            "message",
+            "socialmedia",
+            "likebutton",
+            "online",
+            "onlineshopping",
+            "phone"
+        ],
+        "url": "diamond-message-socialmedia-likebutton-online-onlineshopping-phone",
+        "vsgOfficial": true
+    },
+    {
+        "id": 312,
+        "up": "",
+        "course": "",
+        "tags": [
+            "email",
+            "flat",
+            "generic"
+        ],
+        "url": "email-flat-generic",
+        "vsgOfficial": true
+    },
+    {
+        "id": 313,
+        "up": "",
+        "course": "",
+        "tags": [
+            "hand",
+            "phone",
+            "scene"
+        ],
+        "url": "hand-phone-scene",
+        "vsgOfficial": true
+    },
+    {
+        "id": 314,
+        "up": "",
+        "course": "",
+        "tags": [
+            "homebutton",
+            "grey",
+            "Interactive"
+        ],
+        "url": "homebutton-grey-Interactive",
+        "vsgOfficial": true
+    },
+    {
+        "id": 315,
+        "up": "",
+        "course": "",
+        "tags": [
+            "icon",
+            "lock",
+            "secure"
+        ],
+        "url": "icon-lock-secure",
+        "vsgOfficial": true
+    },
+    {
+        "id": 316,
+        "up": "",
+        "course": "",
+        "tags": [
+            "magnifyingglass",
+            "flat",
+            "icon",
+            "generic"
+        ],
+        "url": "magnifyingglass-flat-icon-generic",
+        "vsgOfficial": true
+    }
+]

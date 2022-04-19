@@ -1,0 +1,63 @@
+<template>
+    <div class="AppViewPopupSelect">
+        <slot>
+            <i class="fas fa-search"></i>
+        </slot>
+        <Multiselect
+            v-model="scrubbedValue"
+            :options="options"
+            :searchable="true"
+            :placeholder="placeholder" />
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'AppViewPopupSelect',
+    props: {
+        options: {
+            type: Array
+        },
+        placeholder: {
+            type: String,
+            default: 'Select option'
+        },
+        value: {
+            type: [String, Array],
+            default: ''
+        }
+    },
+    data() {
+        return {}
+    },
+    computed: {
+        scrubbedValue() {
+            return this.value
+        }
+    }
+}
+</script>
+
+<style lang="scss" src="@/assets/styles/_multiselect.scss"></style>
+<style scoped lang="scss">
+.AppViewPopupSelect {
+    width: 100%;
+    height: 50px;
+    margin: 0 10px;
+    position: relative;
+    :slotted(i) {
+        height: 18px;
+        margin: auto;
+        color: #ccc;
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        z-index: 1;
+    }
+    > div {
+        height: 100%;
+    }
+}
+</style>

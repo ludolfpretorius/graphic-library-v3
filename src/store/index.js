@@ -1,8 +1,10 @@
-import { createStore } from "vuex";
+import { createStore } from 'vuex'
+import images from './modules/images'
+import popup from './modules/popup'
 
 export default createStore({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {},
-});
+    modules: {
+        images,
+        popup
+    }
+})
