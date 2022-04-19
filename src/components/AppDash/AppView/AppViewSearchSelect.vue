@@ -4,7 +4,7 @@
             <i class="fas fa-search"></i>
         </slot>
         <Multiselect
-            :type="type"
+            :search="search"
             :options="options"
             :searchable="true"
             :placeholder="placeholder"
@@ -23,7 +23,7 @@ export default {
             type: String,
             default: 'Select option'
         },
-        type: {
+        search: {
             type: String
         }
     },
@@ -32,7 +32,8 @@ export default {
     },
     methods: {
         emitVal(value) {
-            this.$emit('updateFilter', value)
+            const search = this.search
+            this.$emit('updateFilter', { search, value })
         }
     }
 }

@@ -21,18 +21,6 @@ const getters = {
 const actions = {
     setFilter: ({ commit }, obj) => {
         commit('setFilter', obj)
-        actions.filterImages({ commit })
-    },
-    filterImages: ({ commit }) => {
-        const filter = state.filter
-        const data = state.allImages.filter((img) => {
-            return (
-                img.up.includes(filter.uni) &&
-                img.course.includes(filter.course) &&
-                img.tags.includes(filter.keyword)
-            )
-        })
-        actions.setFilteredImages({ commit }, data)
     },
     setAllImages: ({ commit }, arr) => {
         commit('setAllImages', arr)

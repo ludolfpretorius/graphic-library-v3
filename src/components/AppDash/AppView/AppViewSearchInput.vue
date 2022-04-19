@@ -5,17 +5,30 @@
             type="text"
             placeholder="Search keywords"
             id="searchInput"
-            autoComplete="off" />
+            autoComplete="off"
+            :search="search"
+            @keyup="emitVal" />
     </div>
 </template>
 
 <script>
 export default {
     name: 'AppViewSearchInput',
+    props: {
+        search: {
+            type: String
+        }
+    },
     data() {
         return {}
     },
-    methods: {}
+    methods: {
+        emitVal() {
+            const search = this.search
+            const value = event.target.value
+            this.$emit('updateFilter', { search, value })
+        }
+    }
 }
 </script>
 

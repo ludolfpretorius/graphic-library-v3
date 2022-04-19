@@ -1,7 +1,7 @@
 <template>
     <div id="AppViewSearch">
         <AppViewSearchSelect
-            :type="'uni'"
+            :search="'uni'"
             :options="options"
             :placeholder="'Select UP'"
             @updateFilter="updateFilter">
@@ -9,14 +9,14 @@
         </AppViewSearchSelect>
 
         <AppViewSearchSelect
-            :type="'course'"
+            :search="'course'"
             :options="options"
             :placeholder="'Select Course'"
             @updateFilter="updateFilter">
             <i className="fas fa-graduation-cap"></i>
         </AppViewSearchSelect>
 
-        <AppViewSearchInput :type="'keyword'" @updateFilter="updateFilter" />
+        <AppViewSearchInput :search="'keyword'" @updateFilter="updateFilter" />
 
         <div className="asset-amount">{{ filteredImages.length }} images</div>
     </div>
@@ -35,23 +35,49 @@ export default {
     },
     data() {
         return {
-            options: ['BSM', 'HIL', 'INF', 'SUF', 'SUP', 'WLC', 'HAR'],
-            tempFilter: {
-                uni: '',
-                course: '',
-                keyword: ''
-            }
+            options: [
+                'CAM',
+                'UCT',
+                'BSM',
+                'HIL',
+                'INF',
+                'SUF',
+                'SUP',
+                'WLC',
+                'HAR'
+            ]
         }
     },
-    computed: mapGetters(['filter', 'filteredImages']),
+    computed: mapGetters([
+        'filter',
+        'allImages',
+        'filteredImages',
+        'visibleImages'
+    ]),
     methods: {
-        ...mapActions(['setFilter']),
-        updateFilter() {
-            const type = event.currentTarget
-            // const filter = this.filter
-            // filter[type] = value || ''
-            // this.setFilter(filter)
-            console.log(type)
+        ...mapActions(['setFilter', 'setFilteredImages']),
+        updateFilter(obj) {
+            const filter = this.filter
+            filter[obj.search] = obj.value || ''
+
+            const locallyFilteredImages = this.filterImages(
+                filter,
+                this.allImages
+            )
+            this.setFilter(filter)
+            this.setFilteredImages(locallyFilteredImages)
+        },
+        filterImages(filterObj, imgsArr) {
+            const regex = new RegExp(filterObj.keyword, 'ig')
+            const imgs = imgsArr.filter((img) => {
+                const tags = img.tags.join(',')
+                return (
+                    tags.match(regex) &&
+                    img.up.includes(filterObj.uni) &&
+                    img.course.includes(filterObj.course)
+                )
+            })
+            return imgs
         }
     }
 }

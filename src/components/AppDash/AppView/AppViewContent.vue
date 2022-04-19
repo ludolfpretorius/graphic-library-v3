@@ -35,36 +35,41 @@ export default {
     methods: {
         ...mapActions(['imagesRequest']),
         loadMoreImages() {
-            if (
-                this.filteredImages.length &&
-                this.visibleImages.length < this.filteredImages.length
-            ) {
-                const startIndex = this.visibleImages.length
-                const endIndex = this.visibleImages.length + 100
-                const newImages = this.filteredImages.slice(
-                    startIndex,
-                    endIndex
-                )
+            if (this.visibleImages.length < this.filteredImages.length) {
+                const index = this.visibleImages.length
+                const newImages = this.filteredImages.slice(index, index + 100)
                 this.visibleImages = [...this.visibleImages, ...newImages]
             }
+        },
+        listenForScrolling() {
+            const content = this.$refs.content
+            content.addEventListener('scroll', (event) => {
+                const elem = event.target
+                if (
+                    elem.scrollTop + elem.clientHeight >=
+                    elem.scrollHeight - 400
+                ) {
+                    this.loadMoreImages()
+                }
+            })
+        },
+        scrollToTop() {
+            const content = this.$refs.content
+            content.scroll(0, 0)
+        }
+    },
+    watch: {
+        filteredImages() {
+            this.visibleImages = []
+            this.scrollToTop()
+            this.loadMoreImages()
         }
     },
     created() {
         this.imagesRequest('fetchAll')
     },
     mounted() {
-        const content = this.$refs.content
-        content.addEventListener('scroll', (event) => {
-            const elem = event.target
-            if (elem.scrollTop + elem.clientHeight >= elem.scrollHeight - 400) {
-                this.loadMoreImages()
-            }
-        })
-    },
-    updated() {
-        if (this.filteredImages.length && !this.visibleImages.length) {
-            this.loadMoreImages()
-        }
+        this.listenForScrolling()
     }
 }
 </script>
