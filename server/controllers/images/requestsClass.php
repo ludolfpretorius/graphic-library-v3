@@ -68,4 +68,9 @@
 			}
 			return $successfullyDeletedFromDB;
 		}
+
+		function fetchTags() {
+			$data = file_get_contents('./db/tags.json');
+			return json_decode($data);
+		}
 	}

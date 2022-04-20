@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import AppPopup from '@/components/AppDash/AppPopup/AppPopup'
 import AppSidebar from '@/components/AppDash/AppSidebar/AppSidebar'
 import AppView from '@/components/AppDash/AppView/AppView'
@@ -23,7 +23,12 @@ export default {
         return {}
     },
     computed: mapGetters(['popup']),
-    methods: {}
+    methods: {
+        ...mapActions(['universitiesRequest'])
+    },
+    created() {
+        this.universitiesRequest('fetchAll')
+    }
 }
 </script>
 

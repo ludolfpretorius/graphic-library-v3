@@ -4,7 +4,7 @@
             <i class="fas fa-search"></i>
         </slot>
         <Multiselect
-            v-model="scrubbedValue"
+            :mode="mode"
             :options="options"
             :searchable="true"
             :placeholder="placeholder" />
@@ -15,6 +15,10 @@
 export default {
     name: 'AppViewPopupSelect',
     props: {
+        mode: {
+            type: String,
+            default: 'single'
+        },
         options: {
             type: Array
         },
@@ -25,14 +29,6 @@ export default {
         value: {
             type: [String, Array],
             default: ''
-        }
-    },
-    data() {
-        return {}
-    },
-    computed: {
-        scrubbedValue() {
-            return this.value
         }
     }
 }

@@ -4,10 +4,11 @@
             <i class="fas fa-search"></i>
         </slot>
         <Multiselect
-            :search="search"
+            ref="multiselect"
             :options="options"
-            :searchable="true"
             :placeholder="placeholder"
+            :search="search"
+            :searchable="true"
             @change="emitVal" />
     </div>
 </template>
@@ -28,7 +29,9 @@ export default {
         }
     },
     data() {
-        return {}
+        return {
+            value: ''
+        }
     },
     methods: {
         emitVal(value) {

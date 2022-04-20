@@ -8,14 +8,16 @@ const state = {
     },
     allImages: [],
     filteredImages: [],
-    visibleImages: []
+    visibleImages: [],
+    tags: []
 }
 
 const getters = {
     filter: (state) => state.filter,
     allImages: (state) => state.allImages,
     filteredImages: (state) => state.filteredImages,
-    visibleImages: (state) => state.visibleImages
+    visibleImages: (state) => state.visibleImages,
+    tags: (state) => state.tags
 }
 
 const actions = {
@@ -31,6 +33,9 @@ const actions = {
     },
     setVisibleImages: ({ commit }, arr) => {
         commit('setVisibleImages', arr.slice(0, 100))
+    },
+    setTags: ({ commit }, arr) => {
+        commit('setTags', arr)
     },
     imagesRequest: async ({ commit }, file = '') => {
         if (!file.length) {
@@ -48,6 +53,9 @@ const actions = {
                 actions.setAllImages({ commit }, resp.data.body)
                 actions.setFilteredImages({ commit }, resp.data.body)
             }
+            if (resp.data.status === 'Success: 200 (Fetched all tags)') {
+                actions.setTags({ commit }, resp.data.body)
+            }
             if (resp.data.status === 'Error: 400 (Bad request)') {
                 throw new Error(resp.data.status)
             }
@@ -62,7 +70,8 @@ const mutations = {
     setFilter: (state, obj) => (state.filter = obj),
     setAllImages: (state, arr) => (state.allImages = arr),
     setFilteredImages: (state, arr) => (state.filteredImages = arr),
-    setVisibleImages: (state, arr) => (state.visibleImages = arr)
+    setVisibleImages: (state, arr) => (state.visibleImages = arr),
+    setTags: (state, arr) => (state.tags = arr)
 }
 
 export default {

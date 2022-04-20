@@ -2,30 +2,33 @@
     <div id="AppViewSearch">
         <AppViewSearchSelect
             :search="'uni'"
-            :options="options"
+            :options="universityNames"
             :placeholder="'Select UP'"
-            @updateFilter="updateFilter">
+            @updateFilter="updateUni">
             <i className="fas fa-university"></i>
         </AppViewSearchSelect>
 
         <AppViewSearchSelect
+            ref="courseInput"
             :search="'course'"
-            :options="options"
+            :options="courses"
             :placeholder="'Select Course'"
-            @updateFilter="updateFilter">
+            @updateFilter="updateCourse">
             <i className="fas fa-graduation-cap"></i>
         </AppViewSearchSelect>
 
-        <AppViewSearchInput :search="'keyword'" @updateFilter="updateFilter" />
+        <AppViewSearchInput :search="'keyword'" @updateFilter="updateKeyword" />
 
         <div className="asset-amount">{{ filteredImages.length }} images</div>
     </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, useStore } from 'vuex'
 import AppViewSearchSelect from './AppViewSearchSelect'
 import AppViewSearchInput from './AppViewSearchInput'
+
+import { ref } from 'vue'
 
 export default {
     name: 'AppViewSearch',
@@ -33,41 +36,54 @@ export default {
         AppViewSearchSelect,
         AppViewSearchInput
     },
-    data() {
-        return {
-            options: [
-                'CAM',
-                'UCT',
-                'BSM',
-                'HIL',
-                'INF',
-                'SUF',
-                'SUP',
-                'WLC',
-                'HAR'
-            ]
-        }
-    },
     computed: mapGetters([
         'filter',
         'allImages',
         'filteredImages',
-        'visibleImages'
+        'visibleImages',
+        'universities',
+        'universityNames',
+        'courses'
     ]),
-    methods: {
-        ...mapActions(['setFilter', 'setFilteredImages']),
-        updateFilter(obj) {
-            const filter = this.filter
-            filter[obj.search] = obj.value || ''
+    setup() {
+        const store = useStore()
+        const courseInput = ref(null)
 
-            const locallyFilteredImages = this.filterImages(
-                filter,
-                this.allImages
+        const updateUni = (dataObj) => {
+            updateFilter(dataObj)
+            callFilterImages()
+            store.dispatch('setCourses', dataObj.value || '')
+            clearCourseInput()
+        }
+
+        const updateCourse = (dataObj) => {
+            updateFilter(dataObj)
+            callFilterImages()
+        }
+
+        const updateKeyword = (dataObj) => {
+            updateFilter(dataObj)
+            callFilterImages()
+        }
+
+        const updateFilter = (dataObj) => {
+            const filter = store.getters.filter
+            filter[dataObj.search] = dataObj.value || ''
+            if (!filter.uni.length) {
+                filter.course = ''
+            }
+            store.dispatch('setFilter', filter)
+        }
+
+        const callFilterImages = () => {
+            const locallyFilteredImages = filterImages(
+                store.getters.filter,
+                store.getters.allImages
             )
-            this.setFilter(filter)
-            this.setFilteredImages(locallyFilteredImages)
-        },
-        filterImages(filterObj, imgsArr) {
+            store.dispatch('setFilteredImages', locallyFilteredImages)
+        }
+
+        const filterImages = (filterObj, imgsArr) => {
             const regex = new RegExp(filterObj.keyword, 'ig')
             const imgs = imgsArr.filter((img) => {
                 const tags = img.tags.join(',')
@@ -79,7 +95,71 @@ export default {
             })
             return imgs
         }
+
+        const clearCourseInput = () => {
+            const elem = courseInput.value
+            console.log()
+            elem.$refs.multiselect.clear()
+        }
+
+        return {
+            courseInput,
+            updateUni,
+            updateCourse,
+            updateKeyword,
+            updateFilter,
+            callFilterImages,
+            filterImages
+        }
     }
+    // methods: {
+    //     ...mapActions(['setFilter', 'setFilteredImages', 'setCourses']),
+    //     updateUni(dataObj) {
+    //         this.updateFilter(dataObj)
+    //         this.callFilterImages()
+    //         this.setCourses(dataObj.value || '')
+    //         this.clearCourseInput()
+    //     },
+    //     updateCourse(dataObj) {
+    //         this.updateFilter(dataObj)
+    //         this.callFilterImages()
+    //     },
+    //     updateKeyword(dataObj) {
+    //         this.updateFilter(dataObj)
+    //         this.callFilterImages()
+    //     },
+    //     updateFilter(dataObj) {
+    //         const filter = this.filter
+    //         filter[dataObj.search] = dataObj.value || ''
+    //         if (!filter.uni.length) {
+    //             filter.course = ''
+    //         }
+    //         this.setFilter(filter)
+    //     },
+    //     callFilterImages() {
+    //         const locallyFilteredImages = this.filterImages(
+    //             this.filter,
+    //             this.allImages
+    //         )
+    //         this.setFilteredImages(locallyFilteredImages)
+    //     },
+    //     filterImages(filterObj, imgsArr) {
+    //         const regex = new RegExp(filterObj.keyword, 'ig')
+    //         const imgs = imgsArr.filter((img) => {
+    //             const tags = img.tags.join(',')
+    //             return (
+    //                 tags.match(regex) &&
+    //                 img.up.includes(filterObj.uni) &&
+    //                 img.course.includes(filterObj.course)
+    //             )
+    //         })
+    //         return imgs
+    //     },
+    //     clearCourseInput() {
+    //         const courseInput = this.$refs.courseInput
+    //         courseInput.$refs.multiselect.clear()
+    //     }
+    // }
 }
 </script>
 

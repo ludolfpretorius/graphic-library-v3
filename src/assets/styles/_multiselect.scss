@@ -102,13 +102,13 @@
   flex-shrink: 1;
   display: flex;
   flex-wrap: wrap;
-  margin: var(--ms-tag-my, 0.25rem) 0 0;
+  margin: var(--ms-tag-my, 0.25rem) 0 0 30px;
   padding-left: var(--ms-py, 0.5rem);
   align-items: center;
 }
 
 .multiselect-tag {
-  background: var(--ms-tag-bg, #10B981);
+  background: var(--ms-tag-bg, darken($green, 5%));
   color: var(--ms-tag-color, #FFFFFF);
   font-size: var(--ms-tag-font-size, 0.875rem);
   line-height: var(--ms-tag-line-height, 1.25rem);
@@ -121,11 +121,16 @@
   align-items: center;
   white-space: nowrap;
 
+  &:first-child {
+    margin-left: 10px;
+  }
+
   &.is-disabled {
     padding-right: var(--ms-tag-px, 0.5rem);
     background: var(--ms-tag-bg-disabled, #9CA3AF);
     color: var(--ms-tag-color-disabled, #FFFFFF);
   }
+
 }
 
 .multiselect-tag-remove {

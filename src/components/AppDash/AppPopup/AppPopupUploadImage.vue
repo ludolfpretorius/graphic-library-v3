@@ -8,7 +8,7 @@
             <div class="popup-body">
                 <div class="input-group">
                     <AppViewPopupSelect
-                        :options="options"
+                        :options="universities"
                         :placeholder="'Select UP'">
                         <i class="fas fa-university"></i>
                     </AppViewPopupSelect>
@@ -20,7 +20,8 @@
                 </div>
                 <div class="input-group">
                     <AppViewPopupSelect
-                        :options="options"
+                        :mode="'tags'"
+                        :options="tags"
                         :placeholder="'Add tags'">
                         <i class="fas fa-tags"></i>
                     </AppViewPopupSelect>
@@ -35,7 +36,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import AppViewPopupSelect from './AppViewPopupSelect'
 
 export default {
@@ -49,16 +50,20 @@ export default {
             default: 'Btn text (is a prop)'
         }
     },
+    computed: mapGetters(['tags', 'universities']),
     data() {
         return {
             options: [1, 2, 3]
         }
     },
     methods: {
-        ...mapActions(['setPopup']),
+        ...mapActions(['setPopup', 'imagesRequest']),
         closeDropdown() {
             this.setPopup({ isActive: false, type: '' })
         }
+    },
+    created() {
+        this.imagesRequest('fetchTags')
     }
 }
 </script>
