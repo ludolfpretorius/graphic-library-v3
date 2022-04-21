@@ -3,10 +3,10 @@
 
 	function init($req) {
 		$img = new Image();
-		$allImgs = $img->upload($req);
+		$resp = $img->upload($req);
 
-		if ($allImgs) {
-			echo json_encode(['status' => 'Success: 200 (Image uploaded)', 'body' => $allImgs]);
+		if ($resp !== 'Error') {
+			echo json_encode(['status' => 'Success: 200 (Image uploaded)', 'body' => $resp]);
 		} else {
 			echo json_encode(['status' => 'Error: 400 (Bad request)']);
 		}

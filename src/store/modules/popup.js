@@ -1,6 +1,7 @@
 const state = {
     popup: {
         isActive: false,
+        isLoading: false,
         type: ''
     }
 }

@@ -18,12 +18,11 @@
 
 		function upload($req) {
 			$uploadedFile = $_FILES['file1'];
-			
-			if (is_uploaded_file($uploadedFile)) {
-                $mimeType = mime_content_type($uploadedFile);
+			if ($uploadedFile) {
+                $mimeType = $uploadedFile['type'];
                 $allowedFileTypes = ['image/svg+xml'];
                 if (!in_array($mimeType, $allowedFileTypes)) {
-                    return 'Error: 400';
+                    return 'Error';
                 }
             }
 
@@ -37,7 +36,7 @@
 				$successfullyMoved = move_uploaded_file($_FILES[$key]['tmp_name'], $location);
 				if ($successfullyMoved) {
 					$imagesLength = count(json_decode(file_get_contents($this->imagesFile)));
-					$uploadedInfo = json_decode($req['info']);
+					$uploadedInfo = json_decode($req['data']);
 					$imageEntry = [];
 					$imageEntry['id'] = $imagesLength + 2;
 					foreach($uploadedInfo as $type => $value) {
@@ -56,10 +55,10 @@
 		}
 
 		function delete($req) {
-			$successfullyDeletedImageFile = removeImageFile($this->imagesFolder, $req['info']['url']);
+			$successfullyDeletedImageFile = removeImageFile($this->imagesFolder, $req['data']['url']);
 
 			if ($successfullyDeletedImageFile) {
-				$successfullyDeletedFromDB = removeFromJsonFile($this->imagesFile, $req['info']['id']);
+				$successfullyDeletedFromDB = removeFromJsonFile($this->imagesFile, $req['data']['id']);
 			}
 
 			if ($successfullyDeletedFromDB) {

@@ -92,6 +92,7 @@ export default {
                 })
             }
             store.dispatch('setPopup', { isActive: true, type: 'upload-image' })
+            store.dispatch('setFilesToUpload', acceptFiles)
         }
 
         const { getRootProps, getInputProps, ...rest } = useDropzone({ onDrop })

@@ -37,7 +37,7 @@ import AppViewPopupSelect from './AppViewPopupSelect'
 import AppViewPopupLinkDisplay from './AppViewPopupLinkDisplay'
 
 export default {
-    name: 'AppPopupUploadImage',
+    name: 'AppPopupGenerateLink',
     components: {
         AppViewPopupSelect,
         AppViewPopupLinkDisplay

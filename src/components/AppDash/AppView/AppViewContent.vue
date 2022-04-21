@@ -34,10 +34,13 @@ export default {
     },
     methods: {
         ...mapActions(['imagesRequest']),
-        loadMoreImages() {
+        loadMoreImages(amount = 100) {
             if (this.visibleImages.length < this.filteredImages.length) {
                 const index = this.visibleImages.length
-                const newImages = this.filteredImages.slice(index, index + 100)
+                const newImages = this.filteredImages.slice(
+                    index,
+                    index + amount
+                )
                 this.visibleImages = [...this.visibleImages, ...newImages]
             }
         },
@@ -49,7 +52,7 @@ export default {
                     elem.scrollTop + elem.clientHeight >=
                     elem.scrollHeight - 400
                 ) {
-                    this.loadMoreImages()
+                    this.loadMoreImages(100)
                 }
             })
         },
@@ -62,7 +65,7 @@ export default {
         filteredImages() {
             this.visibleImages = []
             this.scrollToTop()
-            this.loadMoreImages()
+            this.loadMoreImages(50)
         }
     },
     created() {

@@ -28,11 +28,6 @@ export default {
             type: String
         }
     },
-    data() {
-        return {
-            value: ''
-        }
-    },
     methods: {
         emitVal(value) {
             const search = this.search

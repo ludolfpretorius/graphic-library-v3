@@ -2,8 +2,6 @@
 	require './controllers/images/requestsClass.php';
 
 	function init($req) {
-		
-
 		$img = new Image();
 		$allImgs = $img->delete($req);
 

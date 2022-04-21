@@ -9,7 +9,9 @@ const state = {
     allImages: [],
     filteredImages: [],
     visibleImages: [],
-    tags: []
+    tags: [],
+    filesToUpload: [],
+    uploadImgData: {}
 }
 
 const getters = {
@@ -17,7 +19,8 @@ const getters = {
     allImages: (state) => state.allImages,
     filteredImages: (state) => state.filteredImages,
     visibleImages: (state) => state.visibleImages,
-    tags: (state) => state.tags
+    tags: (state) => state.tags,
+    filesToUpload: (state) => state.filesToUpload
 }
 
 const actions = {
@@ -29,23 +32,49 @@ const actions = {
     },
     setFilteredImages: ({ commit }, arr) => {
         commit('setFilteredImages', arr)
-        actions.setVisibleImages({ commit }, arr)
     },
-    setVisibleImages: ({ commit }, arr) => {
-        commit('setVisibleImages', arr.slice(0, 100))
+    filterImagesInSate({ commit }) {
+        const filterObj = state.filter
+        const imgsArr = state.allImages
+        const regex = new RegExp(filterObj.keyword, 'ig')
+        const imgs = imgsArr.filter((img) => {
+            const tags = img.tags.join(',')
+            return (
+                tags.match(regex) &&
+                img.up.includes(filterObj.uni) &&
+                img.course.includes(filterObj.course)
+            )
+        })
+        actions.setFilteredImages({ commit }, imgs)
     },
     setTags: ({ commit }, arr) => {
         commit('setTags', arr)
     },
+    setFilesToUpload: ({ commit }, arr) => {
+        commit('setFilesToUpload', arr)
+    },
+    setUploadImgData({ commit }, obj) {
+        commit('setUploadImgData', obj)
+    },
+    formatData: (file, data) => {
+        let formatedData = null
+        if (file === 'uploadImage') {
+            formatedData = data
+        } else {
+            formatedData = JSON.stringify({
+                path: 'images/' + file
+            })
+        }
+        return formatedData
+    },
     imagesRequest: async ({ commit }, file = '') => {
         if (!file.length) {
+            console.error('Error: Improper request format')
             return
         }
         const options = {
             method: 'POST',
-            data: JSON.stringify({
-                path: 'images/' + file
-            })
+            data: actions.formatData(file, state.uploadImgData)
         }
         try {
             const resp = await axios.request(options)
@@ -56,6 +85,12 @@ const actions = {
             if (resp.data.status === 'Success: 200 (Fetched all tags)') {
                 actions.setTags({ commit }, resp.data.body)
             }
+            if (resp.data.status === 'Success: 200 (Image uploaded)') {
+                actions.setAllImages({ commit }, resp.data.body)
+                actions.filterImagesInSate({ commit })
+            }
+
+            // Server script error
             if (resp.data.status === 'Error: 400 (Bad request)') {
                 throw new Error(resp.data.status)
             }
@@ -71,7 +106,9 @@ const mutations = {
     setAllImages: (state, arr) => (state.allImages = arr),
     setFilteredImages: (state, arr) => (state.filteredImages = arr),
     setVisibleImages: (state, arr) => (state.visibleImages = arr),
-    setTags: (state, arr) => (state.tags = arr)
+    setTags: (state, arr) => (state.tags = arr),
+    setFilesToUpload: (state, arr) => (state.filesToUpload = arr),
+    setUploadImgData: (state, obj) => (state.uploadImgData = obj)
 }
 
 export default {
