@@ -10,6 +10,7 @@
             v-for="img in computedVisibleImages"
             :key="img.id"
             :img="img"
+            @toggleVSGOfficial="toggleVSGOfficial"
             @deleteImage="deleteImage" />
         <AppViewContentTextLoader
             v-show="
@@ -84,6 +85,9 @@ export default {
             } else {
                 this.scrolltopIsVisible = false
             }
+        },
+        toggleVSGOfficial(img) {
+            this.imagesRequest({ endpoint: 'toggleVSGOfficial', data: img })
         },
         deleteImage(img) {
             this.imagesRequest({ endpoint: 'deleteImage', data: img })

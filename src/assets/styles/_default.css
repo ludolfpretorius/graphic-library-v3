@@ -45,6 +45,8 @@ body {
 
 .disable {
 	color: #ccc !important;
+	background-color: #eee!important;
+	pointer-events: none!important;
 	* {
 		pointer-events: none;
 	}

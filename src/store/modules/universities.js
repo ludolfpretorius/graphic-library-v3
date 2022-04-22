@@ -63,9 +63,8 @@ const actions = {
                 actions.setUniversityNames({ commit }, resp.data.body)
             }
             if (resp.data.status === 'Success: 200 (New course added)') {
-                console.log(resp.data)
-                // actions.setUniversities({ commit }, resp.data.body)
-                // actions.setUniversityNames({ commit }, resp.data.body)
+                actions.setUniversities({ commit }, resp.data.body)
+                actions.setUniversityNames({ commit }, resp.data.body)
             }
 
             // Server script error

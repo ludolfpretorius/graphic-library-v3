@@ -4,6 +4,8 @@
 	class Image {
 		private $imagesFile = './db/images.json';
 		private $imagesFolder = '../upload/';
+		private $tagsFile = './db/tags.json';
+		private $tokensFile = './db/tokens.json';
 
 		private function createRandomString() {
             $length = random_bytes('12');
@@ -15,6 +17,27 @@
 			$data = file_get_contents($this->imagesFile);
 			return json_decode($data);
 		}
+
+		function fetchTags() {
+			$data = file_get_contents($this->tagsFile);
+			return json_decode($data);
+		}
+
+        function toggleVSGOfficial($req) {
+            $data = json_decode(file_get_contents($this->imagesFile));
+            $selectedImage = null;
+            foreach ($data as $image) {
+                if ($image->id === $req['data']['id']) {
+                    $selectedImage = $image;
+                }
+            }
+            $selectedImage->vsgOfficial = $selectedImage->vsgOfficial === true ? false : true;
+
+            updateJsonFile($this->imagesFile, $selectedImage, $selectedImage->id);
+            // $output = file_get_contents($this->imagesFile);
+
+            return $selectedImage;
+        }
 
 		function upload($req) {
 			$uploadedFile = $_FILES['file1'];
@@ -48,19 +71,17 @@
 			}
 
 			if ($successfullyUploaded) {
-				$allImages = $this->fetchAll();
-				return $allImages;
+				// $allImages = $this->fetchAll();
+				return $imageEntry;
 			}
 			return null;
 		}
 
 		function delete($req) {
 			$successfullyDeletedImageFile = removeImageFile($this->imagesFolder, $req['data']['url']);
-
 			if ($successfullyDeletedImageFile) {
 				$successfullyDeletedFromDB = removeFromJsonFile($this->imagesFile, $req['data']['id']);
 			}
-
 			if ($successfullyDeletedFromDB) {
 				$allImages = $this->fetchAll();
 				return $allImages;
@@ -68,8 +89,27 @@
 			return $successfullyDeletedFromDB;
 		}
 
-		function fetchTags() {
-			$data = file_get_contents('./db/tags.json');
-			return json_decode($data);
+		function generateShareableLink($req) {
+			$tokensData = json_decode(file_get_contents($this->tokensFile));
+			$newToken = $this->createRandomString();
+
+			$newTokenData['id'] = count($tokensData) + 1;
+			$newTokenData['token'] = $newToken;
+			$newTokenData['filter'] = ['uni' => $req['data']['uni'], 'course' => $req['data']['course'], 'keyword' => $req['data']['keyword']];
+			$newTokenData['link'] = $req['data']['url'].'?t='.$newToken;
+
+			if ($req['expire'] === '2') {
+				$newTokenData['expires'] = time() + (86400 * 7);
+			} else if ($req['expire'] === '3') {
+				$newTokenData['expires'] = time() + (86400 * 30);
+			} else if ($req['expire'] === '4') {
+				$newTokenData['expires'] = time() + ((86400 * 30) * 3);
+			} else {
+				$newTokenData['expires'] = time() + 86400;
+			}
+
+			writeToJsonFile($this->tokensFile, $newTokenData);
+
+			return $newTokenData['link'];
 		}
 	}

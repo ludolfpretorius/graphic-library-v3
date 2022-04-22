@@ -1,16 +1,6 @@
 <template>
     <div id="AppSidebarMenu">
-        <h5 style="margin-top: 0">Sharing</h5>
-        <ul>
-            <li>
-                <a href="#" @click="firePopup('generate-link')">
-                    <i class="fas fa-link"></i>
-                    Create shareable link
-                </a>
-            </li>
-        </ul>
-
-        <h5>UPs & Courses</h5>
+        <h5 style="margin-top: 0">UPs & Courses</h5>
         <ul>
             <li>
                 <a href="#" @click="firePopup('new-uni')">
@@ -22,6 +12,16 @@
                 <a href="#" @click="firePopup('new-course')">
                     <i class="fas fa-graduation-cap"></i>
                     Add new course
+                </a>
+            </li>
+        </ul>
+
+        <h5>Sharing</h5>
+        <ul>
+            <li>
+                <a href="#" @click="firePopup('generate-link')">
+                    <i class="fas fa-link"></i>
+                    Create shareable link
                 </a>
             </li>
         </ul>

@@ -8,7 +8,6 @@ const state = {
     },
     allImages: [],
     filteredImages: [],
-    visibleImages: [],
     tags: [],
     filesToUpload: [],
     uploadImgData: {}
@@ -18,7 +17,6 @@ const getters = {
     filter: (state) => state.filter,
     allImages: (state) => state.allImages,
     filteredImages: (state) => state.filteredImages,
-    visibleImages: (state) => state.visibleImages,
     tags: (state) => state.tags,
     filesToUpload: (state) => state.filesToUpload
 }
@@ -28,10 +26,35 @@ const actions = {
         commit('setFilter', obj)
     },
     setAllImages: ({ commit }, arr) => {
-        commit('setAllImages', arr)
+        const sortedArr = actions.sortImagesInState(arr)
+        commit('setAllImages', sortedArr)
     },
     setFilteredImages: ({ commit }, arr) => {
         commit('setFilteredImages', arr)
+    },
+    injectUpdatedImage({ commit }, image) {
+        const allImages = state.allImages
+        let index = null
+        allImages.forEach((img, i) => {
+            if (img.id === image.id) {
+                index = i
+            }
+        })
+        allImages[index] = image
+        actions.setAllImages({ commit }, allImages)
+    },
+    appendNewImage({ commit }, image) {
+        const allImages = state.allImages
+        allImages.push(image)
+        actions.setAllImages({ commit }, allImages)
+    },
+    sortImagesInState(arr) {
+        arr.sort((a, b) => {
+            if (a.up < b.up) return -1
+            if (a.up > b.up) return 1
+            return 0
+        })
+        return arr
     },
     filterImagesInSate({ commit }) {
         const filterObj = state.filter
@@ -89,13 +112,22 @@ const actions = {
             if (resp.data.status === 'Success: 200 (Fetched all tags)') {
                 actions.setTags({ commit }, resp.data.body)
             }
+            if (resp.data.status === 'Success: 200 (Image VSG data upadated)') {
+                // actions.setAllImages({ commit }, resp.data.body)
+                actions.injectUpdatedImage({ commit }, resp.data.body)
+                actions.filterImagesInSate({ commit })
+            }
             if (resp.data.status === 'Success: 200 (Image uploaded)') {
-                actions.setAllImages({ commit }, resp.data.body)
+                // actions.setAllImages({ commit }, resp.data.body)
+                actions.appendNewImage({ commit }, resp.data.body)
                 actions.filterImagesInSate({ commit })
             }
             if (resp.data.status === 'Success: 200 (Image deleted)') {
                 actions.setAllImages({ commit }, resp.data.body)
                 actions.filterImagesInSate({ commit })
+            }
+            if (resp.data.status === 'Success: 200 (Link generated)') {
+                return resp.data.body
             }
 
             // Server script error
@@ -113,7 +145,6 @@ const mutations = {
     setFilter: (state, obj) => (state.filter = obj),
     setAllImages: (state, arr) => (state.allImages = arr),
     setFilteredImages: (state, arr) => (state.filteredImages = arr),
-    setVisibleImages: (state, arr) => (state.visibleImages = arr),
     setTags: (state, arr) => (state.tags = arr),
     setFilesToUpload: (state, arr) => (state.filesToUpload = arr),
     setUploadImgData: (state, obj) => (state.uploadImgData = obj)

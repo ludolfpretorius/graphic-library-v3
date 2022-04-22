@@ -10,7 +10,9 @@
             <div class="menu-btn" @click.self="toggleDropdown">
                 <div class="label">•••</div>
                 <div class="dropdown">
-                    <div class="dropdown-btn">
+                    <div
+                        class="dropdown-btn"
+                        @click="this.$emit('toggleVSGOfficial', img)">
                         <i class="fas fa-star"></i>
                         <div>
                             {{ img.vsgOfficial ? 'Revoke' : 'Make' }} VSG

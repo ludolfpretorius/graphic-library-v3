@@ -35,7 +35,7 @@
 			updateJsonFile($this->uniesFile, $selectedUni, $selectedUni->id);
 			$output = file_get_contents($this->uniesFile);
 			
-			return $output;
+			return json_decode($output);
 		}
 
 	}

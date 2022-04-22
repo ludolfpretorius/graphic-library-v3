@@ -1,4 +1,5 @@
 <template>
+    <!-- <div v-show="popup.isActive"> -->
     <AppPopupUploadImage
         :class="{ show: popup.isActive && popup.type === 'upload-image' }"
         :action-btn-text="'Upload image'" />
@@ -14,6 +15,7 @@
     <AppPopupEditTags
         :class="{ show: popup.isActive && popup.type === 'edit-tags' }"
         :action-btn-text="'Update image'" />
+    <!-- </div> -->
 </template>
 
 <script>
@@ -77,7 +79,6 @@ export default {
     right: 0;
     opacity: 0;
     transition: $animateSlow;
-    overflow: hidden;
     .popup-header {
         margin-bottom: 40px;
         h2 {
