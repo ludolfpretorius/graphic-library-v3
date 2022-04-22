@@ -1,6 +1,7 @@
 <template>
     <div id="AppPopupNewUni" class="popup">
         <div class="popup-content-wrap">
+            <AppPopupLoader v-show="popup.isLoading" />
             <div class="popup-header">
                 <h2>Add a new university partner</h2>
                 <h4>
@@ -10,33 +11,41 @@
             <div class="popup-body">
                 <div class="input-group">
                     <AppViewPopupInput
-                        :placeholder="'University full name, e.g. Harvard'">
+                        :search="'name'"
+                        :placeholder="'University full name, e.g. Harvard'"
+                        @updateData="updateRequestData">
                         <i class="fas fa-university"></i>
                     </AppViewPopupInput>
                 </div>
                 <div class="input-group">
                     <AppViewPopupInput
-                        :placeholder="'University acronym, e.g. HAR'">
+                        :search="'acronym'"
+                        :placeholder="'University acronym, e.g. HAR'"
+                        @updateData="updateRequestData">
                         <i class="fas fa-university"></i>
                     </AppViewPopupInput>
                 </div>
             </div>
             <div class="popup-controls">
-                <div class="btn cancel" @click="closeDropdown">Cancel</div>
-                <div class="btn action">{{ actionBtnText }}</div>
+                <div class="btn cancel" @click="closePopup">Cancel</div>
+                <div class="btn action" @click="addNewUni">
+                    {{ actionBtnText }}
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import AppViewPopupInput from './AppViewPopupInput'
+import AppPopupLoader from './AppPopupLoader'
 
 export default {
     name: 'AppPopupNewUni',
     components: {
-        AppViewPopupInput
+        AppViewPopupInput,
+        AppPopupLoader
     },
     props: {
         actionBtnText: {
@@ -45,12 +54,39 @@ export default {
         }
     },
     data() {
-        return {}
+        return {
+            requestData: {
+                name: '',
+                acronym: ''
+            }
+        }
     },
+    computed: mapGetters(['popup']),
     methods: {
-        ...mapActions(['setPopup']),
-        closeDropdown() {
+        ...mapActions(['setPopup', 'universitiesRequest']),
+        closePopup() {
             this.setPopup({ isActive: false, type: '' })
+        },
+        setPopupIsLoading() {
+            const popup = this.popup
+            popup.isLoading = true
+            this.setPopup(popup)
+        },
+        updateRequestData(dataObj) {
+            this.requestData[dataObj.search] = dataObj.value
+        },
+        addNewUni() {
+            this.setPopupIsLoading()
+            this.universitiesRequest({
+                endpoint: 'addNew',
+                data: this.requestData
+            }).then(() => {
+                this.setPopup({
+                    isLoading: false,
+                    isActive: false,
+                    type: ''
+                })
+            })
         }
     }
 }

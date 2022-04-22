@@ -1,5 +1,5 @@
 <template>
-    <div id="AppPopupEditTags" class="popup" @click.self="closeDropdown">
+    <div id="AppPopupEditTags" class="popup" @click.self="closePopup">
         <div class="popup-content-wrap">
             <div class="popup-header">
                 <h2>Edit image tags/keywords</h2>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="popup-controls">
-                <div class="btn cancel" @click="closeDropdown">Cancel</div>
+                <div class="btn cancel" @click="closePopup">Cancel</div>
                 <div class="btn action">{{ actionBtnText }}</div>
             </div>
         </div>
@@ -62,7 +62,7 @@ export default {
     },
     methods: {
         ...mapActions(['setPopup']),
-        closeDropdown() {
+        closePopup() {
             this.setPopup({ isActive: false, type: '' })
         }
     }

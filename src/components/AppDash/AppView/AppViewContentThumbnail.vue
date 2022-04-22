@@ -24,7 +24,7 @@
                     <hr />
                     <div
                         class="dropdown-btn delete-btn"
-                        @click="$emit('deleteImg', img)">
+                        @click="$emit('deleteImage', img)">
                         <i class="fas fa-trash-alt"></i>
                         <div>Delete</div>
                     </div>

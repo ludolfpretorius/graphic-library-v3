@@ -3,7 +3,12 @@
         <slot>
             <i class="fas fa-search"></i>
         </slot>
-        <input type="text" v-model="value" :placeholder="placeholder" />
+        <input
+            :search="search"
+            type="text"
+            v-model="value"
+            :placeholder="placeholder"
+            @keyup="emitVal" />
     </div>
 </template>
 
@@ -14,6 +19,10 @@ export default {
         placeholder: {
             type: String,
             default: 'Type something'
+        },
+        search: {
+            type: String,
+            default: ''
         }
     },
     data() {
@@ -21,7 +30,13 @@ export default {
             value: ''
         }
     },
-    methods: {}
+    methods: {
+        emitVal() {
+            const search = this.search
+            const value = this.value
+            this.$emit('updateData', { search, value })
+        }
+    }
 }
 </script>
 

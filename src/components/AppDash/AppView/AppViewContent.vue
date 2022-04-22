@@ -1,36 +1,51 @@
 <template>
     <div id="AppViewContent" ref="content">
+        <AppViewContentLoader :absolute="true" v-show="!allImages.length" />
+        <AppViewContentScrolltop
+            :show="scrolltopIsVisible"
+            @click="scrollToTop" />
         <AppViewContentDropzone />
         <AppViewContentThumbnail
             v-show="filteredImages.length"
-            v-for="img in visibleImages"
+            v-for="img in computedVisibleImages"
             :key="img.id"
-            :img="img" />
-
-        <AppViewContentLoader v-show="!allImages.length" />
+            :img="img"
+            @deleteImage="deleteImage" />
+        <AppViewContentTextLoader
+            v-show="
+                allImages.length && visibleImages.length < filteredImages.length
+            " />
     </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import AppViewContentLoader from './AppViewContentLoader'
+import AppViewContentScrolltop from './AppViewContentScrolltop'
 import AppViewContentDropzone from './AppViewContentDropzone'
 import AppViewContentThumbnail from './AppViewContentThumbnail'
-import AppViewContentLoader from './AppViewContentLoader'
+import AppViewContentTextLoader from './AppViewContentTextLoader'
 
 export default {
     name: 'AppViewContent',
     components: {
+        AppViewContentLoader,
+        AppViewContentScrolltop,
         AppViewContentDropzone,
         AppViewContentThumbnail,
-        AppViewContentLoader
+        AppViewContentTextLoader
     },
     data() {
         return {
-            visibleImages: []
+            visibleImages: [],
+            scrolltopIsVisible: false
         }
     },
     computed: {
-        ...mapGetters(['allImages', 'filteredImages'])
+        ...mapGetters(['allImages', 'filteredImages']),
+        computedVisibleImages() {
+            return this.visibleImages
+        }
     },
     methods: {
         ...mapActions(['imagesRequest']),
@@ -41,7 +56,8 @@ export default {
                     index,
                     index + amount
                 )
-                this.visibleImages = [...this.visibleImages, ...newImages]
+                // this.visibleImages = [...this.visibleImages, ...newImages]
+                this.visibleImages.push(...newImages)
             }
         },
         listenForScrolling() {
@@ -54,11 +70,23 @@ export default {
                 ) {
                     this.loadMoreImages(100)
                 }
+                this.showScrolltopButton(elem)
             })
         },
         scrollToTop() {
             const content = this.$refs.content
             content.scroll(0, 0)
+        },
+        showScrolltopButton(elem) {
+            const scrollTop = elem.pageYOffset || elem.scrollTop
+            if (scrollTop > 1000) {
+                this.scrolltopIsVisible = true
+            } else {
+                this.scrolltopIsVisible = false
+            }
+        },
+        deleteImage(img) {
+            this.imagesRequest({ endpoint: 'deleteImage', data: img })
         }
     },
     watch: {
@@ -69,7 +97,7 @@ export default {
         }
     },
     created() {
-        this.imagesRequest('fetchAll')
+        this.imagesRequest({ endpoint: 'fetchAll' })
     },
     mounted() {
         this.listenForScrolling()

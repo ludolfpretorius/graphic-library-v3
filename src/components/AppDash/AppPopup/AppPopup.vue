@@ -77,6 +77,7 @@ export default {
     right: 0;
     opacity: 0;
     transition: $animateSlow;
+    overflow: hidden;
     .popup-header {
         margin-bottom: 40px;
         h2 {

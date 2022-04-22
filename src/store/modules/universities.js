@@ -32,15 +32,23 @@ const actions = {
         })
         commit('setCourses', uni[0].courses)
     },
-    universitiesRequest: async ({ commit }, file = '') => {
-        if (!file.length) {
+    formatUniData: (data) => {
+        const formatedData = {
+            path: 'universities/' + data.endpoint
+        }
+        if (data.data) {
+            formatedData.data = data.data
+        }
+        return JSON.stringify(formatedData)
+    },
+    universitiesRequest: async ({ commit }, data = {}) => {
+        if (!data.endpoint.length) {
+            console.error('Error: Improper request format')
             return
         }
         const options = {
             method: 'POST',
-            data: JSON.stringify({
-                path: 'universities/' + file
-            })
+            data: actions.formatUniData(data)
         }
         try {
             const resp = await axios.request(options)
@@ -50,6 +58,17 @@ const actions = {
                 actions.setUniversities({ commit }, resp.data.body)
                 actions.setUniversityNames({ commit }, resp.data.body)
             }
+            if (resp.data.status === 'Success: 200 (New university added)') {
+                actions.setUniversities({ commit }, resp.data.body)
+                actions.setUniversityNames({ commit }, resp.data.body)
+            }
+            if (resp.data.status === 'Success: 200 (New course added)') {
+                console.log(resp.data)
+                // actions.setUniversities({ commit }, resp.data.body)
+                // actions.setUniversityNames({ commit }, resp.data.body)
+            }
+
+            // Server script error
             if (resp.data.status === 'Error: 400 (Bad request)') {
                 throw new Error(resp.data.status)
             }

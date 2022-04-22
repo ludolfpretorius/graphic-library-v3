@@ -56,25 +56,29 @@ const actions = {
     setUploadImgData({ commit }, obj) {
         commit('setUploadImgData', obj)
     },
-    formatData: (file, data) => {
+    formatData: (data) => {
         let formatedData = null
-        if (file === 'uploadImage') {
-            formatedData = data
+        if (data.endpoint === 'uploadImage') {
+            formatedData = state.uploadImgData
         } else {
-            formatedData = JSON.stringify({
-                path: 'images/' + file
-            })
+            const dataToSend = {
+                path: 'images/' + data.endpoint
+            }
+            if (data.data) {
+                dataToSend.data = data.data
+            }
+            formatedData = JSON.stringify(dataToSend)
         }
         return formatedData
     },
-    imagesRequest: async ({ commit }, file = '') => {
-        if (!file.length) {
+    imagesRequest: async ({ commit }, data = {}) => {
+        if (!data.endpoint.length) {
             console.error('Error: Improper request format')
             return
         }
         const options = {
             method: 'POST',
-            data: actions.formatData(file, state.uploadImgData)
+            data: actions.formatData(data)
         }
         try {
             const resp = await axios.request(options)
@@ -86,6 +90,10 @@ const actions = {
                 actions.setTags({ commit }, resp.data.body)
             }
             if (resp.data.status === 'Success: 200 (Image uploaded)') {
+                actions.setAllImages({ commit }, resp.data.body)
+                actions.filterImagesInSate({ commit })
+            }
+            if (resp.data.status === 'Success: 200 (Image deleted)') {
                 actions.setAllImages({ commit }, resp.data.body)
                 actions.filterImagesInSate({ commit })
             }

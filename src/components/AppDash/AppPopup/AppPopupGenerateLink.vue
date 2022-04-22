@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="popup-controls">
-                <div class="btn cancel" @click="closeDropdown">Cancel</div>
+                <div class="btn cancel" @click="closePopup">Cancel</div>
                 <div class="btn action">{{ actionBtnText }}</div>
             </div>
         </div>
@@ -56,12 +56,17 @@ export default {
                 'Expires in 1 Month',
                 'Expires in 3 Months'
             ],
+            requestData: {
+                uni: '',
+                course: '',
+                keyword: ''
+            },
             linkDisplayText: 'The created link will be displayed here'
         }
     },
     methods: {
         ...mapActions(['setPopup']),
-        closeDropdown() {
+        closePopup() {
             this.setPopup({ isActive: false, type: '' })
         }
     }

@@ -30,7 +30,8 @@ export default {
             default: 'Select option'
         },
         search: {
-            type: String
+            type: String,
+            default: ''
         }
     },
     methods: {

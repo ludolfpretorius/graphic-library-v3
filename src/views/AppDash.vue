@@ -27,7 +27,7 @@ export default {
         ...mapActions(['universitiesRequest'])
     },
     created() {
-        this.universitiesRequest('fetchAll')
+        this.universitiesRequest({ endpoint: 'fetchAll' })
     }
 }
 </script>

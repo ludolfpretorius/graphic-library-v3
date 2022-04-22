@@ -144,7 +144,6 @@ export default {
                 tags: this.imageData.tags,
                 vsgOfficial: this.imageData.vsgOfficial === 'Yes' ? true : false
             }
-            console.log(data)
             formData.append('path', 'images/uploadImage')
             formData.append('data', JSON.stringify(data))
             filesArray.forEach((file, i) => {
@@ -159,7 +158,7 @@ export default {
             }
             this.setPopupIsLoading()
             this.prepDataForUpload()
-            this.imagesRequest('uploadImage').then(() => {
+            this.imagesRequest({ endpoint: 'uploadImage' }).then(() => {
                 this.setPopup({
                     isLoading: false,
                     isActive: false,
@@ -169,7 +168,7 @@ export default {
         }
     },
     created() {
-        this.imagesRequest('fetchTags')
+        this.imagesRequest({ endpoint: 'fetchTags' })
     }
 }
 </script>

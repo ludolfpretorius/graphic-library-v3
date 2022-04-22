@@ -4848,55 +4848,5 @@
         ],
         "url": "magnifyingglass-flat-icon-generic",
         "vsgOfficial": true
-    },
-    {
-        "id": 317,
-        "up": "HAR",
-        "course": "FIH",
-        "tags": [
-            "911"
-        ],
-        "vsgOfficial": false,
-        "url": "6385674e527290dc8035d507"
-    },
-    {
-        "id": 318,
-        "up": "HAR",
-        "course": "FIH",
-        "tags": [
-            "911"
-        ],
-        "vsgOfficial": true,
-        "url": "110f9bfe6a991e35bc74a455"
-    },
-    {
-        "id": 319,
-        "up": "HAR",
-        "course": "FIH",
-        "tags": [
-            "911"
-        ],
-        "vsgOfficial": false,
-        "url": "e03e54790dc1849a319b6c7f"
-    },
-    {
-        "id": 320,
-        "up": "HAR",
-        "course": "FIH",
-        "tags": [
-            "911"
-        ],
-        "vsgOfficial": true,
-        "url": "72fd8ddf3ab5f85ee9d4ada6"
-    },
-    {
-        "id": 321,
-        "up": "UCT",
-        "course": "ACC",
-        "tags": [
-            "911"
-        ],
-        "vsgOfficial": true,
-        "url": "0c6dd4b37a6f8fa0de481bf4"
     }
 ]
