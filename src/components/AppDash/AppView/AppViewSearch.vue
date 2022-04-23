@@ -72,7 +72,7 @@ export default {
     z-index: 1;
     .asset-amount {
         color: #aaa;
-        margin: 0 10px;
+        margin: 0;
     }
 }
 </style>

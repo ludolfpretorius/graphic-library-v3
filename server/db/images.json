@@ -1212,7 +1212,7 @@
             "scene"
         ],
         "url": "GeorgeWashington-Computer-scene",
-        "vsgOfficial": false
+        "vsgOfficial": true
     },
     {
         "id": 81,
@@ -4852,91 +4852,21 @@
     {
         "id": 317,
         "up": "BER",
-        "course": "ART",
-        "tags": [
-            "911"
-        ],
-        "vsgOfficial": false,
-        "url": "ea233cee2444be48bf75b48d"
-    },
-    {
-        "id": 318,
-        "up": "BER",
-        "course": "ART",
-        "tags": [
-            "911"
-        ],
-        "vsgOfficial": false,
-        "url": "47be05ef0ef78a041077030a"
-    },
-    {
-        "id": 319,
-        "up": "GS",
-        "course": "VBL",
-        "tags": [
-            "911"
-        ],
-        "vsgOfficial": false,
-        "url": "0add3ed7121185b6b907baf0"
-    },
-    {
-        "id": 320,
-        "up": "BER",
-        "course": "ART",
-        "tags": [
-            "911"
-        ],
-        "vsgOfficial": false,
-        "url": "d0e1ee3ea56fbfed1da8412f"
-    },
-    {
-        "id": 321,
-        "up": "BER",
         "course": "",
         "tags": [
             "911"
         ],
-        "vsgOfficial": false,
-        "url": "4108865d636bac0d201df90d"
-    },
-    {
-        "id": 322,
-        "up": "BER",
-        "course": "ART",
-        "tags": [
-            "911"
-        ],
         "vsgOfficial": true,
-        "url": "b52bd1ed9c159da1dd9e7034"
+        "url": "d6945e158e78d4f0d5b4504b"
     },
     {
-        "id": 323,
-        "up": "BER",
-        "course": "ART",
-        "tags": [
-            "911"
-        ],
-        "vsgOfficial": true,
-        "url": "96c1c9fc6c14bb0548a8492c"
-    },
-    {
-        "id": 324,
+        "id": 319,
         "up": "BER",
         "course": "DSE",
         "tags": [
             "911"
         ],
         "vsgOfficial": false,
-        "url": "3845c870cb5f17d2587f62a1"
-    },
-    {
-        "id": 325,
-        "up": "BER",
-        "course": "ART",
-        "tags": [
-            "911"
-        ],
-        "vsgOfficial": false,
-        "url": "ea3c7f4a7a5e03961490badf"
+        "url": "b5f84f0246e129109b853b5a"
     }
 ]

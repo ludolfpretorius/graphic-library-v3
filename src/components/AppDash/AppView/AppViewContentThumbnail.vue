@@ -35,7 +35,14 @@
             <a
                 class="menu-btn download-btn"
                 :href="thumbnailPath"
-                :download="img.tags.join('-') + '.svg'">
+                :download="
+                    img.up +
+                    '-' +
+                    img.course +
+                    '-' +
+                    img.tags.join('-') +
+                    '.svg'
+                ">
                 <i class="fas fa-download"></i>
             </a>
         </div>
@@ -55,17 +62,17 @@ export default {
     props: {
         img: {
             type: Object,
-            required: true,
-            default() {
-                return {
-                    id: Math.floor(Math.random() * 1000),
-                    up: '',
-                    course: '',
-                    tags: [],
-                    url: 'img',
-                    vsgOfficial: false
-                }
-            }
+            required: true
+            // default() {
+            //     return {
+            //         id: Math.floor(Math.random() * 1000),
+            //         up: '',
+            //         course: '',
+            //         tags: [],
+            //         url: 'img',
+            //         vsgOfficial: false
+            //     }
+            // }
         }
     },
     data() {
@@ -73,7 +80,8 @@ export default {
     },
     computed: {
         thumbnailPath() {
-            return require(`@/../upload/${this.img.url}.svg`)
+            return process.env.VUE_APP_UPLOAD_URL + this.img.url + '.svg'
+            // return require(`root/server/upload/${this.img.url}.svg`)
         },
         imgPlaceholder() {
             return require(`@/assets/imgs/img.svg`)

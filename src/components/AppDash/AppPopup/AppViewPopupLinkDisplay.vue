@@ -44,7 +44,7 @@ export default {
             const previewText = this.$refs.previewText
 
             navigator.clipboard.writeText(this.placeholder)
-            document.execCommand('copy')
+            // document.execCommand('copy')
             range.selectNodeContents(previewText)
             selection.removeAllRanges()
             selection.addRange(range)

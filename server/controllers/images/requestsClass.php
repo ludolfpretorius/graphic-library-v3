@@ -3,7 +3,7 @@
 
 	class Image {
 		private $imagesFile = './db/images.json';
-		private $imagesFolder = '../upload/';
+		private $imagesFolder = './upload/';
 		private $tagsFile = './db/tags.json';
 		private $tokensFile = './db/tokens.json';
 

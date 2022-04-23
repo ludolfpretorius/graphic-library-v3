@@ -48,6 +48,21 @@ const actions = {
         allImages.push(image)
         actions.setAllImages({ commit }, allImages)
     },
+    updataImages({ commit }, data) {
+        const allImages = state.allImages
+        let index = null
+        allImages.forEach((img, i) => {
+            if (img.id === data.image.id) {
+                index = i
+            }
+        })
+        if (data.type === 'inject') {
+            allImages[index] = data.image
+        } else {
+            allImages.splice(index, 1)
+        }
+        actions.setAllImages({ commit }, allImages)
+    },
     sortImagesInState(arr) {
         arr.sort((a, b) => {
             if (a.up < b.up) return -1
@@ -114,16 +129,26 @@ const actions = {
             }
             if (resp.data.status === 'Success: 200 (Image VSG data upadated)') {
                 // actions.setAllImages({ commit }, resp.data.body)
-                actions.injectUpdatedImage({ commit }, resp.data.body)
+                const data = {
+                    image: resp.data.body,
+                    type: 'inject'
+                }
+                actions.updataImages({ commit }, data)
                 actions.filterImagesInSate({ commit })
             }
             if (resp.data.status === 'Success: 200 (Image uploaded)') {
                 // actions.setAllImages({ commit }, resp.data.body)
                 actions.appendNewImage({ commit }, resp.data.body)
                 actions.filterImagesInSate({ commit })
+                actions.setFilesToUpload({ commit }, [])
             }
             if (resp.data.status === 'Success: 200 (Image deleted)') {
                 actions.setAllImages({ commit }, resp.data.body)
+                // const data = {
+                //     image: resp.data.body,
+                //     type: 'remove'
+                // }
+                // actions.updataImages({ commit }, data)
                 actions.filterImagesInSate({ commit })
             }
             if (resp.data.status === 'Success: 200 (Link generated)') {
