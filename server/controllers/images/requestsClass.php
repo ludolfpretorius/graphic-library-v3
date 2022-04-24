@@ -34,7 +34,23 @@
             $selectedImage->vsgOfficial = $selectedImage->vsgOfficial === true ? false : true;
 
             updateJsonFile($this->imagesFile, $selectedImage, $selectedImage->id);
-            // $output = file_get_contents($this->imagesFile);
+
+            return $selectedImage;
+        }
+
+        function editImageTags($req) {
+            $data = json_decode(file_get_contents($this->imagesFile));
+            $selectedImage = null;
+            foreach ($data as $image) {
+                if ($image->id === $req['data']['id']) {
+                    $selectedImage = $image;
+                }
+            }
+            $selectedImage->up = $req['data']['up'];
+            $selectedImage->course = $req['data']['course'];
+            $selectedImage->tags = $req['data']['tags'];
+
+            updateJsonFile($this->imagesFile, $selectedImage, $selectedImage->id);
 
             return $selectedImage;
         }
@@ -70,11 +86,11 @@
 				}
 			}
 
-			if ($successfullyUploaded) {
-				// $allImages = $this->fetchAll();
-				return $imageEntry;
+			if (!$successfullyUploaded) {
+                return null;
 			}
-			return null;
+
+            return $imageEntry;
 		}
 
 		function delete($req) {
@@ -82,11 +98,7 @@
 			if ($successfullyDeletedImageFile) {
 				$successfullyDeletedFromDB = removeFromJsonFile($this->imagesFile, $req['data']['id']);
 			}
-			if ($successfullyDeletedFromDB) {
-				$allImages = $this->fetchAll();
-				return $allImages;
-			}
-			return $successfullyDeletedFromDB;
+			return $successfullyDeletedFromDB ? $req['data'] : null;
 		}
 
 		function generateShareableLink($req) {

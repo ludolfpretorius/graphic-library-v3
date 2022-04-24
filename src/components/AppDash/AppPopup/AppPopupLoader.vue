@@ -18,6 +18,7 @@ export default {
     width: 100%;
     height: 100%;
     background: rgba(248, 246, 248, 0.8);
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,6 +1,7 @@
 <template>
     <div id="AppDash">
         <AppPopup v-show="popup.isActive" />
+        <AppNotification v-show="true" />
         <AppSidebar />
         <AppView />
     </div>
@@ -8,6 +9,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import AppNotification from '@/components/AppDash/AppNotification/AppNotification'
 import AppPopup from '@/components/AppDash/AppPopup/AppPopup'
 import AppSidebar from '@/components/AppDash/AppSidebar/AppSidebar'
 import AppView from '@/components/AppDash/AppView/AppView'
@@ -15,6 +17,7 @@ import AppView from '@/components/AppDash/AppView/AppView'
 export default {
     name: 'AppDash',
     components: {
+        AppNotification,
         AppPopup,
         AppSidebar,
         AppView

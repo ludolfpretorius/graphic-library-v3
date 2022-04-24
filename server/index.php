@@ -3,7 +3,7 @@
 	require './cors.php';
 	cors();
 
-	$req = $_FILES['file1'] ? $_POST : getRequestData();
+	$req = isset($_FILES['file1']) ? $_POST : getRequestData();
 	$token = getBearerToken();
 	
 	

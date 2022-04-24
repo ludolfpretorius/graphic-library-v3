@@ -19,7 +19,7 @@
                             official
                         </div>
                     </div>
-                    <div class="dropdown-btn" @click="firePopup('edit-tags')">
+                    <div class="dropdown-btn" @click="$emit('editTags', img)">
                         <i class="fas fa-edit"></i>
                         <div>Edit tags/keywords</div>
                     </div>
@@ -89,9 +89,6 @@ export default {
     },
     methods: {
         ...mapActions(['setPopup']),
-        firePopup(type) {
-            this.setPopup({ isActive: true, type: type })
-        },
         toggleDropdown() {
             const element = event.target
             const dropdown = element.querySelector('.dropdown')

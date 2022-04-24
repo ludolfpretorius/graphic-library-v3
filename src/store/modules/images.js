@@ -10,7 +10,8 @@ const state = {
     filteredImages: [],
     tags: [],
     filesToUpload: [],
-    uploadImgData: {}
+    uploadImgData: {},
+    imgToEdit: {}
 }
 
 const getters = {
@@ -18,7 +19,8 @@ const getters = {
     allImages: (state) => state.allImages,
     filteredImages: (state) => state.filteredImages,
     tags: (state) => state.tags,
-    filesToUpload: (state) => state.filesToUpload
+    filesToUpload: (state) => state.filesToUpload,
+    imgToEdit: (state) => state.imgToEdit
 }
 
 const actions = {
@@ -31,17 +33,6 @@ const actions = {
     },
     setFilteredImages: ({ commit }, arr) => {
         commit('setFilteredImages', arr)
-    },
-    injectUpdatedImage({ commit }, image) {
-        const allImages = state.allImages
-        let index = null
-        allImages.forEach((img, i) => {
-            if (img.id === image.id) {
-                index = i
-            }
-        })
-        allImages[index] = image
-        actions.setAllImages({ commit }, allImages)
     },
     appendNewImage({ commit }, image) {
         const allImages = state.allImages
@@ -85,6 +76,9 @@ const actions = {
         })
         actions.setFilteredImages({ commit }, imgs)
     },
+    setImgToEdit: ({ commit }, obj) => {
+        commit('setImgToEdit', obj)
+    },
     setTags: ({ commit }, arr) => {
         commit('setTags', arr)
     },
@@ -127,8 +121,12 @@ const actions = {
             if (resp.data.status === 'Success: 200 (Fetched all tags)') {
                 actions.setTags({ commit }, resp.data.body)
             }
+            if (resp.data.status === 'Success: 200 (Image uploaded)') {
+                actions.appendNewImage({ commit }, resp.data.body)
+                actions.filterImagesInSate({ commit })
+                actions.setFilesToUpload({ commit }, [])
+            }
             if (resp.data.status === 'Success: 200 (Image VSG data upadated)') {
-                // actions.setAllImages({ commit }, resp.data.body)
                 const data = {
                     image: resp.data.body,
                     type: 'inject'
@@ -136,19 +134,20 @@ const actions = {
                 actions.updataImages({ commit }, data)
                 actions.filterImagesInSate({ commit })
             }
-            if (resp.data.status === 'Success: 200 (Image uploaded)') {
-                // actions.setAllImages({ commit }, resp.data.body)
-                actions.appendNewImage({ commit }, resp.data.body)
+            if (resp.data.status === 'Success: 200 (Image tags updated)') {
+                const data = {
+                    image: resp.data.body,
+                    type: 'inject'
+                }
+                actions.updataImages({ commit }, data)
                 actions.filterImagesInSate({ commit })
-                actions.setFilesToUpload({ commit }, [])
             }
             if (resp.data.status === 'Success: 200 (Image deleted)') {
-                actions.setAllImages({ commit }, resp.data.body)
-                // const data = {
-                //     image: resp.data.body,
-                //     type: 'remove'
-                // }
-                // actions.updataImages({ commit }, data)
+                const data = {
+                    image: resp.data.body,
+                    type: 'remove'
+                }
+                actions.updataImages({ commit }, data)
                 actions.filterImagesInSate({ commit })
             }
             if (resp.data.status === 'Success: 200 (Link generated)') {
@@ -172,7 +171,8 @@ const mutations = {
     setFilteredImages: (state, arr) => (state.filteredImages = arr),
     setTags: (state, arr) => (state.tags = arr),
     setFilesToUpload: (state, arr) => (state.filesToUpload = arr),
-    setUploadImgData: (state, obj) => (state.uploadImgData = obj)
+    setUploadImgData: (state, obj) => (state.uploadImgData = obj),
+    setImgToEdit: (state, obj) => (state.imgToEdit = obj)
 }
 
 export default {

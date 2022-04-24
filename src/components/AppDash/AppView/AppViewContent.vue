@@ -11,6 +11,7 @@
             :key="img.id"
             :img="img"
             @toggleVSGOfficial="toggleVSGOfficial"
+            @editTags="editTags"
             @deleteImage="deleteImage" />
         <AppViewContentTextLoader
             v-show="
@@ -49,7 +50,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(['imagesRequest']),
+        ...mapActions(['imagesRequest', 'setPopup', 'setImgToEdit']),
         loadMoreImages(amount = 100) {
             if (this.visibleImages.length < this.filteredImages.length) {
                 const index = this.visibleImages.length
@@ -57,7 +58,6 @@ export default {
                     index,
                     index + amount
                 )
-                // this.visibleImages = [...this.visibleImages, ...newImages]
                 this.visibleImages.push(...newImages)
             }
         },
@@ -88,6 +88,13 @@ export default {
         },
         toggleVSGOfficial(img) {
             this.imagesRequest({ endpoint: 'toggleVSGOfficial', data: img })
+        },
+        firePopup(type) {
+            this.setPopup({ isActive: true, type: type, isLoading: true })
+        },
+        editTags(img) {
+            this.setImgToEdit(img)
+            this.firePopup('edit-tags')
         },
         deleteImage(img) {
             this.imagesRequest({ endpoint: 'deleteImage', data: img })

@@ -1,7 +1,6 @@
 <?php
     function cors() {
         
-        // Allow from any origin
         if (isset($_SERVER['HTTP_ORIGIN']) && $_SERVER['HTTP_ORIGIN'] === 'http://localhost:8080' && strpos($_SERVER['HTTP_ORIGIN'], 'javascript') == false) {
             // Decide if the origin in $_SERVER['HTTP_ORIGIN'] is one
             // you want to allow, and if so:

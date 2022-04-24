@@ -33,6 +33,14 @@ export default {
             type: String,
             default: ''
         }
+        // value: {
+        //     type: [String, Array]
+        // }
+    },
+    data() {
+        return {
+            // propValue: this.value
+        }
     },
     methods: {
         emitVal(value) {
