@@ -16,7 +16,7 @@
 			$newUni['acronym'] = $req['data']['acronym'];
 			$newUni['courses'] = [];
 
-			writeToJsonFile($this->uniesFile, $newUni);
+			appendToJsonFile($this->uniesFile, $newUni);
 			$output = file_get_contents($this->uniesFile);
 			
 			return json_decode($output);
@@ -36,6 +36,28 @@
 			$output = file_get_contents($this->uniesFile);
 			
 			return json_decode($output);
+		}
+
+		function deleteUni($req) {
+			$successfullyDeletedFromDB = removeFromJsonFile($this->uniesFile, $req['data']['id']);
+			return $successfullyDeletedFromDB ? $req['data'] : null;
+		}
+
+		function deleteCourse($req) {
+			$unies = json_decode(file_get_contents($this->uniesFile));
+			$selectedUni = null;
+			foreach ($unies as $uni) {
+				if ($uni->id === $req['data']['id']) {
+					$selectedUni = $uni;
+				}
+			}
+			foreach ($selectedUni->courses as $i => $course) {
+				if ($course === $req['data']['course']) {
+					array_splice($selectedUni->courses, $i, 1);
+				}
+			}
+			$successfullyDeletedFromDB = updateJsonFile($this->uniesFile, $selectedUni, $req['data']['id']);
+			return $successfullyDeletedFromDB ? $selectedUni : null;
 		}
 
 	}

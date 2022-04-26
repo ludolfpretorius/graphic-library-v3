@@ -1,30 +1,47 @@
 <?php
-	
-	function getFileContent($filepath) {
-		$currentFileData = file_get_contents($filepath);
-		return $currentFileData;
-	}
-
-	function writeToFile($filepath, $data) {
-		$currentFileData = file_get_contents($filepath);
-		$currentFileData .= $data . PHP_EOL;
-		file_put_contents($filepath, $currentFileData);
-	}
-
-	function writeToJsonFile($filepath, $dataObj) {
-		$currentFileData = json_decode(file_get_contents($filepath));
-		$currentFileData[] = $dataObj;
-		file_put_contents($filepath, json_encode($currentFileData, JSON_PRETTY_PRINT));
-	}
-
-	function updateJsonFile($filepath, $dataObj, $updateId) {
-		$currentFileData = json_decode(file_get_contents($filepath));
+	function updateJsonFile($filepath, $updatedObject, $id) {
+		$data = json_decode(file_get_contents($filepath));
 		$index = null;
-		foreach ($currentFileData as $up) {
-			if ($up->id === $updateId) {
-				$index = $up->id - 1;
+		foreach ($data as $i => $obj) {
+			if ($obj->id === $id) {
+				$index = $i;
 			} 
 		}
-		$newFileData = array_replace($currentFileData, [$index=>$dataObj]);
-		file_put_contents($filepath, json_encode($newFileData, JSON_PRETTY_PRINT));
+		$data[$index] = $updatedObject;
+		file_put_contents($filepath, json_encode($data, JSON_PRETTY_PRINT));
+		return true;
+	}
+
+	function removeFromJsonFile($filepath, $id) {
+		$data = json_decode(file_get_contents($filepath));
+		$index = null;
+		foreach ($data as $ind => $obj) {
+			if ($obj->id === $id) {
+				$index = $ind;
+			} 
+		}
+
+		$successfullyDeleted = array_splice($data, $index, 1);
+		if ($successfullyDeleted) {
+			file_put_contents($filepath, json_encode($data, JSON_PRETTY_PRINT));
+		}
+		return $data;
+	}
+
+	function appendToJsonFile($filepath, $newObject) {
+		$data = json_decode(file_get_contents($filepath));
+		$data[] = $newObject;
+		$wroteSuccessfully = file_put_contents($filepath, json_encode($data, JSON_PRETTY_PRINT));
+		return $wroteSuccessfully;
+	}
+
+	function writeJsonFile($filepath, $array) {
+		$wroteSuccessfully = file_put_contents($filepath, json_encode($array, JSON_PRETTY_PRINT));
+		return $wroteSuccessfully;
+	}
+
+	function removeImageFile($folderPath, $filename) {
+		$location = $folderPath.$filename.'.svg';
+		$successfullyDeletedImageFile = unlink($location);
+		return $successfullyDeletedImageFile;
 	}

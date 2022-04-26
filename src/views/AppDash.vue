@@ -1,7 +1,7 @@
 <template>
     <div id="AppDash">
         <AppPopup v-show="popup.isActive" />
-        <AppNotification v-show="true" />
+        <AppNotification />
         <AppSidebar />
         <AppView />
     </div>

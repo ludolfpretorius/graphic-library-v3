@@ -23,6 +23,18 @@
 			return json_decode($data);
 		}
 
+		function deleteTags($req) {
+			$data = json_decode(file_get_contents($this->tagsFile));
+			foreach ($data as $i => $tag) {
+				if (array_key_exists($tag, $req['data']['tags'])) {
+					array_splice($data, $i, 1);
+				}
+			}
+			// $successfullyWroteToDB = writeJsonFile($this->tagsFile, $data);
+			// return $successfullyWroteToDB ? $data : null;
+			return $data;
+		}
+
         function toggleVSGOfficial($req) {
             $data = json_decode(file_get_contents($this->imagesFile));
             $selectedImage = null;
@@ -82,7 +94,7 @@
 						$imageEntry[$type] = $value;
 					}
 					$imageEntry['url'] = $filename;
-					$successfullyUploaded = writeToJsonFile($this->imagesFile, $imageEntry);
+					$successfullyUploaded = appendToJsonFile($this->imagesFile, $imageEntry);
 				}
 			}
 
@@ -120,7 +132,7 @@
 				$newTokenData['expires'] = time() + 86400;
 			}
 
-			writeToJsonFile($this->tokensFile, $newTokenData);
+			appendToJsonFile($this->tokensFile, $newTokenData);
 
 			return $newTokenData['link'];
 		}

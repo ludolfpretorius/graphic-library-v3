@@ -34,7 +34,7 @@
             </div>
             <a
                 class="menu-btn download-btn"
-                :href="thumbnailPath"
+                :href="require(`root/server/upload/${this.img.url}.svg`)"
                 :download="
                     img.up +
                     '-' +
@@ -63,16 +63,6 @@ export default {
         img: {
             type: Object,
             required: true
-            // default() {
-            //     return {
-            //         id: Math.floor(Math.random() * 1000),
-            //         up: '',
-            //         course: '',
-            //         tags: [],
-            //         url: 'img',
-            //         vsgOfficial: false
-            //     }
-            // }
         }
     },
     data() {

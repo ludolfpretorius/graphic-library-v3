@@ -1,61 +1,30 @@
 <template>
     <div id="AppSidebarMenu">
-        <h5 style="margin-top: 0">UPs & Courses</h5>
-        <ul>
-            <li>
-                <a href="#" @click="firePopup('new-uni')">
-                    <i class="fas fa-university"></i>
-                    Add new UP
-                </a>
-            </li>
-            <li>
-                <a href="#" @click="firePopup('new-course')">
-                    <i class="fas fa-graduation-cap"></i>
-                    Add new course
-                </a>
-            </li>
-        </ul>
-
-        <h5>Sharing</h5>
-        <ul>
-            <li>
-                <a href="#" @click="firePopup('generate-link')">
-                    <i class="fas fa-link"></i>
-                    Create shareable link
-                </a>
-            </li>
-        </ul>
-
-        <h5>Session</h5>
-        <ul>
-            <li>
-                <a href="#">
-                    <i class="fas fa-power-off"></i>
-                    Log out
-                </a>
-            </li>
-        </ul>
+        <AppSidebarMenuUnies />
+        <AppSidebarMenuAdmin />
+        <AppSidebarMenuSharing />
+        <AppSidebarMenuSession />
     </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import AppSidebarMenuUnies from './AppSidebarMenuUnies'
+import AppSidebarMenuAdmin from './AppSidebarMenuAdmin'
+import AppSidebarMenuSharing from './AppSidebarMenuSharing'
+import AppSidebarMenuSession from './AppSidebarMenuSession'
 
 export default {
     name: 'AppSidebarMenu',
-    data() {
-        return {}
-    },
-    methods: {
-        ...mapActions(['setPopup']),
-        firePopup(type) {
-            this.setPopup({ isActive: true, type: type })
-        }
+    components: {
+        AppSidebarMenuUnies,
+        AppSidebarMenuAdmin,
+        AppSidebarMenuSharing,
+        AppSidebarMenuSession
     }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 #AppSidebarMenu {
     padding-top: 30px;
     h5 {

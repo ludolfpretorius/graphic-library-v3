@@ -12,9 +12,18 @@
     <AppPopupNewCourse
         :class="{ show: popup.isActive && popup.type === 'new-course' }"
         :action-btn-text="'Add course'" />
-    <AppPopupEditTags
-        :class="{ show: popup.isActive && popup.type === 'edit-tags' }"
+    <AppPopupEditImageTags
+        :class="{ show: popup.isActive && popup.type === 'edit-img-tags' }"
         :action-btn-text="'Update image'" />
+    <AppPopupDeleteUni
+        :class="{ show: popup.isActive && popup.type === 'delete-uni' }"
+        :action-btn-text="'Delete UP'" />
+    <AppPopupDeleteCourse
+        :class="{ show: popup.isActive && popup.type === 'delete-course' }"
+        :action-btn-text="'Add tags'" />
+    <AppPopupDeleteTags
+        :class="{ show: popup.isActive && popup.type === 'delete-tags' }"
+        :action-btn-text="'Delete tags'" />
     <!-- </div> -->
 </template>
 
@@ -24,7 +33,10 @@ import AppPopupUploadImage from '@/components/AppDash/AppPopup/AppPopupUploadIma
 import AppPopupGenerateLink from '@/components/AppDash/AppPopup/AppPopupGenerateLink'
 import AppPopupNewUni from '@/components/AppDash/AppPopup/AppPopupNewUni'
 import AppPopupNewCourse from '@/components/AppDash/AppPopup/AppPopupNewCourse'
-import AppPopupEditTags from '@/components/AppDash/AppPopup/AppPopupEditTags'
+import AppPopupEditImageTags from '@/components/AppDash/AppPopup/AppPopupEditImageTags'
+import AppPopupDeleteUni from '@/components/AppDash/AppPopup/AppPopupDeleteUni'
+import AppPopupDeleteCourse from '@/components/AppDash/AppPopup/AppPopupDeleteCourse'
+import AppPopupDeleteTags from '@/components/AppDash/AppPopup/AppPopupDeleteTags'
 
 export default {
     name: 'AppPopup',
@@ -33,7 +45,10 @@ export default {
         AppPopupGenerateLink,
         AppPopupNewUni,
         AppPopupNewCourse,
-        AppPopupEditTags
+        AppPopupEditImageTags,
+        AppPopupDeleteUni,
+        AppPopupDeleteCourse,
+        AppPopupDeleteTags
     },
     data() {
         return {}

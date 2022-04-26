@@ -39,7 +39,7 @@ const actions = {
         allImages.push(image)
         actions.setAllImages({ commit }, allImages)
     },
-    updataImages({ commit }, data) {
+    updateImages({ commit }, data) {
         const allImages = state.allImages
         let index = null
         allImages.forEach((img, i) => {
@@ -48,7 +48,7 @@ const actions = {
             }
         })
         if (data.type === 'inject') {
-            allImages[index] = data.image
+            allImages.splice(index, 1, data.image)
         } else {
             allImages.splice(index, 1)
         }
@@ -80,7 +80,13 @@ const actions = {
         commit('setImgToEdit', obj)
     },
     setTags: ({ commit }, arr) => {
-        commit('setTags', arr)
+        const formatedTags = arr.map((tag) => {
+            return {
+                value: tag,
+                label: tag
+            }
+        })
+        commit('setTags', formatedTags)
     },
     setFilesToUpload: ({ commit }, arr) => {
         commit('setFilesToUpload', arr)
@@ -112,6 +118,10 @@ const actions = {
             method: 'POST',
             data: actions.formatData(data)
         }
+        const notificationData = {
+            isActive: true,
+            status: 'success'
+        }
         try {
             const resp = await axios.request(options)
             if (resp.data.status === 'Success: 200 (Fetched all images)') {
@@ -119,6 +129,9 @@ const actions = {
                 actions.setFilteredImages({ commit }, resp.data.body)
             }
             if (resp.data.status === 'Success: 200 (Fetched all tags)') {
+                actions.setTags({ commit }, resp.data.body)
+            }
+            if (resp.data.status === 'Success: 200 (Tags deleted)') {
                 actions.setTags({ commit }, resp.data.body)
             }
             if (resp.data.status === 'Success: 200 (Image uploaded)') {
@@ -131,7 +144,7 @@ const actions = {
                     image: resp.data.body,
                     type: 'inject'
                 }
-                actions.updataImages({ commit }, data)
+                actions.updateImages({ commit }, data)
                 actions.filterImagesInSate({ commit })
             }
             if (resp.data.status === 'Success: 200 (Image tags updated)') {
@@ -139,7 +152,7 @@ const actions = {
                     image: resp.data.body,
                     type: 'inject'
                 }
-                actions.updataImages({ commit }, data)
+                actions.updateImages({ commit }, data)
                 actions.filterImagesInSate({ commit })
             }
             if (resp.data.status === 'Success: 200 (Image deleted)') {
@@ -147,11 +160,24 @@ const actions = {
                     image: resp.data.body,
                     type: 'remove'
                 }
-                actions.updataImages({ commit }, data)
+                actions.updateImages({ commit }, data)
                 actions.filterImagesInSate({ commit })
             }
             if (resp.data.status === 'Success: 200 (Link generated)') {
+                notificationData.message = resp.data.status.split(/[(]|[)]/)[1]
+                commit('setNotification', notificationData, { root: true })
                 return resp.data.body
+            }
+
+            // Fire notification
+            if (
+                resp.data.status.includes('Success') &&
+                !resp.data.status.includes('Fetched all images') &&
+                !resp.data.status.includes('Fetched all tags')
+            ) {
+                const msg = resp.data.status.split(/[(]|[)]/)
+                notificationData.message = msg[1]
+                commit('setNotification', notificationData, { root: true })
             }
 
             // Server script error
@@ -159,7 +185,10 @@ const actions = {
                 throw new Error(resp.data.status)
             }
         } catch (err) {
-            alert('Oops! Something went wrong. Please refresh and try again.')
+            notificationData.status = 'error'
+            notificationData.message =
+                'Something went wrong. Please check your connection.'
+            commit('setNotification', notificationData, { root: true })
             console.error(err)
         }
     }

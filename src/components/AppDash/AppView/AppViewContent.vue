@@ -94,7 +94,7 @@ export default {
         },
         editTags(img) {
             this.setImgToEdit(img)
-            this.firePopup('edit-tags')
+            this.firePopup('edit-img-tags')
         },
         deleteImage(img) {
             this.imagesRequest({ endpoint: 'deleteImage', data: img })

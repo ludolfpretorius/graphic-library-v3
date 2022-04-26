@@ -464,5 +464,14 @@
             "XDS"
         ],
         "schools": []
+    },
+    {
+        "id": 28,
+        "name": "Ludolf",
+        "acronym": "LUD",
+        "courses": [
+            "HOS",
+            "AWE"
+        ]
     }
 ]

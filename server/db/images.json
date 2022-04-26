@@ -57,7 +57,7 @@
             "icon"
         ],
         "url": "CAM-SUP-Factory-building-industrial-icon",
-        "vsgOfficial": false
+        "vsgOfficial": true
     },
     {
         "id": 5,
@@ -1812,7 +1812,7 @@
             "plane"
         ],
         "url": "MIT-CPS-airport-aircraft-plane",
-        "vsgOfficial": true
+        "vsgOfficial": false
     },
     {
         "id": 122,
@@ -2110,7 +2110,7 @@
             "icon"
         ],
         "url": "MIT-CPS-communication-gear-cog-icon",
-        "vsgOfficial": true
+        "vsgOfficial": false
     },
     {
         "id": 141,
@@ -2124,7 +2124,7 @@
             "road"
         ],
         "url": "MIT-CPS-cone-stop-road",
-        "vsgOfficial": true
+        "vsgOfficial": false
     },
     {
         "id": 142,
@@ -4554,7 +4554,7 @@
             "check"
         ],
         "url": "Syracuse-Clipboard-list-check",
-        "vsgOfficial": false
+        "vsgOfficial": true
     },
     {
         "id": 295,
@@ -4853,32 +4853,33 @@
         "up": "BER",
         "course": "",
         "tags": [
-            "911"
+            "911",
+            "bias"
         ],
         "vsgOfficial": false,
-        "url": "a63f21fdbc026a7c0f3ce496"
+        "url": "7ee8e69181efa131048201ef"
     },
     {
         "id": 318,
-        "up": "BER",
-        "course": "ART",
+        "up": "CAM",
+        "course": "BSM",
         "tags": [
-            "zen",
-            "zombie"
+            "911",
+            "accessibility"
         ],
         "vsgOfficial": true,
-        "url": "c2def7f6eaa83e833f56ca32"
+        "url": "4f02b932feaea4538f262f4c"
     },
     {
         "id": 319,
-        "up": "CAM",
-        "course": "",
+        "up": "BER",
+        "course": "ART",
         "tags": [
-            "abstract",
-            "accessibility",
-            "911"
+            "911",
+            "amazon",
+            "zombie"
         ],
         "vsgOfficial": true,
-        "url": "808582947d95e139cad08ee9"
+        "url": "961a8398d0085ffdee4b47e1"
     }
 ]

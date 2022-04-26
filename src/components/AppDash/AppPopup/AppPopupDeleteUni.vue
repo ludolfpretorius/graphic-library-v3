@@ -1,34 +1,25 @@
 <template>
-    <div id="AppPopupNewUni" class="popup" @click.self="closePopup">
+    <div id="AppPopupDeleteUni" class="popup" @click.self="closePopup">
         <div class="popup-content-wrap">
             <AppPopupLoader v-show="popup.isLoading" />
             <div class="popup-header">
-                <h2>Add a new university partner</h2>
-                <h4>
-                    Type the UP name and acronym in the provided input fields
-                </h4>
+                <h2>Delete a university partner</h2>
+                <h4>Select and submit the UP you want to delete</h4>
             </div>
             <div class="popup-body">
                 <div class="input-group">
-                    <AppViewPopupInput
-                        :search="'name'"
-                        :placeholder="'University full name, e.g. Harvard'"
-                        @updateData="updateRequestData">
-                        <i class="fas fa-university"></i>
-                    </AppViewPopupInput>
-                </div>
-                <div class="input-group">
-                    <AppViewPopupInput
+                    <AppViewPopupSelect
                         :search="'acronym'"
-                        :placeholder="'University acronym, e.g. HAR'"
-                        @updateData="updateRequestData">
+                        :options="universityNames"
+                        :placeholder="'Select relevant UP'"
+                        @updateFilter="universityNames">
                         <i class="fas fa-university"></i>
-                    </AppViewPopupInput>
+                    </AppViewPopupSelect>
                 </div>
             </div>
             <div class="popup-controls">
                 <div class="btn cancel" @click="closePopup">Cancel</div>
-                <div class="btn action" @click="addNewUni">
+                <div class="btn action" @click="removeUni">
                     {{ actionBtnText }}
                 </div>
             </div>
@@ -38,13 +29,13 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import AppViewPopupInput from './AppViewPopupInput'
+import AppViewPopupSelect from './AppViewPopupSelect'
 import AppPopupLoader from './AppPopupLoader'
 
 export default {
-    name: 'AppPopupNewUni',
+    name: 'AppPopupDeleteUni',
     components: {
-        AppViewPopupInput,
+        AppViewPopupSelect,
         AppPopupLoader
     },
     props: {
@@ -55,13 +46,10 @@ export default {
     },
     data() {
         return {
-            requestData: {
-                name: '',
-                acronym: ''
-            }
+            requestData: {}
         }
     },
-    computed: mapGetters(['popup']),
+    computed: mapGetters(['popup', 'universities', 'universityNames']),
     methods: {
         ...mapActions(['setPopup', 'universitiesRequest']),
         closePopup() {
@@ -73,12 +61,17 @@ export default {
             this.setPopup(popup)
         },
         updateRequestData(dataObj) {
-            this.requestData[dataObj.search] = dataObj.value
+            const acronym = dataObj.value
+            this.universities.forEach((uni) => {
+                if (uni.acronym === acronym) {
+                    this.requestData = uni
+                }
+            })
         },
-        addNewUni() {
+        removeUni() {
             this.setPopupIsLoading()
             this.universitiesRequest({
-                endpoint: 'addNew',
+                endpoint: 'deleteUni',
                 data: this.requestData
             }).then(() => {
                 this.setPopup({

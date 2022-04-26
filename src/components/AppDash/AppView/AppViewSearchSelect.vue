@@ -18,7 +18,8 @@ export default {
     name: 'AppViewSearchSelect',
     props: {
         options: {
-            type: Array
+            type: Array,
+            required: true
         },
         placeholder: {
             type: String,

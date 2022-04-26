@@ -22,7 +22,7 @@
 			$obj->expires = time() + (86400 * 1);
 		}
 
-		writeToJsonFile($filepath, $obj);
+		appendToJsonFile($filepath, $obj);
 		$output = $obj->url;
 	}
 	echo json_encode($output);

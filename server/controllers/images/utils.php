@@ -27,13 +27,18 @@
 		return $data;
 	}
 
-	function writeToJsonFile($filepath, $newObject) {
+	function appendToJsonFile($filepath, $newObject) {
 		$data = json_decode(file_get_contents($filepath));
 		$data[] = $newObject;
 		$wroteSuccessfully = file_put_contents($filepath, json_encode($data, JSON_PRETTY_PRINT));
 		return $wroteSuccessfully;
 	}
 
+	function writeJsonFile($filepath, $array) {
+		$wroteSuccessfully = file_put_contents($filepath, json_encode($array, JSON_PRETTY_PRINT));
+		return $wroteSuccessfully;
+	}
+	
 	function removeImageFile($folderPath, $filename) {
 		$location = $folderPath.$filename.'.svg';
 		$successfullyDeletedImageFile = unlink($location);

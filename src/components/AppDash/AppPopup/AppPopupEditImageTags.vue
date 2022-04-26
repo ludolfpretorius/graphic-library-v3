@@ -1,52 +1,45 @@
 <template>
-    <div id="AppPopupUploadImage" class="popup">
+    <div id="AppPopupEditImageTags" class="popup" @click.self="closePopup">
         <div class="popup-content-wrap">
             <AppPopupLoader v-show="popup.isLoading" />
             <div class="popup-header">
-                <h2>Uploading image</h2>
-                <h4>But first, let's add some information about the image</h4>
+                <h2>Edit image tags/keywords</h2>
+                <h4>Change any information and click "Update image"</h4>
             </div>
             <div class="popup-body">
                 <div class="input-group">
                     <AppViewPopupSelect
+                        ref="uniInput"
+                        :placeholder="'Select UP'"
                         :search="'uni'"
                         :options="universityNames"
-                        :placeholder="'Select UP'"
                         @updateFilter="updateUni">
                         <i class="fas fa-university"></i>
                     </AppViewPopupSelect>
                     <AppViewPopupSelect
                         ref="courseInput"
+                        :placeholder="'Select Course'"
                         :search="'course'"
                         :options="courses"
-                        :placeholder="'Select Course'"
                         @updateFilter="updateCourse">
                         <i class="fas fa-graduation-cap"></i>
                     </AppViewPopupSelect>
                 </div>
                 <div class="input-group">
                     <AppViewPopupSelect
-                        :mode="'tags'"
+                        ref="tagsInput"
                         :search="'tags'"
+                        :mode="'tags'"
                         :options="tags"
                         :placeholder="'Add tags'"
                         @updateFilter="updateTags">
                         <i class="fas fa-tags"></i>
                     </AppViewPopupSelect>
                 </div>
-                <div class="input-group">
-                    <AppViewPopupSelect
-                        :search="'vsgOfficial'"
-                        :options="vsgOptions"
-                        :placeholder="'Is this image(s) in the official VSG?'"
-                        @updateFilter="updateVSGOfficial">
-                        <i class="fas fa-star"></i>
-                    </AppViewPopupSelect>
-                </div>
             </div>
             <div class="popup-controls">
                 <div class="btn cancel" @click="closePopup">Cancel</div>
-                <div class="btn action" @click="callUploadImage">
+                <div class="btn action" @click="callEditImageData">
                     {{ actionBtnText }}
                 </div>
             </div>
@@ -60,7 +53,7 @@ import AppViewPopupSelect from './AppViewPopupSelect'
 import AppPopupLoader from './AppPopupLoader'
 
 export default {
-    name: 'AppPopupUploadImage',
+    name: 'AppPopupEditImageTags',
     components: {
         AppViewPopupSelect,
         AppPopupLoader
@@ -71,43 +64,45 @@ export default {
             default: 'Btn text (is a prop)'
         }
     },
-    computed: mapGetters([
-        'tags',
-        'universities',
-        'universityNames',
-        'courses',
-        'popup',
-        'filesToUpload'
-    ]),
     data() {
         return {
-            vsgOptions: [
-                {
-                    value: 'Yes',
-                    label: 'Yes'
-                },
-                {
-                    value: 'No',
-                    label: 'No'
-                }
-            ],
             imageData: {
                 uni: '',
                 course: '',
-                tags: [],
-                vsgOfficial: ''
+                tags: []
+            }
+        }
+    },
+    computed: mapGetters([
+        'popup',
+        'imgToEdit',
+        'tags',
+        'universities',
+        'universityNames',
+        'courses'
+    ]),
+    watch: {
+        imgToEdit() {
+            if (Object.keys(this.imgToEdit).length) {
+                this.selectInputValue('uniInput', this.imgToEdit.up)
+                this.selectInputValue('courseInput', this.imgToEdit.course)
+                this.selectInputValue('tagsInput', this.imgToEdit.tags)
+                setTimeout(() => {
+                    this.setPopupIsLoading(false)
+                }, 1000)
             }
         }
     },
     methods: {
         ...mapActions([
-            'imagesRequest',
             'setPopup',
             'setCourses',
-            'setUploadImgData'
+            'imagesRequest',
+            'setImgToEdit'
         ]),
         closePopup() {
-            this.setPopup({ isActive: false, type: '' })
+            this.setPopup({ isActive: false, type: '', isLoading: false })
+            this.clearInputValues(), this.setImgToEdit({})
         },
         updateUni(dataObj) {
             this.updateImageData(dataObj)
@@ -123,6 +118,33 @@ export default {
         updateVSGOfficial(dataObj) {
             this.updateImageData(dataObj)
         },
+        selectInputValue(type, val) {
+            const input = this.$refs[type]
+            if (val.length) {
+                if (type === 'tagsInput') {
+                    Object.values(val).forEach((value) => {
+                        const data = {
+                            value: value,
+                            label: value
+                        }
+                        input.$refs.multiselect.select(data)
+                    })
+                }
+                if (type === 'uniInput') {
+                    input.$refs.multiselect.select(val)
+                }
+                if (type === 'courseInput') {
+                    setTimeout(() => {
+                        input.$refs.multiselect.select(val)
+                    }, 800)
+                }
+            }
+        },
+        clearInputValues() {
+            Object.keys(this.$refs).forEach((input) => {
+                this.$refs[input].$refs.multiselect.clear()
+            })
+        },
         clearCourseInput() {
             const courseInput = this.$refs.courseInput
             courseInput.$refs.multiselect.clear()
@@ -130,9 +152,9 @@ export default {
         updateImageData(dataObj) {
             this.imageData[dataObj.search] = dataObj.value || ''
         },
-        setPopupIsLoading() {
+        setPopupIsLoading(bool) {
             const popup = this.popup
-            popup.isLoading = true
+            popup.isLoading = bool
             this.setPopup(popup)
         },
         validateData() {
@@ -146,39 +168,26 @@ export default {
             return true
         },
         prepDataForUpload() {
-            const formData = new FormData()
-            const filesArray = this.filesToUpload
-            const data = {
-                up: this.imageData.uni,
-                course: this.imageData.course,
-                tags: this.imageData.tags,
-                vsgOfficial: this.imageData.vsgOfficial === 'Yes' ? true : false
-            }
-            formData.append('path', 'images/uploadImage')
-            formData.append('data', JSON.stringify(data))
-            filesArray.forEach((file, i) => {
-                formData.append('file' + (i + 1), file)
-            })
-            this.setUploadImgData(formData)
+            const data = this.imgToEdit
+            data.up = this.imageData.uni
+            data.course = this.imageData.course
+            data.tags = this.imageData.tags
+            return data
         },
-        callUploadImage() {
+        callEditImageData() {
             const ready = this.validateData()
             if (!ready) {
                 return
             }
-            this.setPopupIsLoading()
-            this.prepDataForUpload()
-            this.imagesRequest({ endpoint: 'uploadImage' }).then(() => {
-                this.setPopup({
-                    isLoading: false,
-                    isActive: false,
-                    type: ''
-                })
+            this.setPopupIsLoading(true)
+            const data = this.prepDataForUpload()
+            this.imagesRequest({
+                endpoint: 'editImageTags',
+                data: data
+            }).then(() => {
+                this.closePopup()
             })
         }
-    },
-    created() {
-        this.imagesRequest({ endpoint: 'fetchTags' })
     }
 }
 </script>

@@ -23,7 +23,8 @@ export default {
             default: 'single'
         },
         options: {
-            type: Array
+            type: Array,
+            required: true
         },
         placeholder: {
             type: String,

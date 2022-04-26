@@ -19,7 +19,7 @@
                 <div class="input-group">
                     <AppViewPopupSelect
                         :search="'expire'"
-                        :options="options"
+                        :options="expiryOptions"
                         :placeholder="'Select expiry date'"
                         @updateFilter="updateRequestData">
                         <i class="far fa-calendar-check"></i>
@@ -73,11 +73,23 @@ export default {
     },
     data() {
         return {
-            options: [
-                'Expires in 1 Day',
-                'Expires in 1 Week',
-                'Expires in 1 Month',
-                'Expires in 3 Months'
+            expiryOptions: [
+                {
+                    value: 'Expires in 1 Day',
+                    label: 'Expires in 1 Day'
+                },
+                {
+                    value: 'Expires in 1 Week',
+                    label: 'Expires in 1 Week'
+                },
+                {
+                    value: 'Expires in 1 Month',
+                    label: 'Expires in 1 Month'
+                },
+                {
+                    value: 'Expires in 3 Months',
+                    label: 'Expires in 3 Months'
+                }
             ],
             requestData: {
                 uni: '',

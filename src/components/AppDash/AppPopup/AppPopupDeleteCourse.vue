@@ -1,12 +1,12 @@
 <template>
-    <div id="AppPopupNewCourse" class="popup" @click.self="closePopup">
+    <div id="AppPopupDeleteCourse" class="popup" @click.self="closePopup">
         <div class="popup-content-wrap">
             <AppPopupLoader v-show="popup.isLoading" />
             <div class="popup-header">
-                <h2>Add a new course</h2>
+                <h2>Delete a course</h2>
                 <h4>
-                    Select the relevant UP and add the course acronym in the
-                    provided input field
+                    Select the relevant UP and then the course you want to
+                    delete
                 </h4>
             </div>
             <div class="popup-body">
@@ -15,20 +15,22 @@
                         :search="'uni'"
                         :options="universityNames"
                         :placeholder="'Select relevant UP'"
-                        @updateFilter="updateRequestData">
+                        @updateFilter="updateUni">
                         <i class="fas fa-university"></i>
                     </AppViewPopupSelect>
-                    <AppViewPopupInput
+                    <AppViewPopupSelect
+                        ref="courseInput"
                         :search="'course'"
-                        :placeholder="'Type course acronym, e.g. FIH'"
-                        @updateData="updateRequestData">
+                        :options="courses"
+                        :placeholder="'Select course to delete'"
+                        @updateFilter="updateCourse">
                         <i class="fas fa-graduation-cap"></i>
-                    </AppViewPopupInput>
+                    </AppViewPopupSelect>
                 </div>
             </div>
             <div class="popup-controls">
                 <div class="btn cancel" @click="closePopup">Cancel</div>
-                <div class="btn action" @click="addNewCourse">
+                <div class="btn action" @click="removeUni">
                     {{ actionBtnText }}
                 </div>
             </div>
@@ -39,14 +41,12 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import AppViewPopupSelect from './AppViewPopupSelect'
-import AppViewPopupInput from './AppViewPopupInput'
 import AppPopupLoader from './AppPopupLoader'
 
 export default {
-    name: 'AppPopupNewCourse',
+    name: 'AppPopupDeleteCourse',
     components: {
         AppViewPopupSelect,
-        AppViewPopupInput,
         AppPopupLoader
     },
     props: {
@@ -58,14 +58,20 @@ export default {
     data() {
         return {
             requestData: {
+                id: null,
                 uni: '',
                 course: ''
             }
         }
     },
-    computed: mapGetters(['popup', 'universityNames']),
+    computed: mapGetters([
+        'popup',
+        'universities',
+        'universityNames',
+        'courses'
+    ]),
     methods: {
-        ...mapActions(['setPopup', 'universitiesRequest']),
+        ...mapActions(['setPopup', 'universitiesRequest', 'setCourses']),
         closePopup() {
             this.setPopup({ isActive: false, type: '' })
         },
@@ -74,13 +80,34 @@ export default {
             popup.isLoading = true
             this.setPopup(popup)
         },
-        updateRequestData(dataObj) {
-            this.requestData[dataObj.search] = dataObj.value
+        updateUni(dataObj) {
+            this.updateRequestData(dataObj)
+            this.setCourses(dataObj.value || '')
+            this.clearCourseInput()
         },
-        addNewCourse() {
+        updateCourse(dataObj) {
+            this.updateRequestData(dataObj)
+        },
+        clearCourseInput() {
+            const courseInput = this.$refs.courseInput
+            courseInput.$refs.multiselect.clear()
+        },
+
+        updateRequestData(dataObj) {
+            this.requestData[dataObj.search] = dataObj.value || ''
+            this.universities.forEach((uni) => {
+                if (
+                    this.requestData.uni.length &&
+                    uni.acronym === this.requestData.uni
+                ) {
+                    this.requestData.id = uni.id
+                }
+            })
+        },
+        removeUni() {
             this.setPopupIsLoading()
             this.universitiesRequest({
-                endpoint: 'addNewCourse',
+                endpoint: 'deleteCourse',
                 data: this.requestData
             }).then(() => {
                 this.setPopup({

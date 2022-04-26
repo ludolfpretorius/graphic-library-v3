@@ -17,7 +17,7 @@
 		} else {
 			$obj->schools = [];
 		}
-		writeToJsonFile('../db/ups.json', $obj);
+		appendToJsonFile('../db/ups.json', $obj);
 
 		$output = file_get_contents('../db/ups.json');
 		echo $output;

@@ -3,10 +3,10 @@
 
 	function init($req) {
 		$image = new Image();
-		$imgData = $image->editImageTags($req);
+		$allTags = $image->deleteTags($req);
 		
-		if ($imgData) {
-			echo json_encode(['status' => 'Success: 200 (Image tags updated)', 'body' => $imgData]);
+		if ($allTags) {
+			echo json_encode(['status' => 'Success: 200 (Tags deleted)', 'body' => $allTags]);
 		} else {
 			echo json_encode(['status' => 'Error: 400 (Bad request)']);
 		}

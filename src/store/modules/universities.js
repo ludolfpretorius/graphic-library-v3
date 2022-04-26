@@ -15,12 +15,16 @@ const getters = {
 const actions = {
     setUniversities: ({ commit }, arr) => {
         commit('setUniversities', arr)
+        actions.setUniversityNames({ commit }, arr)
     },
     setUniversityNames({ commit }, arr) {
-        const data = arr.map((uni) => {
-            return uni.acronym
+        const acronymArr = arr.map((uni) => {
+            return {
+                value: uni.acronym,
+                label: uni.acronym
+            }
         })
-        commit('setUniversityNames', data)
+        commit('setUniversityNames', acronymArr)
     },
     setCourses: ({ commit }, str) => {
         if (!str.length) {
@@ -30,7 +34,36 @@ const actions = {
         const uni = state.universities.filter((uni) => {
             return uni.acronym.includes(str)
         })
-        commit('setCourses', uni[0].courses)
+        const courses = uni[0].courses.map((course) => {
+            return {
+                value: course,
+                label: course
+            }
+        })
+        commit('setCourses', courses)
+    },
+    updateUniversities({ commit }, data) {
+        const allUnies = state.universities
+        let index = null
+        allUnies.forEach((uni, i) => {
+            if (uni.id === data.uni.id) {
+                index = i
+            }
+        })
+        if (data.type === 'inject') {
+            allUnies.splice(index, 1, data.uni)
+        } else {
+            allUnies.splice(index, 1)
+        }
+        actions.setUniversities({ commit }, allUnies)
+    },
+    sortUniversitiesInState(arr) {
+        arr.sort((a, b) => {
+            if (a.up < b.up) return -1
+            if (a.up > b.up) return 1
+            return 0
+        })
+        return arr
     },
     formatUniData: (data) => {
         const formatedData = {
@@ -50,21 +83,46 @@ const actions = {
             method: 'POST',
             data: actions.formatUniData(data)
         }
+        const notificationData = {
+            isActive: true,
+            status: 'success'
+        }
         try {
             const resp = await axios.request(options)
             if (
                 resp.data.status === 'Success: 200 (Fetched all universities)'
             ) {
                 actions.setUniversities({ commit }, resp.data.body)
-                actions.setUniversityNames({ commit }, resp.data.body)
             }
             if (resp.data.status === 'Success: 200 (New university added)') {
                 actions.setUniversities({ commit }, resp.data.body)
-                actions.setUniversityNames({ commit }, resp.data.body)
             }
             if (resp.data.status === 'Success: 200 (New course added)') {
                 actions.setUniversities({ commit }, resp.data.body)
-                actions.setUniversityNames({ commit }, resp.data.body)
+            }
+            if (resp.data.status === 'Success: 200 (University deleted)') {
+                const data = {
+                    uni: resp.data.body,
+                    type: 'remove'
+                }
+                actions.updateUniversities({ commit }, data)
+            }
+            if (resp.data.status === 'Success: 200 (Course deleted)') {
+                const data = {
+                    uni: resp.data.body,
+                    type: 'inject'
+                }
+                actions.updateUniversities({ commit }, data)
+            }
+
+            // Fire notification
+            if (
+                resp.data.status.includes('Success') &&
+                !resp.data.status.includes('Fetched all universities')
+            ) {
+                const msg = resp.data.status.split(/[(]|[)]/)
+                notificationData.message = msg[1]
+                commit('setNotification', notificationData, { root: true })
             }
 
             // Server script error
@@ -72,7 +130,10 @@ const actions = {
                 throw new Error(resp.data.status)
             }
         } catch (err) {
-            alert('Oops! Something went wrong. Please refresh and try again.')
+            notificationData.status = 'error'
+            notificationData.message =
+                'Something went wrong. Please check your connection.'
+            commit('setNotification', notificationData, { root: true })
             console.error(err)
         }
     }
