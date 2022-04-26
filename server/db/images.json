@@ -1223,7 +1223,7 @@
             "2"
         ],
         "url": "GeorgeWashington-sdfsdf-2",
-        "vsgOfficial": false
+        "vsgOfficial": true
     },
     {
         "id": 82,
@@ -4541,7 +4541,7 @@
             "target"
         ],
         "url": "Syracuse-Aim-dartboard-goal-target",
-        "vsgOfficial": true
+        "vsgOfficial": false
     },
     {
         "id": 294,
@@ -4619,7 +4619,7 @@
             "save"
         ],
         "url": "Syracuse-Wallet-money-save",
-        "vsgOfficial": true
+        "vsgOfficial": false
     },
     {
         "id": 300,
@@ -4876,8 +4876,7 @@
         "course": "ART",
         "tags": [
             "911",
-            "amazon",
-            "zombie"
+            "amazon"
         ],
         "vsgOfficial": true,
         "url": "961a8398d0085ffdee4b47e1"

@@ -20,7 +20,10 @@
         :action-btn-text="'Delete UP'" />
     <AppPopupDeleteCourse
         :class="{ show: popup.isActive && popup.type === 'delete-course' }"
-        :action-btn-text="'Add tags'" />
+        :action-btn-text="'Delete course'" />
+    <AppPopupNewTags
+        :class="{ show: popup.isActive && popup.type === 'new-tags' }"
+        :action-btn-text="'Add new tags'" />
     <AppPopupDeleteTags
         :class="{ show: popup.isActive && popup.type === 'delete-tags' }"
         :action-btn-text="'Delete tags'" />
@@ -36,6 +39,7 @@ import AppPopupNewCourse from '@/components/AppDash/AppPopup/AppPopupNewCourse'
 import AppPopupEditImageTags from '@/components/AppDash/AppPopup/AppPopupEditImageTags'
 import AppPopupDeleteUni from '@/components/AppDash/AppPopup/AppPopupDeleteUni'
 import AppPopupDeleteCourse from '@/components/AppDash/AppPopup/AppPopupDeleteCourse'
+import AppPopupNewTags from '@/components/AppDash/AppPopup/AppPopupNewTags'
 import AppPopupDeleteTags from '@/components/AppDash/AppPopup/AppPopupDeleteTags'
 
 export default {
@@ -48,6 +52,7 @@ export default {
         AppPopupEditImageTags,
         AppPopupDeleteUni,
         AppPopupDeleteCourse,
+        AppPopupNewTags,
         AppPopupDeleteTags
     },
     data() {

@@ -25,14 +25,24 @@
 
 		function deleteTags($req) {
 			$data = json_decode(file_get_contents($this->tagsFile));
-			foreach ($data as $i => $tag) {
-				if (array_key_exists($tag, $req['data']['tags'])) {
-					array_splice($data, $i, 1);
+			$output = [];
+			foreach ($data as $tag) {
+				if (!in_array($tag, $req['data']['tags'])) {
+					$output[] = $tag;
 				}
 			}
-			// $successfullyWroteToDB = writeJsonFile($this->tagsFile, $data);
-			// return $successfullyWroteToDB ? $data : null;
-			return $data;
+			$successfullyWroteToDB = writeJsonFile($this->tagsFile, $output);
+			return $successfullyWroteToDB ? $output : null;
+		}
+
+		function addNewTags($req) {
+			$data = json_decode(file_get_contents($this->tagsFile));
+			foreach ($req['data']['tags'] as $tag) {
+				$data[] = $tag;
+			}
+			sort($data);
+			$successfullyWroteToDB = writeJsonFile($this->tagsFile, $data);
+			return $successfullyWroteToDB ? $data : null;
 		}
 
         function toggleVSGOfficial($req) {

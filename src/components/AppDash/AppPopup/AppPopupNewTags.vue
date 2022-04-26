@@ -1,24 +1,19 @@
 <template>
-    <div id="AppPopupDeleteTags" class="popup" @click.self="closePopup">
+    <div id="AppPopupNewTags" class="popup" @click.self="closePopup">
         <div class="popup-content-wrap">
             <AppPopupLoader v-show="popup.isLoading" />
             <div class="popup-header">
-                <h2>Delete tags from the tags list</h2>
-                <h4>
-                    Select the tags you want to delete and click "Delete tags"
-                </h4>
+                <h2>Add new tags to the tag list</h2>
+                <h4>Type tags out and separate them with a comma</h4>
             </div>
             <div class="popup-body">
                 <div class="input-group">
-                    <AppViewPopupSelect
-                        ref="tagsInput"
+                    <AppViewPopupInput
                         :search="'tags'"
-                        :mode="'tags'"
-                        :options="tags"
-                        :placeholder="'Select tags to delete'"
-                        @updateFilter="updateRequestData">
-                        <i class="fas fa-tags"></i>
-                    </AppViewPopupSelect>
+                        :placeholder="'Tags separated with a comma, e.g. rocket, launcher, explodes'"
+                        @updateData="updateRequestData">
+                        <i class="fas fa-university"></i>
+                    </AppViewPopupInput>
                 </div>
             </div>
             <div class="popup-controls">
@@ -33,13 +28,13 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import AppViewPopupSelect from './AppViewPopupSelect'
+import AppViewPopupInput from './AppViewPopupInput'
 import AppPopupLoader from './AppPopupLoader'
 
 export default {
-    name: 'AppPopupDeleteTags',
+    name: 'AppPopupNewTags',
     components: {
-        AppViewPopupSelect,
+        AppViewPopupInput,
         AppPopupLoader
     },
     props: {
@@ -55,31 +50,30 @@ export default {
             }
         }
     },
-    computed: mapGetters(['popup', 'tags']),
+    computed: mapGetters(['popup']),
     methods: {
         ...mapActions(['setPopup', 'imagesRequest']),
         closePopup() {
-            this.setPopup({ isActive: false, type: '', isLoading: false })
-            this.clearInputValues()
+            this.setPopup({ isActive: false, type: '' })
         },
-        clearInputValues() {
-            Object.keys(this.$refs).forEach((input) => {
-                this.$refs[input].$refs.multiselect.clear()
-            })
-        },
-        setPopupIsLoading(bool) {
+        setPopupIsLoading() {
             const popup = this.popup
-            popup.isLoading = bool
+            popup.isLoading = true
             this.setPopup(popup)
         },
         updateRequestData(dataObj) {
-            this.requestData[dataObj.search] = dataObj.value || ''
+            this.requestData[dataObj.search] = dataObj.value
+        },
+        formatData() {
+            const data = this.requestData.tags.split(',')
+            const tags = data.map((tag) => tag.trim().toLowerCase())
+            this.requestData.tags = tags.sort()
         },
         validateData() {
             const data = this.requestData
             if (!data.tags.length) {
                 alert(
-                    'Please select the tags you want to remove before submitting.'
+                    'Please enter the tags you want to add before submitting.'
                 )
                 return false
             }
@@ -90,13 +84,17 @@ export default {
             if (!ready) {
                 return
             }
-            this.setPopupIsLoading(true)
-            this.clearInputValues()
+            this.formatData()
+            this.setPopupIsLoading()
             this.imagesRequest({
-                endpoint: 'deleteTags',
+                endpoint: 'addNewTags',
                 data: this.requestData
             }).then(() => {
-                this.closePopup()
+                this.setPopup({
+                    isLoading: false,
+                    isActive: false,
+                    type: ''
+                })
             })
         }
     }

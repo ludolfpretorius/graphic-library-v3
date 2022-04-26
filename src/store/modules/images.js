@@ -134,6 +134,9 @@ const actions = {
             if (resp.data.status === 'Success: 200 (Tags deleted)') {
                 actions.setTags({ commit }, resp.data.body)
             }
+            if (resp.data.status === 'Success: 200 (New tags added)') {
+                actions.setTags({ commit }, resp.data.body)
+            }
             if (resp.data.status === 'Success: 200 (Image uploaded)') {
                 actions.appendNewImage({ commit }, resp.data.body)
                 actions.filterImagesInSate({ commit })
@@ -168,7 +171,7 @@ const actions = {
                 commit('setNotification', notificationData, { root: true })
                 return resp.data.body
             }
-
+            console.log('hossss')
             // Fire notification
             if (
                 resp.data.status.includes('Success') &&

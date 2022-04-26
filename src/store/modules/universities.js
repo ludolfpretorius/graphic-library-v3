@@ -14,8 +14,9 @@ const getters = {
 
 const actions = {
     setUniversities: ({ commit }, arr) => {
-        commit('setUniversities', arr)
-        actions.setUniversityNames({ commit }, arr)
+        const sortedUnies = actions.sortUniversitiesInState(arr)
+        commit('setUniversities', sortedUnies)
+        actions.setUniversityNames({ commit }, sortedUnies)
     },
     setUniversityNames({ commit }, arr) {
         const acronymArr = arr.map((uni) => {
@@ -34,7 +35,9 @@ const actions = {
         const uni = state.universities.filter((uni) => {
             return uni.acronym.includes(str)
         })
-        const courses = uni[0].courses.map((course) => {
+        const sortedCourses = uni[0].courses
+        sortedCourses.sort()
+        const courses = sortedCourses.map((course) => {
             return {
                 value: course,
                 label: course
@@ -59,8 +62,8 @@ const actions = {
     },
     sortUniversitiesInState(arr) {
         arr.sort((a, b) => {
-            if (a.up < b.up) return -1
-            if (a.up > b.up) return 1
+            if (a.acronym < b.acronym) return -1
+            if (a.acronym > b.acronym) return 1
             return 0
         })
         return arr
