@@ -1,40 +1,32 @@
 <template>
-    <div id="AppViewContent" ref="content">
-        <AppViewContentLoader :absolute="true" v-show="!allImages.length" />
+    <div id="GuestContent" ref="content">
         <AppViewContentScrolltop
             :show="scrolltopIsVisible"
             @click="scrollToTop" />
-        <AppViewContentDropzone />
-        <AppViewContentThumbnail
-            v-show="filteredImages.length"
+        <GuestContentThumbnail
+            v-show="filteredGuestImages.length"
             v-for="img in visibleImages"
             :key="img.id"
-            :img="img"
-            @toggleVSGOfficial="toggleVSGOfficial"
-            @editTags="editTags"
-            @deleteImage="deleteImage" />
+            :img="img" />
         <AppViewContentTextLoader
             v-show="
-                allImages.length && visibleImages.length < filteredImages.length
+                allGuestImages.length &&
+                visibleImages.length < filteredGuestImages.length
             " />
     </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import AppViewContentLoader from './AppViewContentLoader'
-import AppViewContentScrolltop from './AppViewContentScrolltop'
-import AppViewContentDropzone from './AppViewContentDropzone'
-import AppViewContentThumbnail from './AppViewContentThumbnail'
-import AppViewContentTextLoader from './AppViewContentTextLoader'
+import AppViewContentScrolltop from '@/components/AppDash/AppView/AppViewContentScrolltop'
+import GuestContentThumbnail from './GuestContentThumbnail'
+import AppViewContentTextLoader from '@/components/AppDash/AppView/AppViewContentTextLoader'
 
 export default {
-    name: 'AppViewContent',
+    name: 'GuestContent',
     components: {
-        AppViewContentLoader,
         AppViewContentScrolltop,
-        AppViewContentDropzone,
-        AppViewContentThumbnail,
+        GuestContentThumbnail,
         AppViewContentTextLoader
     },
     data() {
@@ -43,13 +35,13 @@ export default {
             scrolltopIsVisible: false
         }
     },
-    computed: mapGetters(['allImages', 'filteredImages']),
+    computed: mapGetters(['allGuestImages', 'filteredGuestImages']),
     methods: {
-        ...mapActions(['imagesRequest', 'setPopup', 'setImgToEdit']),
+        ...mapActions(['guestRequest', 'setPopup', 'setImgToEdit']),
         loadMoreImages(amount = 100) {
-            if (this.visibleImages.length < this.filteredImages.length) {
+            if (this.visibleImages.length < this.filteredGuestImages.length) {
                 const index = this.visibleImages.length
-                const newImages = this.filteredImages.slice(
+                const newImages = this.filteredGuestImages.slice(
                     index,
                     index + amount
                 )
@@ -60,6 +52,7 @@ export default {
             const content = this.$refs.content
             content.addEventListener('scroll', (event) => {
                 const elem = event.target
+                console.log(elem.scrollTop + elem.clientHeight >= elem.scrollHeight - 400)
                 if (
                     elem.scrollTop + elem.clientHeight >=
                     elem.scrollHeight - 400
@@ -80,30 +73,14 @@ export default {
             } else {
                 this.scrolltopIsVisible = false
             }
-        },
-        toggleVSGOfficial(img) {
-            this.imagesRequest({ endpoint: 'toggleVSGOfficial', data: img })
-        },
-        firePopup(type) {
-            this.setPopup({ isActive: true, type: type, isLoading: true })
-        },
-        editTags(img) {
-            this.setImgToEdit(img)
-            this.firePopup('edit-img-tags')
-        },
-        deleteImage(img) {
-            this.imagesRequest({ endpoint: 'deleteImage', data: img })
         }
     },
     watch: {
-        filteredImages() {
+        filteredGuestImages() {
             this.visibleImages = []
             this.scrollToTop()
             this.loadMoreImages(50)
         }
-    },
-    created() {
-        this.imagesRequest({ endpoint: 'fetchAll' })
     },
     mounted() {
         this.listenForScrolling()
@@ -112,13 +89,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#AppViewContent {
-    height: calc(100% - 102px);
+#GuestContent {
+    height: calc(100% - 140px);
     padding: 40px;
     background-color: $backgroundGrey;
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
+    position: fixed;
+    top: 140px;
     overflow-y: auto;
 }
 </style>

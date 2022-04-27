@@ -171,7 +171,7 @@ const actions = {
                 commit('setNotification', notificationData, { root: true })
                 return resp.data.body
             }
-            console.log('hossss')
+
             // Fire notification
             if (
                 resp.data.status.includes('Success') &&

@@ -126,26 +126,26 @@ export default {
         },
         updateRequestData(dataObj) {
             this.requestData = this.filter
-            let expire
+            let expires
             switch (dataObj.value) {
-                case this.options[0]:
-                    expire = 1
+                case this.expiryOptions[0].value:
+                    expires = 1
                     break
-                case this.options[1]:
-                    expire = 2
+                case this.expiryOptions[1].value:
+                    expires = 2
                     break
-                case this.options[2]:
-                    expire = 3
+                case this.expiryOptions[2].value:
+                    expires = 3
                     break
-                case this.options[3]:
-                    expire = 3
+                case this.expiryOptions[3].value:
+                    expires = 4
                     break
             }
-            this.requestData.expire = expire
+            this.requestData.expires = expires
             this.requestData.url = window.location.origin + '/guest'
         },
         validateRequest() {
-            if (!this.requestData.expire) {
+            if (!this.requestData.expires) {
                 return false
             }
             return true

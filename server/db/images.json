@@ -4554,7 +4554,7 @@
             "check"
         ],
         "url": "Syracuse-Clipboard-list-check",
-        "vsgOfficial": true
+        "vsgOfficial": false
     },
     {
         "id": 295,
@@ -4851,34 +4851,11 @@
     {
         "id": 317,
         "up": "BER",
-        "course": "",
-        "tags": [
-            "911",
-            "bias"
-        ],
-        "vsgOfficial": false,
-        "url": "7ee8e69181efa131048201ef"
-    },
-    {
-        "id": 318,
-        "up": "CAM",
-        "course": "BSM",
-        "tags": [
-            "911",
-            "accessibility"
-        ],
-        "vsgOfficial": true,
-        "url": "4f02b932feaea4538f262f4c"
-    },
-    {
-        "id": 319,
-        "up": "BER",
         "course": "ART",
         "tags": [
-            "911",
-            "amazon"
+            "911"
         ],
-        "vsgOfficial": true,
-        "url": "961a8398d0085ffdee4b47e1"
+        "vsgOfficial": false,
+        "url": "3d5ac7463fc1129c062c0c77"
     }
 ]

@@ -12,6 +12,11 @@ const routes = [
         name: 'Login',
         component: Login
     },
+    {
+        path: '/guest',
+        name: 'Guest',
+        component: () => import('../views/Guest')
+    },
 
     // Redirects
     {

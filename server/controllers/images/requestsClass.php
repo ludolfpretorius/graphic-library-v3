@@ -132,11 +132,11 @@
 			$newTokenData['filter'] = ['uni' => $req['data']['uni'], 'course' => $req['data']['course'], 'keyword' => $req['data']['keyword']];
 			$newTokenData['link'] = $req['data']['url'].'?t='.$newToken;
 
-			if ($req['expire'] === '2') {
+			if ($req['data']['expires'] == 2) {
 				$newTokenData['expires'] = time() + (86400 * 7);
-			} else if ($req['expire'] === '3') {
+			} else if ($req['data']['expires'] == 3) {
 				$newTokenData['expires'] = time() + (86400 * 30);
-			} else if ($req['expire'] === '4') {
+			} else if ($req['data']['expires'] == 4) {
 				$newTokenData['expires'] = time() + ((86400 * 30) * 3);
 			} else {
 				$newTokenData['expires'] = time() + 86400;
