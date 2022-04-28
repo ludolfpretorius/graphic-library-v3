@@ -27,10 +27,11 @@ export default {
     },
     computed: mapGetters(['popup']),
     methods: {
-        ...mapActions(['universitiesRequest'])
+        ...mapActions(['universitiesRequest', 'imagesRequest'])
     },
     created() {
         this.universitiesRequest({ endpoint: 'fetchAll' })
+        this.imagesRequest({ endpoint: 'fetchTags' })
     }
 }
 </script>

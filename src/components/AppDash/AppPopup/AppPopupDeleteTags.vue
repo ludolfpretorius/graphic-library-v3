@@ -60,7 +60,6 @@ export default {
         ...mapActions(['setPopup', 'imagesRequest']),
         closePopup() {
             this.setPopup({ isActive: false, type: '', isLoading: false })
-            this.clearInputValues()
         },
         clearInputValues() {
             Object.keys(this.$refs).forEach((input) => {
@@ -79,7 +78,7 @@ export default {
             const data = this.requestData
             if (!data.tags.length) {
                 alert(
-                    'Please select the tags you want to remove before submitting.'
+                    'Please select the tags you want to delete before submitting.'
                 )
                 return false
             }
@@ -90,12 +89,16 @@ export default {
             if (!ready) {
                 return
             }
+            const component = this
+            const data = {
+                endpoint: 'deleteTags',
+                data: {
+                    tags: component.requestData.tags
+                }
+            }
             this.setPopupIsLoading(true)
             this.clearInputValues()
-            this.imagesRequest({
-                endpoint: 'deleteTags',
-                data: this.requestData
-            }).then(() => {
+            this.imagesRequest(data).then(() => {
                 this.closePopup()
             })
         }

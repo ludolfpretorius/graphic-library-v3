@@ -12,6 +12,7 @@
             <div class="popup-body">
                 <div class="input-group">
                     <AppViewPopupSelect
+                        ref="uni"
                         :search="'uni'"
                         :options="universityNames"
                         :placeholder="'Select relevant UP'"
@@ -23,14 +24,14 @@
                         :search="'course'"
                         :options="courses"
                         :placeholder="'Select course to delete'"
-                        @updateFilter="updateCourse">
+                        @updateFilter="updateRequestData">
                         <i class="fas fa-graduation-cap"></i>
                     </AppViewPopupSelect>
                 </div>
             </div>
             <div class="popup-controls">
                 <div class="btn cancel" @click="closePopup">Cancel</div>
-                <div class="btn action" @click="removeUni">
+                <div class="btn action" @click="callRequest">
                     {{ actionBtnText }}
                 </div>
             </div>
@@ -73,48 +74,72 @@ export default {
     methods: {
         ...mapActions(['setPopup', 'universitiesRequest', 'setCourses']),
         closePopup() {
-            this.setPopup({ isActive: false, type: '' })
+            this.setPopup({ isActive: false, isLoading: false, type: '' })
         },
-        setPopupIsLoading() {
+        setPopupIsLoading(bool) {
             const popup = this.popup
-            popup.isLoading = true
+            popup.isLoading = bool
             this.setPopup(popup)
         },
         updateUni(dataObj) {
+            this.clearCourseInput()
             this.updateRequestData(dataObj)
             this.setCourses(dataObj.value || '')
-            this.clearCourseInput()
-        },
-        updateCourse(dataObj) {
-            this.updateRequestData(dataObj)
         },
         clearCourseInput() {
             const courseInput = this.$refs.courseInput
             courseInput.$refs.multiselect.clear()
         },
-
-        updateRequestData(dataObj) {
-            this.requestData[dataObj.search] = dataObj.value || ''
-            this.universities.forEach((uni) => {
-                if (
-                    this.requestData.uni.length &&
-                    uni.acronym === this.requestData.uni
-                ) {
-                    this.requestData.id = uni.id
-                }
+        clearInputValues() {
+            Object.keys(this.$refs).forEach((input) => {
+                this.$refs[input].$refs.multiselect.clear()
             })
         },
-        removeUni() {
-            this.setPopupIsLoading()
-            this.universitiesRequest({
-                endpoint: 'deleteCourse',
-                data: this.requestData
-            }).then(() => {
-                this.setPopup({
-                    isLoading: false,
-                    isActive: false,
-                    type: ''
+        updateRequestData(dataObj) {
+            this.requestData[dataObj.search] = dataObj.value || ''
+            if (dataObj.search === 'uni') {
+                this.universities.forEach((uni) => {
+                    if (
+                        this.requestData.uni.length &&
+                        uni.acronym === this.requestData.uni
+                    ) {
+                        this.requestData.id = uni.id
+                    }
                 })
+            }
+        },
+        validateData() {
+            const data = this.requestData
+            if (!data.uni.length || !data.course.length) {
+                alert(
+                    'Please select the relevant UP and course you want to delete before submitting.'
+                )
+                return false
+            }
+            return true
+        },
+        formatData() {
+            const component = this
+            const data = {
+                endpoint: 'deleteCourse',
+                data: {
+                    id: component.requestData.id,
+                    uni: component.requestData.uni,
+                    course: component.requestData.course
+                }
+            }
+            return data
+        },
+        callRequest() {
+            const ready = this.validateData()
+            if (!ready) {
+                return
+            }
+            const data = this.formatData()
+            this.setPopupIsLoading(true)
+            this.clearInputValues()
+            this.universitiesRequest(data).then(() => {
+                this.closePopup()
             })
         }
     }

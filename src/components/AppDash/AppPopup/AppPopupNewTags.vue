@@ -9,6 +9,7 @@
             <div class="popup-body">
                 <div class="input-group">
                     <AppViewPopupInput
+                        ref="tagsInput"
                         :search="'tags'"
                         :placeholder="'Tags separated with a comma, e.g. rocket, launcher, explodes'"
                         @updateData="updateRequestData">
@@ -54,12 +55,22 @@ export default {
     methods: {
         ...mapActions(['setPopup', 'imagesRequest']),
         closePopup() {
-            this.setPopup({ isActive: false, type: '' })
+            this.setPopup({ isActive: false, isLoading: false, type: '' })
+            this.clearInputValues()
         },
         setPopupIsLoading() {
             const popup = this.popup
             popup.isLoading = true
             this.setPopup(popup)
+        },
+        clearInputValues() {
+            Object.keys(this.$refs).forEach((input) => {
+                if (this.$refs[input].$refs.multiselect) {
+                    this.$refs[input].$refs.multiselect.clear()
+                } else {
+                    this.$refs[input].value = ''
+                }
+            })
         },
         updateRequestData(dataObj) {
             this.requestData[dataObj.search] = dataObj.value
@@ -90,11 +101,7 @@ export default {
                 endpoint: 'addNewTags',
                 data: this.requestData
             }).then(() => {
-                this.setPopup({
-                    isLoading: false,
-                    isActive: false,
-                    type: ''
-                })
+                this.closePopup()
             })
         }
     }

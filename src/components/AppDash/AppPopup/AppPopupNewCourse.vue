@@ -12,6 +12,7 @@
             <div class="popup-body">
                 <div class="input-group">
                     <AppViewPopupSelect
+                        ref="uniInput"
                         :search="'uni'"
                         :options="universityNames"
                         :placeholder="'Select relevant UP'"
@@ -19,6 +20,7 @@
                         <i class="fas fa-university"></i>
                     </AppViewPopupSelect>
                     <AppViewPopupInput
+                        ref="courseInput"
                         :search="'course'"
                         :placeholder="'Type course acronym, e.g. FIH'"
                         @updateData="updateRequestData">
@@ -28,7 +30,7 @@
             </div>
             <div class="popup-controls">
                 <div class="btn cancel" @click="closePopup">Cancel</div>
-                <div class="btn action" @click="addNewCourse">
+                <div class="btn action" @click="callRequest">
                     {{ actionBtnText }}
                 </div>
             </div>
@@ -67,27 +69,45 @@ export default {
     methods: {
         ...mapActions(['setPopup', 'universitiesRequest']),
         closePopup() {
-            this.setPopup({ isActive: false, type: '' })
+            this.setPopup({ isActive: false, isLoading: false, type: '' })
+            this.clearInputValues()
         },
         setPopupIsLoading() {
             const popup = this.popup
             popup.isLoading = true
             this.setPopup(popup)
         },
+        clearInputValues() {
+            Object.keys(this.$refs).forEach((input) => {
+                if (this.$refs[input].$refs.multiselect) {
+                    this.$refs[input].$refs.multiselect.clear()
+                } else {
+                    this.$refs[input].value = ''
+                }
+            })
+        },
         updateRequestData(dataObj) {
             this.requestData[dataObj.search] = dataObj.value
         },
-        addNewCourse() {
+        validateData() {
+            const data = this.requestData
+            if (!data.uni.length || !data.course.length) {
+                alert('Please add a UP and course before submitting.')
+                return false
+            }
+            return true
+        },
+        callRequest() {
+            const ready = this.validateData()
+            if (!ready) {
+                return
+            }
             this.setPopupIsLoading()
             this.universitiesRequest({
                 endpoint: 'addNewCourse',
                 data: this.requestData
             }).then(() => {
-                this.setPopup({
-                    isLoading: false,
-                    isActive: false,
-                    type: ''
-                })
+                this.closePopup()
             })
         }
     }

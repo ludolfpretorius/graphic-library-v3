@@ -107,7 +107,7 @@ export default {
     top: 0;
     z-index: 1;
     .asset-amount {
-        color: #aaa;
+        color: $black;
         margin: 0;
     }
 }

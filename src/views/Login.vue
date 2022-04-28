@@ -2,11 +2,12 @@
     <div id="Login">
         <LoginTitle />
         <LoginForm />
-        <LoginAlert />
+        <LoginAlert :show="loginAttemptFailed" />
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import LoginTitle from '@/components/Login/LoginTitle'
 import LoginForm from '@/components/Login/LoginForm'
 import LoginAlert from '@/components/Login/LoginAlert'
@@ -17,7 +18,8 @@ export default {
         LoginTitle,
         LoginForm,
         LoginAlert
-    }
+    },
+    computed: mapGetters(['loginAttemptFailed'])
 }
 </script>
 

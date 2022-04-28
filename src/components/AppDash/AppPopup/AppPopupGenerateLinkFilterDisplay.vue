@@ -43,7 +43,6 @@ export default {
         keyword() {
             if (this.filter.keyword.length > 13) {
                 const snippedVal = this.filter.keyword.slice(0, 10) + '...'
-                console.log(snippedVal)
                 return snippedVal
             }
             return this.filter.keyword || 'none'

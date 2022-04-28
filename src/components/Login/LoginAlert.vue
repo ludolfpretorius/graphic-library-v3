@@ -1,5 +1,5 @@
 <template>
-    <div id="LoginAlert">
+    <div id="LoginAlert" :class="{ show: show }">
         <span>Oops! The password you entered is incorrect.</span>
     </div>
 </template>
@@ -7,16 +7,18 @@
 <script>
 export default {
     name: 'LoginAlert',
-    data() {
-        return {}
-    },
-    methods: {}
+    props: {
+        show: {
+            type: Boolean,
+            default: false
+        }
+    }
 }
 </script>
 
 <style scoped lang="scss">
 #LoginAlert {
-    width: 380px;
+    width: 400px;
     padding: 10px 10px;
     background-color: $red;
     border-radius: 10px;

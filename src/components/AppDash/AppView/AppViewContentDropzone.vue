@@ -79,7 +79,7 @@ export default {
         const files = ref([])
 
         function onDrop(acceptFiles, rejectReasons) {
-            console.log('placeholder', acceptFiles, rejectReasons)
+            console.log(rejectReasons)
             imgBlobs.value = []
             if (acceptFiles.length) {
                 files.value = acceptFiles

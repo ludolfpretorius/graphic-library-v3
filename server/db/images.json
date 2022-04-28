@@ -1259,7 +1259,7 @@
             "5"
         ],
         "url": "GeorgeWashington-sdfsdf-5",
-        "vsgOfficial": true
+        "vsgOfficial": false
     },
     {
         "id": 85,
@@ -4847,15 +4847,5 @@
         ],
         "url": "magnifyingglass-flat-icon-generic",
         "vsgOfficial": true
-    },
-    {
-        "id": 317,
-        "up": "BER",
-        "course": "ART",
-        "tags": [
-            "911"
-        ],
-        "vsgOfficial": false,
-        "url": "3d5ac7463fc1129c062c0c77"
     }
 ]

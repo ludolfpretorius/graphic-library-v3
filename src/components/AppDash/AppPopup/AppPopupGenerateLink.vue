@@ -18,6 +18,7 @@
                 </div>
                 <div class="input-group">
                     <AppViewPopupSelect
+                        ref="dateInput"
                         :search="'expire'"
                         :options="expiryOptions"
                         :placeholder="'Select expiry date'"
@@ -94,7 +95,8 @@ export default {
             requestData: {
                 uni: '',
                 course: '',
-                keyword: ''
+                keyword: '',
+                expires: null
             },
             linkDisplayText: 'The created link will be displayed here',
             copyBtnIsActive: false,
@@ -111,10 +113,11 @@ export default {
                 )
                 return
             }
-            this.setPopup({ isActive: false, type: '' })
+            this.setPopup({ isActive: false, isLoading: false, type: '' })
             this.copyBtnIsActive = false
             this.linkHasBeenCopied = false
             this.linkDisplayText = 'The created link will be displayed here'
+            this.clearInputValues()
         },
         setCopied() {
             this.linkHasBeenCopied = true
@@ -123,6 +126,11 @@ export default {
             const popup = this.popup
             popup.isLoading = true
             this.setPopup(popup)
+        },
+        clearInputValues() {
+            Object.keys(this.$refs).forEach((input) => {
+                this.$refs[input].$refs.multiselect.clear()
+            })
         },
         updateRequestData(dataObj) {
             this.requestData = this.filter
@@ -150,11 +158,19 @@ export default {
             }
             return true
         },
-        generateLink() {
-            if (!this.validateRequest()) {
+        validateData() {
+            const data = this.requestData
+            if (!data.expires) {
                 alert(
-                    'Please select an expiry date from the provided options before creating the link.'
+                    'Please select when the link should expire before creating the link.'
                 )
+                return false
+            }
+            return true
+        },
+        generateLink() {
+            const ready = this.validateData()
+            if (!ready) {
                 return
             }
             this.setPopupIsLoading()

@@ -1,13 +1,14 @@
 <template>
     <div id="AppSidebarMenu">
         <AppSidebarMenuUnies />
-        <AppSidebarMenuAdmin />
+        <AppSidebarMenuAdmin v-if="user.isAdmin" />
         <AppSidebarMenuSharing />
         <AppSidebarMenuSession />
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import AppSidebarMenuUnies from './AppSidebarMenuUnies'
 import AppSidebarMenuAdmin from './AppSidebarMenuAdmin'
 import AppSidebarMenuSharing from './AppSidebarMenuSharing'
@@ -20,7 +21,8 @@ export default {
         AppSidebarMenuAdmin,
         AppSidebarMenuSharing,
         AppSidebarMenuSession
-    }
+    },
+    computed: mapGetters(['user'])
 }
 </script>
 

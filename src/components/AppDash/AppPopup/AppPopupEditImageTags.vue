@@ -39,7 +39,7 @@
             </div>
             <div class="popup-controls">
                 <div class="btn cancel" @click="closePopup">Cancel</div>
-                <div class="btn action" @click="callEditImageData">
+                <div class="btn action" @click="callRequest">
                     {{ actionBtnText }}
                 </div>
             </div>
@@ -101,8 +101,9 @@ export default {
             'setImgToEdit'
         ]),
         closePopup() {
-            this.setPopup({ isActive: false, type: '', isLoading: false })
-            this.clearInputValues(), this.setImgToEdit({})
+            this.setPopup({ isActive: false, isLoading: false, type: '' })
+            this.clearInputValues()
+            this.setImgToEdit({})
         },
         updateUni(dataObj) {
             this.updateImageData(dataObj)
@@ -167,20 +168,20 @@ export default {
             }
             return true
         },
-        prepDataForUpload() {
+        formatData() {
             const data = this.imgToEdit
             data.up = this.imageData.uni
             data.course = this.imageData.course
             data.tags = this.imageData.tags
             return data
         },
-        callEditImageData() {
+        callRequest() {
             const ready = this.validateData()
             if (!ready) {
                 return
             }
             this.setPopupIsLoading(true)
-            const data = this.prepDataForUpload()
+            const data = this.formatData()
             this.imagesRequest({
                 endpoint: 'editImageTags',
                 data: data

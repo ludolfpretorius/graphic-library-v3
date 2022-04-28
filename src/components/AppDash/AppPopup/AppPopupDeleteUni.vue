@@ -9,17 +9,18 @@
             <div class="popup-body">
                 <div class="input-group">
                     <AppViewPopupSelect
+                        ref="uniInput"
                         :search="'acronym'"
                         :options="universityNames"
                         :placeholder="'Select relevant UP'"
-                        @updateFilter="universityNames">
+                        @updateFilter="updateRequestData">
                         <i class="fas fa-university"></i>
                     </AppViewPopupSelect>
                 </div>
             </div>
             <div class="popup-controls">
                 <div class="btn cancel" @click="closePopup">Cancel</div>
-                <div class="btn action" @click="removeUni">
+                <div class="btn action" @click="callRequest">
                     {{ actionBtnText }}
                 </div>
             </div>
@@ -53,12 +54,17 @@ export default {
     methods: {
         ...mapActions(['setPopup', 'universitiesRequest']),
         closePopup() {
-            this.setPopup({ isActive: false, type: '' })
+            this.setPopup({ isActive: false, isLoading: false, type: '' })
         },
         setPopupIsLoading() {
             const popup = this.popup
             popup.isLoading = true
             this.setPopup(popup)
+        },
+        clearInputValues() {
+            Object.keys(this.$refs).forEach((input) => {
+                this.$refs[input].$refs.multiselect.clear()
+            })
         },
         updateRequestData(dataObj) {
             const acronym = dataObj.value
@@ -68,17 +74,28 @@ export default {
                 }
             })
         },
-        removeUni() {
+        validateData() {
+            const data = this.requestData
+            if (!Object.keys(data).length) {
+                alert(
+                    'Please select the UP you want to delete before submitting.'
+                )
+                return false
+            }
+            return true
+        },
+        callRequest() {
+            const ready = this.validateData()
+            if (!ready) {
+                return
+            }
             this.setPopupIsLoading()
+            this.clearInputValues()
             this.universitiesRequest({
                 endpoint: 'deleteUni',
                 data: this.requestData
             }).then(() => {
-                this.setPopup({
-                    isLoading: false,
-                    isActive: false,
-                    type: ''
-                })
+                this.closePopup()
             })
         }
     }

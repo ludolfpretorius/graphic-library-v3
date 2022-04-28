@@ -11,6 +11,7 @@
             <div class="popup-body">
                 <div class="input-group">
                     <AppViewPopupInput
+                        ref="uniNameInput"
                         :search="'name'"
                         :placeholder="'University full name, e.g. Harvard'"
                         @updateData="updateRequestData">
@@ -19,6 +20,7 @@
                 </div>
                 <div class="input-group">
                     <AppViewPopupInput
+                        ref="uniAcronymInput"
                         :search="'acronym'"
                         :placeholder="'University acronym, e.g. HAR'"
                         @updateData="updateRequestData">
@@ -28,7 +30,7 @@
             </div>
             <div class="popup-controls">
                 <div class="btn cancel" @click="closePopup">Cancel</div>
-                <div class="btn action" @click="addNewUni">
+                <div class="btn action" @click="callRequest">
                     {{ actionBtnText }}
                 </div>
             </div>
@@ -65,27 +67,50 @@ export default {
     methods: {
         ...mapActions(['setPopup', 'universitiesRequest']),
         closePopup() {
-            this.setPopup({ isActive: false, type: '' })
+            this.setPopup({ isActive: false, isLoading: false, type: '' })
+            this.clearInputValues()
         },
         setPopupIsLoading() {
             const popup = this.popup
             popup.isLoading = true
             this.setPopup(popup)
         },
+        clearInputValues() {
+            Object.keys(this.$refs).forEach((input) => {
+                if (this.$refs[input].$refs.multiselect) {
+                    this.$refs[input].$refs.multiselect.clear()
+                } else {
+                    this.$refs[input].value = ''
+                }
+            })
+        },
         updateRequestData(dataObj) {
             this.requestData[dataObj.search] = dataObj.value
         },
-        addNewUni() {
+        validateData() {
+            const data = this.requestData
+            if (!data.name.length || !data.acronym.length) {
+                alert('Please add a UP name and acronym before submitting.')
+                return false
+            }
+            return true
+        },
+        formatData() {
+            const data = this.requestData
+            return data
+        },
+        callRequest() {
+            const ready = this.validateData()
+            if (!ready) {
+                return
+            }
             this.setPopupIsLoading()
+            const data = this.formatData()
             this.universitiesRequest({
                 endpoint: 'addNew',
-                data: this.requestData
+                data: data
             }).then(() => {
-                this.setPopup({
-                    isLoading: false,
-                    isActive: false,
-                    type: ''
-                })
+                this.closePopup()
             })
         }
     }

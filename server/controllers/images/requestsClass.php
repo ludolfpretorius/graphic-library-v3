@@ -96,10 +96,10 @@
 				$location = $folder.$filename.'.svg';
 				$successfullyMoved = move_uploaded_file($_FILES[$key]['tmp_name'], $location);
 				if ($successfullyMoved) {
-					$imagesLength = count(json_decode(file_get_contents($this->imagesFile)));
+					$allImages = json_decode(file_get_contents($this->imagesFile));
 					$uploadedInfo = json_decode($req['data']);
 					$imageEntry = [];
-					$imageEntry['id'] = $imagesLength + 2;
+					$imageEntry['id'] = $allImages[count($allImages) - 1]->id + 1;
 					foreach($uploadedInfo as $type => $value) {
 						$imageEntry[$type] = $value;
 					}
@@ -127,7 +127,7 @@
 			$tokensData = json_decode(file_get_contents($this->tokensFile));
 			$newToken = $this->createRandomString();
 
-			$newTokenData['id'] = count($tokensData) + 1;
+			$newTokenData['id'] = $tokensData[count($tokensData) - 1]->id + 1;
 			$newTokenData['token'] = $newToken;
 			$newTokenData['filter'] = ['uni' => $req['data']['uni'], 'course' => $req['data']['course'], 'keyword' => $req['data']['keyword']];
 			$newTokenData['link'] = $req['data']['url'].'?t='.$newToken;

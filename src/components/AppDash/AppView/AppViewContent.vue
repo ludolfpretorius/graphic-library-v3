@@ -92,7 +92,9 @@ export default {
             this.firePopup('edit-img-tags')
         },
         deleteImage(img) {
-            this.imagesRequest({ endpoint: 'deleteImage', data: img })
+            if (confirm('Are you sure you want to delete this image?')) {
+                this.imagesRequest({ endpoint: 'deleteImage', data: img })
+            }
         }
     },
     watch: {

@@ -9,6 +9,7 @@
             <div class="popup-body">
                 <div class="input-group">
                     <AppViewPopupSelect
+                        ref="uniInput"
                         :search="'uni'"
                         :options="universityNames"
                         :placeholder="'Select UP'"
@@ -26,6 +27,7 @@
                 </div>
                 <div class="input-group">
                     <AppViewPopupSelect
+                        ref="tagsInput"
                         :mode="'tags'"
                         :search="'tags'"
                         :options="tags"
@@ -36,6 +38,7 @@
                 </div>
                 <div class="input-group">
                     <AppViewPopupSelect
+                        ref="vsgInput"
                         :search="'vsgOfficial'"
                         :options="vsgOptions"
                         :placeholder="'Is this image(s) in the official VSG?'"
@@ -46,7 +49,7 @@
             </div>
             <div class="popup-controls">
                 <div class="btn cancel" @click="closePopup">Cancel</div>
-                <div class="btn action" @click="callUploadImage">
+                <div class="btn action" @click="callRequest">
                     {{ actionBtnText }}
                 </div>
             </div>
@@ -107,7 +110,8 @@ export default {
             'setUploadImgData'
         ]),
         closePopup() {
-            this.setPopup({ isActive: false, type: '' })
+            this.setPopup({ isActive: false, isLoading: false, type: '' })
+            this.clearInputValues()
         },
         updateUni(dataObj) {
             this.updateImageData(dataObj)
@@ -127,6 +131,11 @@ export default {
             const courseInput = this.$refs.courseInput
             courseInput.$refs.multiselect.clear()
         },
+        clearInputValues() {
+            Object.keys(this.$refs).forEach((input) => {
+                this.$refs[input].$refs.multiselect.clear()
+            })
+        },
         updateImageData(dataObj) {
             this.imageData[dataObj.search] = dataObj.value || ''
         },
@@ -145,7 +154,7 @@ export default {
             }
             return true
         },
-        prepDataForUpload() {
+        formatData() {
             const formData = new FormData()
             const filesArray = this.filesToUpload
             const data = {
@@ -161,24 +170,17 @@ export default {
             })
             this.setUploadImgData(formData)
         },
-        callUploadImage() {
+        callRequest() {
             const ready = this.validateData()
             if (!ready) {
                 return
             }
             this.setPopupIsLoading()
-            this.prepDataForUpload()
+            this.formatData()
             this.imagesRequest({ endpoint: 'uploadImage' }).then(() => {
-                this.setPopup({
-                    isLoading: false,
-                    isActive: false,
-                    type: ''
-                })
+                this.closePopup()
             })
         }
-    },
-    created() {
-        this.imagesRequest({ endpoint: 'fetchTags' })
     }
 }
 </script>

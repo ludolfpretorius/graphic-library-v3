@@ -10,8 +10,8 @@
 		}
 
 		function addNew($req) {
-			$uniesLength = count(json_decode(file_get_contents($this->uniesFile)));
-			$newUni['id'] = $uniesLength + 1;
+			$allUnies = json_decode(file_get_contents($this->uniesFile));
+			$newUni['id'] = $allUnies[count($allUnies) - 1]->id + 1;
 			$newUni['name'] = $req['data']['name'];
 			$newUni['acronym'] = $req['data']['acronym'];
 			$newUni['courses'] = [];

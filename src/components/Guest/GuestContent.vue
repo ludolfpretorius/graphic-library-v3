@@ -52,7 +52,6 @@ export default {
             const content = this.$refs.content
             content.addEventListener('scroll', (event) => {
                 const elem = event.target
-                console.log(elem.scrollTop + elem.clientHeight >= elem.scrollHeight - 400)
                 if (
                     elem.scrollTop + elem.clientHeight >=
                     elem.scrollHeight - 400
