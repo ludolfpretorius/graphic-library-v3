@@ -16,7 +16,10 @@ const routes = [
     {
         path: '/login',
         name: 'Login',
-        component: Login
+        component: Login,
+        meta: {
+            requiresLoggedOut: true
+        }
     },
     {
         path: '/guest',
@@ -41,7 +44,7 @@ const router = createRouter({
     routes
 })
 
-const checkSession = async (to, next) => {
+const authSession = async (next) => {
     const options = {
         method: 'POST',
         data: JSON.stringify({
@@ -53,6 +56,7 @@ const checkSession = async (to, next) => {
         await store.dispatch('setUser', {
             isAdmin: resp.data.body.user === 2 ? true : false
         })
+        await store.dispatch('setHasLoggedIn', true)
         await next()
     } else {
         await next('/login')
@@ -64,7 +68,7 @@ router.beforeEach((to, from, next) => {
         to.matched.some((record) => record.meta.requiresAuth) &&
         !store.getters.hasLoggedIn
     ) {
-        checkSession(to, next).catch((err) => alert(err))
+        authSession(next).catch((err) => alert(err))
     } else {
         next()
     }

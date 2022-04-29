@@ -55,6 +55,12 @@ const actions = {
                 return true
             }
 
+            if (resp.data.status === 'Success: 200 (Logged out)') {
+                actions.setUser({ commit }, { isAdmin: false })
+                actions.setHasLoggedIn({ commit }, false)
+                return true
+            }
+
             if (resp.data.status === 'Error: 400 (Bad request)') {
                 actions.setLoginAttemptFailed({ commit }, true)
                 return false

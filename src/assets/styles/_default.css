@@ -24,11 +24,12 @@
 body {
 	margin: 0;
 	background-color: #f8f6f8;
+	color: #2e2e2e;
 	font-family: Sen, Arial, sans-serif;
 	position: relative;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	color: #2e2e2e;
+	overflow: hidden;
 }
 
 .flex-center {

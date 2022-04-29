@@ -12,7 +12,7 @@
                 alt="Image preview" />
         </div>
         <div class="dropzone-upload-area" v-bind="getRootProps()" v-else>
-            <input v-bind="getInputProps()" />
+            <input v-bind="getInputProps()" accept="image/svg+xml" />
             <img
                 class="placeholder-image"
                 src="@/assets/imgs/img.svg"
@@ -21,6 +21,7 @@
                 getResponse('dropResponse', dropResponses)
             }}</span>
             <span v-else>{{ getResponse('dragResponse', dragResponses) }}</span>
+            <span v-if="isDragReject">HOSSS</span>
         </div>
     </div>
 </template>
@@ -77,9 +78,36 @@ export default {
         const store = useStore()
         const imgBlobs = ref([])
         const files = ref([])
+        const rejectResponses = {
+            counter: 0,
+            responses: [
+                'Apologies friend. Only SVGs are allowed.',
+                "Okay... You're persistent. I like that. Keep trying. Maybe it will work.",
+                'PSYCH! It will never work. Please use SVGs.'
+            ]
+        }
 
         function onDrop(acceptFiles, rejectReasons) {
-            console.log(rejectReasons)
+            let ready = acceptFiles.reduce((ready, file) => {
+                if (file.type !== 'image/svg+xml') {
+                    ready = false
+                }
+                return ready
+            }, true)
+
+            if (!ready) {
+                console.log(rejectReasons)
+                store.dispatch('setNotification', {
+                    isActive: true,
+                    status: 'error',
+                    message: rejectResponses.responses[rejectResponses.counter]
+                })
+                acceptFiles = []
+                rejectResponses.counter >= 2
+                    ? (rejectResponses.counter = 0)
+                    : rejectResponses.counter++
+                return
+            }
             imgBlobs.value = []
             if (acceptFiles.length) {
                 files.value = acceptFiles
@@ -95,7 +123,14 @@ export default {
             store.dispatch('setFilesToUpload', acceptFiles)
         }
 
-        const { getRootProps, getInputProps, ...rest } = useDropzone({ onDrop })
+        function onDropRejected() {
+            console.log('rejected')
+        }
+
+        const { getRootProps, getInputProps, ...rest } = useDropzone({
+            onDrop,
+            onDropRejected
+        })
 
         return {
             getRootProps,

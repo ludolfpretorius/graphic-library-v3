@@ -28,7 +28,27 @@ export default {
 
 <style lang="scss">
 #AppSidebarMenu {
+    height: calc(100% - 102px);
     padding-top: 30px;
+    overflow-y: auto;
+    &::selection {
+        color: #fff;
+        background: #1475d4;
+    }
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: #f8f6f8;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: darken($navy, 5%) !important;
+    }
+    &::-webkit-scrollbar-track-piece {
+        background-color: darken($navy, 5%) !important;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: lighten($navy, 8%);
+    }
     h5 {
         padding: 0 30px;
         margin: 30px 0 10px 0;

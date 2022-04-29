@@ -39,7 +39,9 @@ export default {
     methods: {
         ...mapActions(['authRequest', 'setLoginAttemptFailed']),
         validateData() {
-            const data = this.requestData
+            const data = {
+                password: this.$sanitize(this.requestData.password)
+            }
             if (!data.password.length) {
                 alert('Please enter enter a password before submitting.')
                 return false

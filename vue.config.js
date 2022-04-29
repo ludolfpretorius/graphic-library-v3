@@ -13,5 +13,6 @@ module.exports = {
                 prependData: `@import "@/assets/styles/_variables.scss";`
             }
         }
-    }
+    },
+    productionSourceMap: false
 }

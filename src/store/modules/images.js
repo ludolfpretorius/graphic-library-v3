@@ -4,7 +4,8 @@ const state = {
     filter: {
         uni: '',
         course: '',
-        keyword: ''
+        keyword: '',
+        vsg: false
     },
     allImages: [],
     filteredImages: [],

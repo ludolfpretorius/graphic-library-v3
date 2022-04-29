@@ -33,7 +33,7 @@ export default {
     methods: {
         emitVal() {
             const search = this.search
-            const value = this.value
+            const value = this.$sanitize(this.value)
             this.$emit('updateData', { search, value })
         }
     }

@@ -2,7 +2,7 @@
     <h5>Session</h5>
     <ul>
         <li>
-            <a href="#">
+            <a href="#" @click="callRequest">
                 <i class="fas fa-power-off"></i>
                 Log out
             </a>
@@ -16,9 +16,15 @@ import { mapActions } from 'vuex'
 export default {
     name: 'AppSidebarMenuSession',
     methods: {
-        ...mapActions(['setPopup']),
-        firePopup(type) {
-            this.setPopup({ isActive: true, type: type })
+        ...mapActions(['setPopup', 'authRequest']),
+        callRequest() {
+            this.authRequest({
+                endpoint: 'logout'
+            }).then((success) => {
+                if (success) {
+                    this.$router.push('/login')
+                }
+            })
         }
     }
 }

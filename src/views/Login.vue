@@ -28,7 +28,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     flex-direction: column;
 }
 </style>

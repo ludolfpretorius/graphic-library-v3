@@ -1,4 +1,6 @@
 <?php
+
+	date_default_timezone_set("Africa/Johannesburg");
 	
 	class Auth {
 		private $hashesFile = './db/hashes.json';
@@ -25,15 +27,22 @@
 			$output = ['success' => false, 'user' => null];
 			if (isset($_COOKIE['graphic-lib-session'])) {
 				$cookie = $_COOKIE['graphic-lib-session'];
-				if (password_verify('gl-user', $data->userCookie)) {
+				if (password_verify('gl-user', $cookie)) {
 					$output['success'] = true;
 					$output['user'] = 1;
 				}
-				if (password_verify('gl-admin', $data->adminCookie)) {
+				if (password_verify('gl-admin', $cookie)) {
 					$output['success'] = true;
 					$output['user'] = 2;
 				}
 			}
 			return $output;
+		}
+
+		function logout() {
+			if (isset($_COOKIE['graphic-lib-session'])) {
+				return true;
+			}
+			return false;
 		}
 	}
