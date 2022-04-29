@@ -9,7 +9,7 @@
         <div class="btns-wrap">
             <a
                 class="menu-btn download-btn"
-                :href="require(`root/server/upload/${this.img.url}.svg`)"
+                :href="thumbnailPath"
                 :download="
                     img.up +
                     '-' +
@@ -45,12 +45,7 @@ export default {
     },
     computed: {
         thumbnailPath() {
-            return (
-                window.location.origin +
-                '/server/upload/' +
-                this.img.url +
-                '.svg'
-            )
+            return window.location.origin + '/server/upload/' + this.img.url + '.svg'
             // return process.env.VUE_APP_UPLOAD_URL + this.img.url + '.svg'
         },
         imgPlaceholder() {
