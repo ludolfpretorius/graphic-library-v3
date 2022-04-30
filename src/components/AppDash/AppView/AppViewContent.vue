@@ -10,6 +10,7 @@
             v-for="img in visibleImages"
             :key="img.id"
             :img="img"
+            :isLoading="isLoading"
             @toggleVSGOfficial="toggleVSGOfficial"
             @editTags="editTags"
             @deleteImage="deleteImage" />
@@ -40,7 +41,8 @@ export default {
     data() {
         return {
             visibleImages: [],
-            scrolltopIsVisible: false
+            scrolltopIsVisible: false,
+            isLoading: false
         }
     },
     computed: mapGetters(['allImages', 'filteredImages']),
@@ -82,7 +84,11 @@ export default {
             }
         },
         toggleVSGOfficial(img) {
-            this.imagesRequest({ endpoint: 'toggleVSGOfficial', data: img })
+            this.isLoading = true
+            this.imagesRequest({
+                endpoint: 'toggleVSGOfficial',
+                data: img
+            }).then(() => (this.isLoading = false))
         },
         firePopup(type) {
             this.setPopup({ isActive: true, type: type, isLoading: true })

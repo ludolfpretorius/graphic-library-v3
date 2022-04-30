@@ -25,6 +25,18 @@
                 Delete course
             </a>
         </li>
+        <li>
+            <a href="#" @click="firePopup('change-default-password')">
+                <i class="fas fa-lock"></i>
+                Change default password
+            </a>
+        </li>
+        <li>
+            <a href="#" @click="firePopup('change-admin-password')">
+                <i class="fas fa-shield-alt"></i>
+                Change admin password
+            </a>
+        </li>
     </ul>
 </template>
 

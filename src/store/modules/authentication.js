@@ -42,6 +42,10 @@ const actions = {
             method: 'POST',
             data: actions.formatAuthData(data)
         }
+        const notificationData = {
+            isActive: true,
+            status: 'success'
+        }
         try {
             const resp = await axios.request(options)
             if (resp.data.status === 'Success: 200 (Logged in)') {
@@ -54,16 +58,32 @@ const actions = {
                 actions.setHasLoggedIn({ commit }, true)
                 return true
             }
-
             if (resp.data.status === 'Success: 200 (Logged out)') {
                 actions.setUser({ commit }, { isAdmin: false })
                 actions.setHasLoggedIn({ commit }, false)
                 return true
             }
-
-            if (resp.data.status === 'Error: 400 (Bad request)') {
+            if (
+                resp.data.status === 'Success: 200 (Default password changed)'
+            ) {
+                notificationData.message = resp.data.status.split(/[(]|[)]/)[1]
+                commit('setNotification', notificationData, { root: true })
+                return true
+            }
+            if (resp.data.status === 'Success: 200 (Admin password changed)') {
+                notificationData.message = resp.data.status.split(/[(]|[)]/)[1]
+                commit('setNotification', notificationData, { root: true })
+                return true
+            }
+            if (resp.data.status === 'Error: 400 (Incorrect password)') {
                 actions.setLoginAttemptFailed({ commit }, true)
                 return false
+            }
+
+            if (resp.data.status === 'Error: 400 (Bad request)') {
+                notificationData.status = 'error'
+                notificationData.message = 'That last request was unsuccessful.'
+                commit('setNotification', notificationData, { root: true })
             }
         } catch (err) {
             alert('Something went wrong. Please check your connection.')

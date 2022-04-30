@@ -5,7 +5,7 @@
         </slot>
         <input
             :search="search"
-            type="text"
+            :type="type"
             v-model="value"
             :placeholder="placeholder"
             @keyup="emitVal" />
@@ -23,6 +23,10 @@ export default {
         search: {
             type: String,
             default: ''
+        },
+        type: {
+            type: String,
+            default: 'text'
         }
     },
     data() {

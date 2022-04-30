@@ -10,6 +10,7 @@
             <div class="menu-btn" @click.self="toggleDropdown">
                 <div class="label">•••</div>
                 <div class="dropdown">
+                    <div class="loading" v-if="isLoading"></div>
                     <div
                         class="dropdown-btn"
                         @click="this.$emit('toggleVSGOfficial', img)">
@@ -63,6 +64,10 @@ export default {
         img: {
             type: Object,
             required: true
+        },
+        isLoading: {
+            type: Boolean,
+            default: false
         }
     },
     data() {
@@ -70,7 +75,12 @@ export default {
     },
     computed: {
         thumbnailPath() {
-             return window.location.origin + '/server/upload/' + this.img.url + '.svg'
+            return (
+                window.location.origin +
+                '/server/upload/' +
+                this.img.url +
+                '.svg'
+            )
             // return (
             //     window.location.origin +
             //     '/server/upload/' +
@@ -178,6 +188,18 @@ export default {
                 z-index: 1;
                 &.show {
                     display: block;
+                }
+                .loading {
+                    width: 100%;
+                    height: 100%;
+                    margin: auto;
+                    background-color: rgba(255, 255, 255, 0.8);
+                    border-radius: 14px;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
                 }
                 .dropdown-btn {
                     width: 100%;

@@ -11,6 +11,6 @@
 			setcookie('graphic-lib-session', $cookiedata, time() + (86400 * 30), '/', '', true, true);
 			echo json_encode(['status' => 'Success: 200 (Logged in)', 'body' => ['user' => $login['user']]]);
 		} else {
-			echo json_encode(['status' => 'Error: 400 (Bad request)']);
+			echo json_encode(['status' => 'Error: 400 (Incorrect password)']);
 		}
 	}

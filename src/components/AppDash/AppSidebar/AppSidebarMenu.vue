@@ -1,8 +1,8 @@
 <template>
     <div id="AppSidebarMenu">
         <AppSidebarMenuUnies />
-        <AppSidebarMenuAdmin v-if="user.isAdmin" />
         <AppSidebarMenuSharing />
+        <AppSidebarMenuAdmin v-if="user.isAdmin" />
         <AppSidebarMenuSession />
     </div>
 </template>

@@ -1,7 +1,7 @@
 <?php
 
 	date_default_timezone_set("Africa/Johannesburg");
-	
+
 	class Auth {
 		private $hashesFile = './db/hashes.json';
 
@@ -44,5 +44,29 @@
 				return true;
 			}
 			return false;
+		}
+
+		function changeDefaultPassword($req) {
+			$data = json_decode(file_get_contents($this->hashesFile));
+			$output = ['success' => false];	
+			if (password_verify($req['data']['oldPassword'], $data->user)) {
+					$newPassword = password_hash($req['data']['newPassword'], PASSWORD_DEFAULT);
+					$data->user = $newPassword;
+					file_put_contents($this->hashesFile, json_encode($data, JSON_PRETTY_PRINT));
+					$output['success'] = true;
+				}
+			return $output;
+		}
+
+		function changeAdminPassword($req) {
+			$data = json_decode(file_get_contents($this->hashesFile));
+			$output = ['success' => false];
+			if (password_verify($req['data']['oldPassword'], $data->admin)) {
+					$newPassword = password_hash($req['data']['newPassword'], PASSWORD_DEFAULT);
+					$data->admin = $newPassword;
+					file_put_contents($this->hashesFile, json_encode($data, JSON_PRETTY_PRINT));
+					$output['success'] = true;
+				}
+			return $output;
 		}
 	}

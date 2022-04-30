@@ -27,6 +27,16 @@
     <AppPopupDeleteTags
         :class="{ show: popup.isActive && popup.type === 'delete-tags' }"
         :action-btn-text="'Delete tags'" />
+    <AppPopupChangeDefaultPassword
+        :class="{
+            show: popup.isActive && popup.type === 'change-default-password'
+        }"
+        :action-btn-text="'Change password'" />
+    <AppPopupChangeAdminPassword
+        :class="{
+            show: popup.isActive && popup.type === 'change-admin-password'
+        }"
+        :action-btn-text="'Change password'" />
     <!-- </div> -->
 </template>
 
@@ -41,6 +51,8 @@ import AppPopupDeleteUni from '@/components/AppDash/AppPopup/AppPopupDeleteUni'
 import AppPopupDeleteCourse from '@/components/AppDash/AppPopup/AppPopupDeleteCourse'
 import AppPopupNewTags from '@/components/AppDash/AppPopup/AppPopupNewTags'
 import AppPopupDeleteTags from '@/components/AppDash/AppPopup/AppPopupDeleteTags'
+import AppPopupChangeDefaultPassword from '@/components/AppDash/AppPopup/AppPopupChangeDefaultPassword'
+import AppPopupChangeAdminPassword from '@/components/AppDash/AppPopup/AppPopupChangeAdminPassword'
 
 export default {
     name: 'AppPopup',
@@ -53,7 +65,9 @@ export default {
         AppPopupDeleteUni,
         AppPopupDeleteCourse,
         AppPopupNewTags,
-        AppPopupDeleteTags
+        AppPopupDeleteTags,
+        AppPopupChangeDefaultPassword,
+        AppPopupChangeAdminPassword
     },
     data() {
         return {}
