@@ -7,7 +7,7 @@ import axios from 'axios'
 import Vue3Sanitize from 'vue-3-sanitize'
 
 axios.defaults.withCredentials = true
-axios.defaults.baseURL = 'http://localhost:3000/server/' //'../../server/'
+axios.defaults.baseURL = '../../server/' // 'http://localhost:3000/server/'
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 axios.defaults.headers.post['Authorization'] =
     'Bearer ' + process.env.VUE_APP_XHR_TOKEN
