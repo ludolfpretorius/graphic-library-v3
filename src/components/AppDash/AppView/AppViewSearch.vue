@@ -75,11 +75,14 @@ export default {
             this.setFilteredImages(locallyFilteredImages)
         },
         filterImages(filterObj, imgsArr) {
-            const regex = new RegExp(filterObj.keyword, 'ig')
+            const regex = new RegExp('^' + filterObj.keyword, 'ig')
             const imgs = imgsArr.filter((img) => {
-                const tags = img.tags.join(',')
+                const tagsMatch = img.tags.reduce((bool, tag) => {
+                    if (tag.match(regex)) bool = true
+                    return bool
+                }, false)
                 return (
-                    tags.match(regex) &&
+                    tagsMatch &&
                     img.up.includes(filterObj.uni) &&
                     img.course.includes(filterObj.course)
                 )

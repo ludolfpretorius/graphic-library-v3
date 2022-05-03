@@ -1,18 +1,25 @@
 <template>
-    <div
-        id="AppPopupChangeDefaultPassword"
-        class="popup"
-        @click.self="closePopup">
+    <div id="AppPopupChangePassword" class="popup" @click.self="closePopup">
         <div class="popup-content-wrap">
             <AppPopupLoader v-show="popup.isLoading" />
             <div class="popup-header">
                 <h2>Change the default password</h2>
                 <h4>
-                    Type the old password and new password and then confirm the
-                    new password
+                    Select which password to change and complete the password
+                    fields
                 </h4>
             </div>
             <div class="popup-body">
+                <div class="input-group">
+                    <AppViewPopupSelect
+                        ref="passwordType"
+                        :search="'user'"
+                        :options="passwordOptions"
+                        :placeholder="'Select which password to change'"
+                        @updateFilter="updateRequestData">
+                        <i class="fas fa-user"></i>
+                    </AppViewPopupSelect>
+                </div>
                 <div class="input-group">
                     <AppViewPopupInput
                         ref="oldPassword"
@@ -54,12 +61,14 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import AppViewPopupSelect from './AppViewPopupSelect'
 import AppViewPopupInput from './AppViewPopupInput'
 import AppPopupLoader from './AppPopupLoader'
 
 export default {
-    name: 'AppPopupChangeDefaultPassword',
+    name: 'AppPopupChangePassword',
     components: {
+        AppViewPopupSelect,
         AppViewPopupInput,
         AppPopupLoader
     },
@@ -74,8 +83,19 @@ export default {
             requestData: {
                 oldPassword: '',
                 newPassword: '',
-                confirmNewPassword: ''
-            }
+                confirmNewPassword: '',
+                user: 0
+            },
+            passwordOptions: [
+                {
+                    value: 1,
+                    label: 'General user password'
+                },
+                {
+                    value: 2,
+                    label: 'Admin user password'
+                }
+            ]
         }
     },
     computed: mapGetters(['popup']),
@@ -105,13 +125,12 @@ export default {
         validateData() {
             const data = this.requestData
             if (
+                !data.user ||
                 !data.oldPassword.length ||
                 !data.newPassword.length ||
                 !data.confirmNewPassword.length
             ) {
-                alert(
-                    'Please type the old password and new password and then confirm the new password before submitting.'
-                )
+                alert('Please complete each input before submitting.')
                 return false
             }
             if (data.newPassword !== data.confirmNewPassword) {
@@ -135,7 +154,7 @@ export default {
             this.setPopupIsLoading()
             const data = this.formatData()
             this.authRequest({
-                endpoint: 'changeDefaultPassword',
+                endpoint: 'changePassword',
                 data: data
             }).then(() => {
                 this.closePopup()

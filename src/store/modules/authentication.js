@@ -63,14 +63,7 @@ const actions = {
                 actions.setHasLoggedIn({ commit }, false)
                 return true
             }
-            if (
-                resp.data.status === 'Success: 200 (Default password changed)'
-            ) {
-                notificationData.message = resp.data.status.split(/[(]|[)]/)[1]
-                commit('setNotification', notificationData, { root: true })
-                return true
-            }
-            if (resp.data.status === 'Success: 200 (Admin password changed)') {
+            if (resp.data.status === 'Success: 200 (Password changed)') {
                 notificationData.message = resp.data.status.split(/[(]|[)]/)[1]
                 commit('setNotification', notificationData, { root: true })
                 return true

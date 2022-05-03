@@ -22,10 +22,17 @@
 		function fetchImages($req) {
 			$data = json_decode(file_get_contents($this->imagesFile));
 			$guestImages = [];
+			$searchKeyword = $req['data']['keyword'];
 			foreach($data as $img) {
 				$uni = strlen($req['data']['uni']) ? $img->up === $req['data']['uni'] : true;
 				$course = strlen($req['data']['course']) ? $img->course === $req['data']['course'] : true;
-				$keyword = strlen($req['data']['keyword']) ? in_array($req['data']['keyword'], $img->tags) : true;
+				$tagsMatch = false;
+				foreach($img->tags as $tag) {
+					if (preg_match("/^$searchKeyword/i", $tag)) {
+						$tagsMatch = true;
+					}
+				}
+				$keyword = strlen($req['data']['keyword']) ? $tagsMatch : true;
 				if ($uni && $course && $keyword) {
 					$guestImages[] = $img;
 				}

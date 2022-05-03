@@ -127,7 +127,7 @@
 			$tokensData = json_decode(file_get_contents($this->tokensFile));
 			$newToken = $this->createRandomString();
 
-			$newTokenData['id'] = $tokensData[count($tokensData) - 1]->id + 1;
+			$newTokenData['id'] = count($tokensData) ? $tokensData[count($tokensData) - 1]->id + 1 : 1;
 			$newTokenData['token'] = $newToken;
 			$newTokenData['filter'] = ['uni' => $req['data']['uni'], 'course' => $req['data']['course'], 'keyword' => $req['data']['keyword']];
 			$newTokenData['link'] = $req['data']['url'].'?t='.$newToken;

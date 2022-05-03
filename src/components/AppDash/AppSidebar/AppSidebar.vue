@@ -25,7 +25,7 @@ export default {
 <style scoped lang="scss">
 #AppSidebar {
     flex-shrink: 0;
-    width: 290px;
+    width: 260px;
     height: 100vh;
     background-color: $navy;
     border-radius: 0 0 0 0;

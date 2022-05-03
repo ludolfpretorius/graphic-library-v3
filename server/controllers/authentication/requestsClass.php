@@ -46,24 +46,13 @@
 			return false;
 		}
 
-		function changeDefaultPassword($req) {
-			$data = json_decode(file_get_contents($this->hashesFile));
-			$output = ['success' => false];	
-			if (password_verify($req['data']['oldPassword'], $data->user)) {
-					$newPassword = password_hash($req['data']['newPassword'], PASSWORD_DEFAULT);
-					$data->user = $newPassword;
-					file_put_contents($this->hashesFile, json_encode($data, JSON_PRETTY_PRINT));
-					$output['success'] = true;
-				}
-			return $output;
-		}
-
-		function changeAdminPassword($req) {
+		function changePassword($req) {
 			$data = json_decode(file_get_contents($this->hashesFile));
 			$output = ['success' => false];
-			if (password_verify($req['data']['oldPassword'], $data->admin)) {
+			$userType = $req['data']['user'] === 2 ? 'admin' : 'user';
+			if (password_verify($req['data']['oldPassword'], $data->$userType)) {
 					$newPassword = password_hash($req['data']['newPassword'], PASSWORD_DEFAULT);
-					$data->admin = $newPassword;
+					$data->$userType = $newPassword;
 					file_put_contents($this->hashesFile, json_encode($data, JSON_PRETTY_PRINT));
 					$output['success'] = true;
 				}

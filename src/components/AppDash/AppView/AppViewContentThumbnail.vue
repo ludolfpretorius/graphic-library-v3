@@ -75,19 +75,13 @@ export default {
     },
     computed: {
         thumbnailPath() {
-            return (
-                window.location.origin +
-                '/server/upload/' +
-                this.img.url +
-                '.svg'
-            )
             // return (
             //     window.location.origin +
             //     '/server/upload/' +
             //     this.img.url +
             //     '.svg'
             // )
-            // return process.env.VUE_APP_UPLOAD_URL + this.img.url + '.svg'
+            return process.env.VUE_APP_UPLOAD_URL + this.img.url + '.svg'
         },
         imgPlaceholder() {
             return require(`@/assets/imgs/img.svg`)
